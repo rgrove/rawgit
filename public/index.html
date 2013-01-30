@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>rawgithub.com</title>
+    <link href="http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Titillium+Web:400italic,400,700" rel="stylesheet">
+    <style>
+        html {
+            background: #fff;
+            color: #333;
+            font: 17px/1.4 'Titillium Web', sans-serif;
+        }
+
+        body {
+            padding: 0 1em;
+        }
+
+        code, pre {
+            font-family: 'Ubuntu Mono', monospace;
+        }
+
+        code {
+            background: #f8f8f8;
+            border: 1px solid #efefef;
+            padding: 1px 4px;
+        }
+
+        pre { overflow-x: auto; }
+
+        #doc {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .hd { text-align: center; }
+
+        .ft {
+            font-size: 14px;
+            margin: 3em 0 4em;
+            text-align: center;
+        }
+
+        .after, .before {
+            border: 1px solid;
+            padding: 4px 6px;
+        }
+
+        .after {
+            background: #F2FFEB;
+            border-color: #D0FFB5;
+        }
+
+        .before {
+            background: #FFF7F7;
+            border-color: #FFCCCC;
+        }
+    </style>
+</head>
+<body>
+
+<div id="doc">
+    <div class="hd">
+        <h1>rawgithub.com</h1>
+    </div>
+
+    <div class="bd">
+        <h2>The Problem</h2>
+
+        <p>
+        You've got a <code>raw.github.com</code> URL that points to some work-in-progress HTML, JavaScript, or CSS. You'd like to share it with someone as a working example, or maybe you'd like to use it in a <a href="http://jsperf.com/">jsPerf</a> test.
+        </p>
+
+        <p>
+        Too bad! Everything served from <code>raw.github.com</code> has a <code>text/plain</code> content type, which means HTML won't render, and some browsers won't execute JavaScript or apply CSS.
+        </p>
+
+        <h2>The Solution</h2>
+
+        <p>
+        Delete the dot! Just replace <code>raw.github.com</code> with <code>rawgithub.com</code> and <em>skadoosh</em>, you're loading raw files from your GitHub repo and they're served with appropriate content types. Render HTML, apply CSS, execute JavaScript.
+        </p>
+
+        <h3>Before</h3>
+
+        <pre class="before">https://<strong>raw.github.com</strong>/user/repo/master/filename.js</pre>
+
+        <h3>After</h3>
+
+        <pre class="after">https://<strong>rawgithub.com</strong>/user/repo/master/filename.js</pre>
+
+        <h2>The Caveat</h2>
+
+        <p>
+        Use this for testing and for sharing demo code with friends, but don't use it for anything production-related. It's slow, and it might break from time to time. You've been warned.
+        </p>
+
+        <h2>The Source</h2>
+
+        <p>
+        The source code for rawgithub.com is <a href="https://github.com/rgrove/rawgithub">hosted on GitHub</a>! Fork it and go nuts.
+        </p>
+
+        <a href="https://github.com/rgrove/rawgithub"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    </div>
+
+    <div class="ft">
+        <p>
+            Hey! rawgithub.com is just for fun and is not associated with GitHub in any way.
+            <br>Please use it responsibly. Got feedback? I'm <a href="https://twitter.com/yaypie">@yaypie</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
