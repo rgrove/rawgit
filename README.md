@@ -33,9 +33,9 @@ Want to add a feature or fix a bug? If it's something small, just send a pull
 request. If it's something big, please get in touch and ask if I'm interested
 before working on it.
 
-I'm pretty picky about code quality and simplicity, so don't be alarmed if I
-ask you to change things or just say I'm not interested. If you're offended,
-maybe [a kitten](http://emergencykitten.com/) will help cheer you up?
+I'm pretty picky, so don't be alarmed if I ask you to change things or just say
+I'm not interested. If you're offended, maybe
+[a kitten](http://emergencykitten.com/) will help cheer you up?
 
 
 License
