@@ -52,6 +52,9 @@ app.use(app.router);
 app.get('/:user/:repo/:branch/*', function (req, res, next) {
     var headers = {};
 
+    // No robots!
+    res.set('X-Robots-Tag', 'none');
+
     // Pass certain request headers through to GitHub.
     passHeaders.forEach(function (header) {
         var value = req.header(header);
