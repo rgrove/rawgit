@@ -72,7 +72,7 @@
         </p>
 
         <p>
-        Too bad! Everything served from <code>raw.github.com</code> has a <code>text/plain</code> content type, which means HTML won't render, and some browsers won't execute JavaScript or apply CSS.
+        Too bad! Most things served from <code>raw.github.com</code> have a <code>text/plain</code> content type, which means HTML won't render, and some browsers won't execute JavaScript or apply CSS.
         </p>
 
         <h2>The Solution</h2>
@@ -81,13 +81,15 @@
         Delete the dot! Just replace <code>raw.github.com</code> with <code>rawgithub.com</code> and <em>skadoosh</em>, you're loading raw files from your GitHub repo and they're served with appropriate content types. Render HTML, apply CSS, execute JavaScript.
         </p>
 
-        <h3>Before</h3>
-
+        <p><strong>Before</strong></p>
         <pre class="before">https://<strong>raw.github.com</strong>/user/repo/master/filename.js</pre>
 
-        <h3>After</h3>
-
+        <p><strong>After</strong></p>
         <pre class="after">https://<strong>rawgithub.com</strong>/user/repo/master/filename.js</pre>
+
+        <p>
+        It works with gists too! Just replace <code>gist.github.com</code> with <code>rawgithub.com</code> in the raw gist URL.
+        </p>
 
         <h2>The Caveat</h2>
 

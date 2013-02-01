@@ -1,27 +1,5 @@
-var express = require('express'),
-    mime    = require('mime'),
-
-    request = require('request').defaults({
-        jar      : false,
-        strictSSL: true,
-        timeout  : 10000
-    });
-
-// -- Options ------------------------------------------------------------------
-
-// Public directory containing static files.
-var publicDir = __dirname + '/public';
-
-// Array of request header names that should be passed through to GitHub from
-// the user.
-var passHeaders = [
-    'Accept',
-    'Accept-Charset',
-    'Cache-Control',
-    'If-None-Match',
-    'Pragma',
-    'User-Agent'
-];
+var express    = require('express'),
+    middleware = require('./lib/middleware');
 
 // -- Configure Express --------------------------------------------------------
 var app = express();
@@ -44,54 +22,23 @@ app.use(function (req, res, next) {
     next();
 });
 
+// Public directory containing static files.
+var publicDir = __dirname + '/public';
+
 app.use(express.static(publicDir));
 app.use(app.router);
 
 // -- Routes -------------------------------------------------------------------
 
-app.get('/:user/:repo/:branch/*', function (req, res, next) {
-    var headers = {};
+// Repo file.
+app.get('/:user/:repo/:branch/*',
+    middleware.noRobots,
+    middleware.proxyPath('https://raw.github.com'));
 
-    // No robots!
-    res.set('X-Robots-Tag', 'none');
-
-    // Pass certain request headers through to GitHub.
-    passHeaders.forEach(function (header) {
-        var value = req.header(header);
-
-        if (value) {
-            headers[header] = value;
-        }
-    });
-
-    request('https://raw.github.com' + req.path, {headers: headers}, function (err, ghRes, body) {
-        if (err) {
-            next(err);
-            return;
-        }
-
-        var status = ghRes.statusCode;
-
-        if (status !== 200 && status !== 304) {
-            next();
-            return;
-        }
-
-        // Pass certain GitHub headers along in the response.
-        res.set({
-            'Date': ghRes.headers.date,
-            'ETag': ghRes.headers.etag
-        });
-
-        if (status === 304) {
-            res.send(304);
-            return;
-        }
-
-        res.type(mime.lookup(req.path));
-        res.send(body);
-    });
-});
+// Gist.
+app.get('/raw/*',
+    middleware.noRobots,
+    middleware.proxyPath('https://gist.github.com'));
 
 // -- Error handlers -----------------------------------------------------------
 app.use(function (req, res, next) {
