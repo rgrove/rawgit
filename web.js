@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var express    = require('express'),
     middleware = require('./lib/middleware');
 
