@@ -9,21 +9,19 @@ Installing
 
 1. Install Node.js 0.8.x from <http://nodejs.org/>.
 
-2. Install the Heroku Toolbelt from <https://toolbelt.heroku.com/>.
-
-3. Clone this git repo (fork it first if you plan to make changes).
+2. Clone this git repo (fork it first if you plan to make changes).
 
         $ git clone git://github.com/rgrove/rawgithub.git
 
-4. Install dependencies using npm.
+3. Install dependencies using npm.
 
         $ cd rawgithub && npm install
 
-5. Start the local server.
+4. Start the local server.
 
-        $ foreman start
+        $ ./web.js
 
-6. Browse to <http://localhost:5000/> and you should see rawgithub in action.
+5. Browse to <http://localhost:5000/> and you should see rawgithub in action.
 
 
 Pull Requests
