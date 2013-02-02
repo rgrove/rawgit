@@ -6,7 +6,6 @@ var express    = require('express'),
 var app = express();
 
 app.disable('x-powered-by');
-app.use(express.compress());
 
 if (app.get('env' === 'development')) {
     app.use(express.responseTime());
