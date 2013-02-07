@@ -36,7 +36,7 @@ app.get('/:user/:repo/:branch/*',
     middleware.proxyPath('https://raw.github.com'));
 
 // Public or private gist.
-app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/[0-9a-f]{40}\/.+$/,
+app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
     middleware.noRobots,
     middleware.proxyPath('https://gist.github.com'));
 
