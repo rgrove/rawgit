@@ -7,7 +7,7 @@ This is the source code behind <http://rawgithub.com/>.
 Installing
 ----------
 
-1. Install Node.js 0.8.x from <http://nodejs.org/>.
+1. Install Node.js from <http://nodejs.org/>.
 
 2. Clone this git repo (fork it first if you plan to make changes).
 
