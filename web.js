@@ -7,7 +7,7 @@ var app = express();
 
 app.disable('x-powered-by');
 
-if (app.get('env' === 'development')) {
+if (app.get('env') === 'development') {
     app.use(express.responseTime());
     app.use(express.logger('tiny'));
 }
