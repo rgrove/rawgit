@@ -1,4 +1,4 @@
-// Don't send production traffic to rawgithub.com!
+alert("Don't send production traffic to rawgithub.com!");
 
 /*
  * `evil.js` Version 42
