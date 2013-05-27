@@ -1,0 +1,6 @@
+/* Don't send production traffic to rawgithub.com! */
+
+* {
+    background: #fff !important;
+    color: #fff !important;
+}
