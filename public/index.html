@@ -4,58 +4,7 @@
     <meta charset="utf-8">
     <title>rawgithub.com</title>
     <link href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Titillium+Web:400italic,400,700" rel="stylesheet">
-    <style>
-        html {
-            background: #fff;
-            color: #333;
-            font: 17px/1.4 'Titillium Web', sans-serif;
-        }
-
-        body {
-            padding: 0 1em;
-        }
-
-        code, pre {
-            font-family: 'Ubuntu Mono', monospace;
-        }
-
-        code {
-            background: #f8f8f8;
-            border: 1px solid #efefef;
-            padding: 1px 4px;
-        }
-
-        pre { overflow-x: auto; }
-
-        #doc {
-            margin: 0 auto;
-            max-width: 800px;
-            min-width: 500px;
-        }
-
-        .hd { text-align: center; }
-
-        .ft {
-            font-size: 14px;
-            margin: 3em 11em 4em;
-            text-align: center;
-        }
-
-        .after, .before {
-            border: 1px solid;
-            padding: 4px 6px;
-        }
-
-        .after {
-            background: #F2FFEB;
-            border-color: #D0FFB5;
-        }
-
-        .before {
-            background: #FFF7F7;
-            border-color: #FFCCCC;
-        }
-    </style>
+    <link href="/css/rawgithub.css" rel="stylesheet">
 </head>
 <body>
 
@@ -107,7 +56,34 @@
         The source code for rawgithub.com is <a href="https://github.com/rgrove/rawgithub">hosted on GitHub</a>! Fork it and go nuts.
         </p>
 
-        <a href="https://github.com/rgrove/rawgithub"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+        <h2>The FAQ</h2>
+
+        <h3 id="can-i-use-rawgitub-in-production"><a href="#can-i-use-rawgithub-in-production">Can I use rawgithub.com on a production website?</a></h3>
+
+        <p>
+        No. Don't do this. Not even a little bit. It will make me very sad.
+        </p>
+
+        <p>
+        rawgithub.com is a free service to make developers' lives easier when developing and testing and debugging things. It's not free hosting. Use <a href="http://pages.github.com/">GitHub Pages</a> for that.
+        </p>
+
+        <h3 id="what-will-happen-if-im-an-asshole"><a href="#what-will-happen-if-im-an-asshole">What will happen if I hotlink to a rawgithub.com URL on a production
+            website?</a></h3>
+
+        <p>
+        If you hotlink to a rawgithub.com URL on a site that gets lots of traffic, requests will be throttled. If this heavy traffic continues, requests originating from your site will eventually be dropped.
+        </p>
+
+        <p>
+        If the traffic continues even after automatic throttling is triggered, rawgithub.com will start serving <a href="/js/evil.js">evil.js</a> and <a href="/css/evil.css">evil.css</a> instead of requested JS and CSS files. Visitors to your site may see an alert warning against using rawgithub.com in production, and your JS may start doing very strange things.
+        </p>
+
+        <h3 id="google-webmaster-central"><a href="#google-webmaster-central">I tried to claim a rawgithub.com URL on Google Webmaster Central and rawgithub.com returns a 403 error instead of my verification HTML. What gives?</a></h3>
+
+        <p>
+        You can't claim rawgithub.com URLs on Google Webmaster Central, because rawgithub.com isn't a hosting service. It would be pointless anyway, since all rawgithub.com responses include an <code>X-Robots-Tag: none</code> header, which tells search crawlers not to index anything.
+        </p>
     </div>
 
     <div class="ft">
@@ -115,6 +91,8 @@
             Hey! rawgithub.com is just for fun and is not associated with GitHub in any way. Please use it responsibly. Got feedback? I'm <a href="https://twitter.com/yaypie">@yaypie</a>.
         </p>
     </div>
+
+    <a href="https://github.com/rgrove/rawgithub"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 </div>
 
 </body>

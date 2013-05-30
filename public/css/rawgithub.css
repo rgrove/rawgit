@@ -1,0 +1,57 @@
+html {
+    background: #fff;
+    color: #333;
+    font: 17px/1.4 'Titillium Web', sans-serif;
+}
+
+body {
+    padding: 0 1em;
+}
+
+code, pre {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+code {
+    background: #f8f8f8;
+    border: 1px solid #efefef;
+    padding: 1px 4px;
+}
+
+h3 { margin: 1.5em 0 0.5em; }
+
+h3 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+pre { overflow-x: auto; }
+
+#doc {
+    margin: 0 auto;
+    max-width: 800px;
+    min-width: 500px;
+}
+
+.hd { text-align: center; }
+
+.ft {
+    font-size: 14px;
+    margin: 3em 11em 4em;
+    text-align: center;
+}
+
+.after, .before {
+    border: 1px solid;
+    padding: 4px 6px;
+}
+
+.after {
+    background: #F2FFEB;
+    border-color: #D0FFB5;
+}
+
+.before {
+    background: #FFF7F7;
+    border-color: #FFCCCC;
+}
