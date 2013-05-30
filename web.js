@@ -31,6 +31,7 @@ app.use(app.router);
 
 // -- Routes -------------------------------------------------------------------
 
+// Check the referrer against the blacklist.
 app.get('*', function (req, res, next) {
     var referrer = req.get('referrer');
 
@@ -56,6 +57,25 @@ app.get('*', function (req, res, next) {
     }
 
     next();
+});
+
+// Don't allow requests for Google Webmaster Central verification files, because
+// rawgithub.com isn't a hosting provider and people can't own URLs under its
+// domain.
+app.get('*/google[0-9a-f]{16}.html', function (req, res) {
+    res.status(403);
+
+    if (req.accepts('html')) {
+        res.sendfile(publicDir + '/errors/403.html');
+        return;
+    }
+
+    if (req.accepts('json')) {
+        res.send({error: 'Not cool, man.'});
+        return;
+    }
+
+    res.type('txt').send('Not cool, man.');
 });
 
 // Repo file.
