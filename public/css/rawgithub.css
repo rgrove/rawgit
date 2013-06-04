@@ -1,7 +1,8 @@
 html {
     background: #fff;
     color: #333;
-    font: 17px/1.4 'Titillium Web', sans-serif;
+    font: 16px/1.5 Ubuntu, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased
 }
 
 body {
@@ -9,7 +10,7 @@ body {
 }
 
 code, pre {
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: 'Ubuntu Mono', 'Source Code Pro', 'DejaVu Sans Mono', Menlo, monospace;
 }
 
 code {
@@ -18,10 +19,19 @@ code {
     padding: 1px 4px;
 }
 
-h3 { margin: 1.5em 0 0.5em; }
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin: 1.4em 0 0.5em;
+}
+
+h1 { font-size: 2.6em; }
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.2em; }
+h4, h5, h6 { font-size: 1em; }
 
 h3 a {
     color: inherit;
+    margin-top: 1.8em;
     text-decoration: none;
 }
 
@@ -36,7 +46,7 @@ pre { overflow-x: auto; }
 .hd { text-align: center; }
 
 .ft {
-    font-size: 14px;
+    font-size: 0.8em;
     margin: 3em 11em 4em;
     text-align: center;
 }
