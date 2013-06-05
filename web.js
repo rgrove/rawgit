@@ -1,10 +1,12 @@
 #!/usr/bin/env node
+
+/*jshint node:true */
 var express    = require('express'),
-    blacklist  = require('./lib/blacklist'),
     middleware = require('./lib/middleware');
 
 // -- Configure Express --------------------------------------------------------
-var app = express();
+var app       = express(),
+    publicDir = __dirname + '/public';
 
 app.disable('x-powered-by');
 
@@ -12,6 +14,9 @@ if (app.get('env') === 'development') {
     app.use(express.responseTime());
     app.use(express.logger('tiny'));
 }
+
+app.use(express.static(publicDir));
+app.use(middleware.blacklist);
 
 // Global middleware to set some security-related headers.
 app.use(function (req, res, next) {
@@ -23,60 +28,15 @@ app.use(function (req, res, next) {
     next();
 });
 
-// Public directory containing static files.
-var publicDir = __dirname + '/public';
-
-app.use(express.static(publicDir));
 app.use(app.router);
 
 // -- Routes -------------------------------------------------------------------
 
-// Check the referrer against the blacklist.
-app.get('*', function (req, res, next) {
-    var referrer = req.get('referrer');
-
-    if (referrer) {
-        for (var i = 0, len = blacklist.length; i < len; i++) {
-            if (blacklist[i].test(referrer)) {
-                if (/\.js$/i.test(req.path)) {
-                    res.sendfile(publicDir + '/js/evil.js', {
-                        maxAge: 86400000 // 1 day
-                    });
-                } else if (/\.css$/i.test(req.path)) {
-                    res.sendfile(publicDir + '/css/evil.css', {
-                        maxAge: 86400000 // 1 day
-                    });
-                } else {
-                    res.status(403);
-                    res.type('txt').send('The referring website has been blacklisted for abusing rawgithub.com.');
-                }
-
-                return;
-             }
-        }
-    }
-
-    next();
-});
-
 // Don't allow requests for Google Webmaster Central verification files, because
 // rawgithub.com isn't a hosting provider and people can't own URLs under its
 // domain.
-app.get('*/google[0-9a-f]{16}.html', function (req, res) {
-    res.status(403);
-
-    if (req.accepts('html')) {
-        res.sendfile(publicDir + '/errors/403.html');
-        return;
-    }
-
-    if (req.accepts('json')) {
-        res.send({error: 'Not cool, man.'});
-        return;
-    }
-
-    res.type('txt').send('Not cool, man.');
-});
+app.get('*/google[0-9a-f]{16}.html',
+    middleware.error403);
 
 // Repo file.
 app.get('/:user/:repo/:branch/*',
