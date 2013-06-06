@@ -38,15 +38,17 @@ app.use(app.router);
 app.get('*/google[0-9a-f]{16}.html',
     middleware.error403);
 
-// Repo file.
-app.get('/:user/:repo/:branch/*',
-    middleware.noRobots,
-    middleware.proxyPath('https://raw.github.com'));
-
 // Public or private gist.
 app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
     middleware.noRobots,
+    middleware.imageRedirect('https://gist.github.com'),
     middleware.proxyPath('https://gist.github.com'));
+
+// Repo file.
+app.get('/:user/:repo/:branch/*',
+    middleware.noRobots,
+    middleware.imageRedirect('https://raw.github.com'),
+    middleware.proxyPath('https://raw.github.com'));
 
 // -- Error handlers -----------------------------------------------------------
 app.use(function (req, res, next) {
