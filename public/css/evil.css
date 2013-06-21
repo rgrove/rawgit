@@ -1,6 +1,6 @@
 /* Don't send production traffic to rawgithub.com! */
 
-* {
+html {
     -moz-transform: rotateX(180deg) !important;
     -webkit-transform: rotateX(180deg) !important;
     transform: rotateX(180deg) !important;
