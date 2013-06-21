@@ -159,10 +159,4 @@ alert("Don't send production traffic to rawgithub.com!");
     }
   };
 
-  if (typeof setTimeout != "undefined") {
-    setTimeout(function () {
-      location && (location.hash = "#blowme");
-    }, 20000);
-  }
-
 }).call(this);
