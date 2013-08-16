@@ -12,5 +12,9 @@
         "request": "2.21.0"
     },
 
-    "private": true
+    "private": true,
+
+    "scripts": {
+        "start": "node web.js"
+    }
 }
