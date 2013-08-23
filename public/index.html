@@ -25,7 +25,7 @@
         </p>
 
         <p>
-        Too bad! Most things served from <code>raw.github.com</code> have a <code>text/plain</code> content type, which means HTML won't render, and some browsers won't execute JavaScript or apply CSS.
+        Too bad! Most things served from <code>raw.github.com</code> have a <code>text/plain</code> content type and send out the <code>X-Content-Type-Options</code> header with the value <code>nosniff</code>, which means HTML won't render, and some browsers won't execute JavaScript or apply CSS.
         </p>
 
         <h2>The Solution</h2>
