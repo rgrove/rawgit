@@ -50,7 +50,7 @@
 
     <div class="bd">
         <p>
-        These statistics represent requests to rawgithub.com since <time id="since"></time>. They get reset often, and should be used for entertainment purposes only.
+        These statistics represent requests to rawgithub.com since <time id="stats-since"></time>. They get reset often, and should be used for entertainment purposes only.
         </p>
 
         <h2 id="files">Top Files</h2>
@@ -64,7 +64,7 @@
                 </tr>
             </thead>
 
-            <tbody id="files">
+            <tbody id="stats-files">
             </tbody>
         </table>
 
@@ -79,7 +79,7 @@
                 </tr>
             </thead>
 
-            <tbody id="referrers">
+            <tbody id="stats-referrers">
             </tbody>
         </table>
     </div>
@@ -109,9 +109,9 @@ rawgithub = (function (doc) {
         '`': '&#x60;'
     };
 
-    var filesEl     = doc.getElementById('files'),
-        referrersEl = doc.getElementById('referrers'),
-        sinceEl     = doc.getElementById('since');
+    var filesEl     = doc.getElementById('stats-files'),
+        referrersEl = doc.getElementById('stats-referrers'),
+        sinceEl     = doc.getElementById('stats-since');
 
     function escapeHTML(string) {
         return string.replace(/[&<>"'\/`]/g, function (match) {
