@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 
 /*jshint node:true */
+
+"use strict";
+
 var express    = require('express'),
-    middleware = require('./lib/middleware');
+    middleware = require('./lib/middleware'),
+    stats      = require('./lib/stats');
 
 // -- Configure Express --------------------------------------------------------
 var app       = express(),
@@ -40,15 +44,32 @@ app.get('*/google[0-9a-f]{16}.html',
 
 // Public or private gist.
 app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
+    middleware.stats,
     middleware.noRobots,
     middleware.imageRedirect('https://gist.github.com'),
     middleware.proxyPath('https://gist.github.com'));
 
 // Repo file.
 app.get('/:user/:repo/:branch/*',
+    middleware.stats,
     middleware.noRobots,
     middleware.imageRedirect('https://raw.github.com'),
     middleware.proxyPath('https://raw.github.com'));
+
+// Stats API.
+app.get('/api/stats', function (req, res, next) {
+    var count = Math.max(0, Math.min(100, req.query.count || 100));
+
+    res.jsonp({
+        status: 'success',
+
+        data: {
+            since    : stats.since(),
+            files    : stats.files().slice(0, count),
+            referrers: stats.referrers().slice(0, count)
+        }
+    });
+});
 
 // -- Error handlers -----------------------------------------------------------
 app.use(function (req, res, next) {

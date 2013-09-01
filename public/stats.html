@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Statistics - rawgithub.com</title>
+    <link href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:400,700,400italic" rel="stylesheet">
+    <link href="/css/rawgithub.css" rel="stylesheet">
+    <link rel="icon" href="/img/sushi.png">
+
+    <style>
+    #since {
+        font-weight: bold;
+    }
+
+    .stats {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+
+    .stats td,
+    .stats th {
+        padding: 6px;
+    }
+
+    .stats td {
+        border-top: 1px solid #ddd;
+    }
+
+    .stats th {
+        border-bottom: 2px solid #ddd;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    .stats tr:nth-child(odd) td {
+        background-color: #f9f9f9;
+    }
+    </style>
+</head>
+<body>
+
+<div id="doc">
+    <div class="hd">
+        <h1>
+            <a href="/"><img class="logo" src="/img/sushi-large.png" alt=""></a>
+            rawgithub.com statistics
+        </h1>
+    </div>
+
+    <div class="bd">
+        <p>
+        These statistics represent requests to rawgithub.com since <time id="since"></time>. They get reset often, and should be used for entertainment purposes only.
+        </p>
+
+        <h2 id="files">Top Files</h2>
+
+        <table class="stats">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Hits</th>
+                    <th>URI</th>
+                </tr>
+            </thead>
+
+            <tbody id="files">
+            </tbody>
+        </table>
+
+        <h2 id="referrers">Top Referrers</h2>
+
+        <table class="stats">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Hits</th>
+                    <th>URI</th>
+                </tr>
+            </thead>
+
+            <tbody id="referrers">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="ft">
+        <p>
+        Hey! rawgithub.com is just for fun and is not associated with GitHub in any way. Please use it responsibly. Have feedback? I'm <a href="https://twitter.com/yaypie">@yaypie</a>.
+        </p>
+
+        <p>
+        <a href="http://thenounproject.com/noun/sushi/#icon-No14497">Sushi icon</a> designed by <a href="http://thenounproject.com/lnakanishi">Linda Yuki Nakanishi</a> from The Noun Project.
+        </p>
+    </div>
+
+    <a href="https://github.com/rgrove/rawgithub"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+</div>
+
+<script>
+rawgithub = (function (doc) {
+    var HTML_CHARS = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#x27;',
+        '/': '&#x2F;',
+        '`': '&#x60;'
+    };
+
+    var filesEl     = doc.getElementById('files'),
+        referrersEl = doc.getElementById('referrers'),
+        sinceEl     = doc.getElementById('since');
+
+    function escapeHTML(string) {
+        return string.replace(/[&<>"'\/`]/g, function (match) {
+            return HTML_CHARS[match];
+        });
+    }
+
+    return {
+        loadStats: function (res) {
+            var files     = res.data.files,
+                referrers = res.data.referrers,
+                since     = new Date(res.data.since);
+
+            sinceEl.setAttribute('datetime', since.toISOString());
+            sinceEl.textContent = since.toLocaleString();
+
+            files.forEach(function (entry, i) {
+                var tr = doc.createElement('tr');
+
+                if (entry.blacklisted) {
+                    tr.className = 'stats-blacklisted';
+                }
+
+                var number = tr.insertCell(-1),
+                    hits   = tr.insertCell(-1),
+                    uri    = tr.insertCell(-1);
+
+                number.textContent = i + 1;
+                hits.textContent   = entry.hits;
+
+                var safeURI = escapeHTML(entry.uri);
+
+                uri.innerHTML = '<a rel="nofollow" href="' + safeURI + '">' +
+                    safeURI + '</a>';
+
+                filesEl.appendChild(tr);
+            });
+
+            referrers.forEach(function (entry, i) {
+                var tr = doc.createElement('tr');
+
+                if (entry.blacklisted) {
+                    tr.className = 'stats-blacklisted';
+                }
+
+                var number = tr.insertCell(-1),
+                    hits   = tr.insertCell(-1),
+                    uri    = tr.insertCell(-1);
+
+                number.textContent = i + 1;
+                hits.textContent   = entry.hits;
+
+                var safeURI = escapeHTML(entry.uri);
+
+                uri.innerHTML = '<a rel="nofollow" href="' + safeURI + '">' +
+                    safeURI + '</a>';
+
+                referrersEl.appendChild(tr);
+            });
+        }
+    };
+}(document));
+</script>
+<script src="/api/stats?count=20&amp;callback=rawgithub.loadStats"></script>
+
+</body>
+</html>
