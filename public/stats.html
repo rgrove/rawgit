@@ -37,6 +37,11 @@
     .stats tr:nth-child(odd) td {
         background-color: #f9f9f9;
     }
+
+    .stats tr.stats-blacklisted td {
+        background-color: #fcf8e3;
+        border-color: #fbeed5;
+    }
     </style>
 </head>
 <body>
@@ -52,6 +57,10 @@
     <div class="bd">
         <p>
         These statistics represent requests to rawgithub.com since <time id="stats-since"></time>. They get reset often, and should be used for entertainment purposes only.
+        </p>
+
+        <p>
+        Highlighted rows indicate files or referrers that have been blacklisted due to abuse.
         </p>
 
         <h2 id="files">Top Files</h2>

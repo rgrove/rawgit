@@ -20,7 +20,6 @@ if (app.get('env') === 'development') {
 }
 
 app.use(express.static(publicDir));
-app.use(middleware.blacklist);
 
 // Global middleware to set some security-related headers.
 app.use(function (req, res, next) {
@@ -45,6 +44,7 @@ app.get('*/google[0-9a-f]{16}.html',
 // Public or private gist.
 app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
     middleware.stats,
+    middleware.blacklist,
     middleware.noRobots,
     middleware.imageRedirect('https://gist.github.com'),
     middleware.proxyPath('https://gist.github.com'));
@@ -52,13 +52,14 @@ app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
 // Repo file.
 app.get('/:user/:repo/:branch/*',
     middleware.stats,
+    middleware.blacklist,
     middleware.noRobots,
     middleware.imageRedirect('https://raw.github.com'),
     middleware.proxyPath('https://raw.github.com'));
 
 // Stats API.
 app.get('/api/stats', function (req, res, next) {
-    var count = Math.max(0, Math.min(100, req.query.count || 100));
+    var count = Math.max(0, Math.min(20, req.query.count || 10));
 
     res.set('Cache-Control', 'private, no-cache, no-store, max-age=0, must-revalidate');
 
