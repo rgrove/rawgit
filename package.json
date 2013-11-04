@@ -1,6 +1,16 @@
 {
     "name": "rawgithub",
+    "author": "Ryan Grove (ryan@wonko.com)",
     "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rgrove/rawgithub.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rgrove/rawgithub/issues"
+    },
+    "license": "MIT",
+    "main": "web.js",
 
     "engines": {
         "node": ">=0.8.0"
