@@ -56,6 +56,13 @@ pre { overflow-x: auto; }
     width: 96px;
 }
 
+.forkme {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+}
+
 .ft {
     font-size: 0.8em;
     margin: 3em 11em 4em;
