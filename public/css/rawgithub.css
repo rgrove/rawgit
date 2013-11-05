@@ -83,3 +83,41 @@ pre { overflow-x: auto; }
     background: #FFF7F7;
     border-color: #FFCCCC;
 }
+
+#since {
+    font-weight: bold;
+}
+
+.stats {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.stats td,
+.stats th {
+    padding: 6px;
+}
+
+.stats td {
+    border-top: 1px solid #ddd;
+}
+
+.stats td:last-child {
+    word-break: break-all;
+}
+
+.stats th {
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+    text-align: left;
+}
+
+.stats tr:nth-child(odd) td {
+    background-color: #f9f9f9;
+}
+
+.stats tr.stats-blacklisted td {
+    background-color: #fcf8e3;
+    border-color: #fbeed5;
+}
