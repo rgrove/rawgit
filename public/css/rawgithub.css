@@ -1,5 +1,5 @@
 html {
-    background: #fff;
+    background-color: #fff;
     color: #333;
     font: 16px/1.5 Ubuntu, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased
@@ -14,7 +14,7 @@ code, pre {
 }
 
 code {
-    background: #f8f8f8;
+    background-color: #f8f8f8;
     border: 1px solid #efefef;
     padding: 1px 4px;
 }
@@ -56,6 +56,13 @@ pre { overflow-x: auto; }
     width: 96px;
 }
 
+.forkme {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+}
+
 .ft {
     font-size: 0.8em;
     margin: 3em 11em 4em;
@@ -68,11 +75,49 @@ pre { overflow-x: auto; }
 }
 
 .after {
-    background: #F2FFEB;
-    border-color: #D0FFB5;
+    background-color: #f2ffeb;
+    border-color: #d0ffb5;
 }
 
 .before {
-    background: #FFF7F7;
-    border-color: #FFCCCC;
+    background-color: #fff7f7;
+    border-color: #fcc;
+}
+
+#since {
+    font-weight: bold;
+}
+
+.stats {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+.stats td,
+.stats th {
+    padding: 6px;
+}
+
+.stats td {
+    border-top: 1px solid #ddd;
+}
+
+.stats td:last-child {
+    word-break: break-all;
+}
+
+.stats th {
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+    text-align: left;
+}
+
+.stats tr:nth-child(odd) td {
+    background-color: #f9f9f9;
+}
+
+.stats tr.stats-blacklisted td {
+    background-color: #fcf8e3;
+    border-color: #fbeed5;
 }
