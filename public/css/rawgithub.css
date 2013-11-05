@@ -1,5 +1,5 @@
 html {
-    background: #fff;
+    background-color: #fff;
     color: #333;
     font: 16px/1.5 Ubuntu, Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased
@@ -14,7 +14,7 @@ code, pre {
 }
 
 code {
-    background: #f8f8f8;
+    background-color: #f8f8f8;
     border: 1px solid #efefef;
     padding: 1px 4px;
 }
@@ -75,13 +75,13 @@ pre { overflow-x: auto; }
 }
 
 .after {
-    background: #F2FFEB;
-    border-color: #D0FFB5;
+    background-color: #f2ffeb;
+    border-color: #d0ffb5;
 }
 
 .before {
-    background: #FFF7F7;
-    border-color: #FFCCCC;
+    background-color: #fff7f7;
+    border-color: #fcc;
 }
 
 #since {
