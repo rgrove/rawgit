@@ -19,7 +19,7 @@ if (app.get('env') === 'development') {
     app.use(express.logger('tiny'));
 }
 
-app.use(express.static(publicDir));
+app.use(express.static(publicDir, {maxAge: 300000}));
 
 // Global middleware to set some security-related headers.
 app.use(function (req, res, next) {
@@ -77,6 +77,9 @@ app.get('/api/stats', function (req, res, next) {
 // -- Error handlers -----------------------------------------------------------
 app.use(function (req, res, next) {
     res.status(404);
+
+    // Ensure that 404s can always be cached.
+    res.set('Cache-Control', 'public');
 
     if (req.accepts('html')) {
         res.sendfile(publicDir + '/errors/404.html');
