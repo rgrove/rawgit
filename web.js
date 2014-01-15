@@ -46,7 +46,7 @@ app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
     middleware.stats,
     middleware.blacklist,
     middleware.noRobots,
-    middleware.imageRedirect('https://gist.github.com'),
+    middleware.fileRedirect('https://gist.github.com'),
     middleware.proxyPath('https://gist.github.com'));
 
 // Repo file.
@@ -54,7 +54,7 @@ app.get('/:user/:repo/:branch/*',
     middleware.stats,
     middleware.blacklist,
     middleware.noRobots,
-    middleware.imageRedirect('https://raw.github.com'),
+    middleware.fileRedirect('https://raw.github.com'),
     middleware.proxyPath('https://raw.github.com'));
 
 // Stats API.
