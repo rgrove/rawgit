@@ -5,12 +5,12 @@
 "use strict";
 
 var express    = require('express'),
+    config     = require('./conf'),
     middleware = require('./lib/middleware'),
     stats      = require('./lib/stats');
 
 // -- Configure Express --------------------------------------------------------
-var app       = express(),
-    publicDir = __dirname + '/public';
+var app = express();
 
 app.disable('x-powered-by');
 
@@ -19,7 +19,7 @@ if (app.get('env') === 'development') {
     app.use(express.logger('tiny'));
 }
 
-app.use(express.static(publicDir, {maxAge: 300000}));
+app.use(express.static(config.publicDir, {maxAge: 300000}));
 
 // Global middleware to set some security-related headers.
 app.use(function (req, res, next) {
@@ -82,7 +82,7 @@ app.use(function (req, res, next) {
     res.set('Cache-Control', 'public');
 
     if (req.accepts('html')) {
-        res.sendfile(publicDir + '/errors/404.html');
+        res.sendfile(config.publicDir + '/errors/404.html');
         return;
     }
 
@@ -100,7 +100,7 @@ app.use(function (err, req, res, next) {
     res.status(err.status || 500);
 
     if (req.accepts('html')) {
-        res.sendfile(publicDir + '/errors/500.html');
+        res.sendfile(config.publicDir + '/errors/500.html');
         return;
     }
 
