@@ -10,6 +10,7 @@ module.exports = {
          '.htm' : true,
          '.html': true,
          '.js'  : true,
+         '.json': true,
          '.rss' : true,
          '.svg' : true,
          '.swf' : true,
