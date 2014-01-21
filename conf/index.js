@@ -3,8 +3,8 @@
 "use strict";
 
 module.exports = {
-    // Whitelist of file extensions that will be proxied through rawgithub.com. All
-    // others will be redirected to raw.github.com.
+    // Whitelist of file extensions that will be proxied through rawgithub.com.
+    // All others will be redirected to raw.github.com.
     extensionWhitelist: {
          '.css' : true,
          '.htm' : true,
