@@ -7,9 +7,9 @@
     },
 
     "dependencies": {
+        "accepts": "1.0.1",
         "express": "3.4.7",
-        "mime"   : "1.2.11",
-        "request": "2.21.0"
+        "mime"   : "1.2.11"
     },
 
     "private": true,

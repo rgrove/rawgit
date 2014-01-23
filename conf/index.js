@@ -23,8 +23,6 @@ module.exports = {
     // Array of request header names that should be relayed from the user to
     // GitHub.
     relayRequestHeaders: [
-        'Accept',
-        'Accept-Charset',
         'If-Modified-Since',
         'If-None-Match',
         'User-Agent'
