@@ -78,8 +78,7 @@ app.get('/api/stats', function (req, res, next) {
 app.use(function (req, res, next) {
     res.status(404);
 
-    // Ensure that 404s can always be cached.
-    res.set('Cache-Control', 'public');
+    res.set('Cache-Control', 'public, max-age=300'); // 5 minutes
 
     if (req.accepts('html')) {
         res.sendfile(config.publicDir + '/errors/404.html');
