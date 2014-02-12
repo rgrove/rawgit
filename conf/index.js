@@ -15,8 +15,14 @@ module.exports = {
         '.rss'   : true,
         '.svg'   : true,
         '.swf'   : true,
-        '.xml'   : true
+        '.xml'   : true,
+        '.ttf'   : true,
+        '.ttc'   : true,
+        '.eot'   : true,
+        '.otf'   : true,
+        '.woff'  : true
     },
+
 
     // Public directory containing static files.
     publicDir: require('fs').realpathSync(__dirname + '/../public'),
