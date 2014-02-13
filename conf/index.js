@@ -8,21 +8,20 @@ module.exports = {
     extensionWhitelist: {
         '.coffee': true,
         '.css'   : true,
+        '.eot'   : true,
         '.htm'   : true,
         '.html'  : true,
         '.js'    : true,
         '.json'  : true,
+        '.otf'   : true,
         '.rss'   : true,
         '.svg'   : true,
         '.swf'   : true,
-        '.xml'   : true,
-        '.ttf'   : true,
         '.ttc'   : true,
-        '.eot'   : true,
-        '.otf'   : true,
-        '.woff'  : true
+        '.ttf'   : true,
+        '.woff'  : true,
+        '.xml'   : true
     },
-
 
     // Public directory containing static files.
     publicDir: require('fs').realpathSync(__dirname + '/../public'),
