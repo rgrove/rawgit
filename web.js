@@ -42,12 +42,14 @@ app.get('*/google[0-9a-f]{16}.html',
     middleware.error403);
 
 // Public or private gist.
+// Gist raw domain changed on 2014-02-21:
+// http://developer.github.com/changes/2014-02-21-gist-raw-file-url-change/
 app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
     middleware.stats,
     middleware.blacklist,
     middleware.noRobots,
-    middleware.fileRedirect('https://gist.github.com'),
-    middleware.proxyPath('https://gist.github.com'));
+    middleware.fileRedirect('https://gist.githubusercontent.com'),
+    middleware.proxyPath('https://gist.githubusercontent.com'));
 
 // Repo file.
 app.get('/:user/:repo/:branch/*',
