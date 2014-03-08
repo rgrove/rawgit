@@ -13,6 +13,7 @@ module.exports = {
         '.html'  : true,
         '.js'    : true,
         '.json'  : true,
+        '.kml'   : true,
         '.otf'   : true,
         '.rss'   : true,
         '.svg'   : true,
