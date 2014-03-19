@@ -42,8 +42,6 @@ app.get('*/google[0-9a-f]{16}.html',
     middleware.error403);
 
 // Public or private gist.
-// Gist raw domain changed on 2014-02-21:
-// http://developer.github.com/changes/2014-02-21-gist-raw-file-url-change/
 app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
     middleware.stats,
     middleware.blacklist,
@@ -60,7 +58,7 @@ app.get('/:user/:repo/:branch/*',
     middleware.proxyPath('https://raw.github.com'));
 
 // Stats API.
-app.get('/api/stats', function (req, res, next) {
+app.get('/api/stats', function (req, res) {
     var count = Math.max(0, Math.min(20, req.query.count || 10));
 
     res.set('Cache-Control', 'private, no-cache, no-store, max-age=0, must-revalidate');
@@ -69,7 +67,7 @@ app.get('/api/stats', function (req, res, next) {
         status: 'success',
 
         data: {
-            since    : stats.since(),
+            since    : stats.since,
             files    : stats.files().slice(0, count),
             referrers: stats.referrers().slice(0, count)
         }

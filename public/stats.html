@@ -154,15 +154,15 @@ rawgithub = (function (doc) {
 
                 var number = tr.insertCell(-1),
                     hits   = tr.insertCell(-1),
-                    uri    = tr.insertCell(-1);
+                    url    = tr.insertCell(-1);
 
                 number.textContent = i + 1;
                 hits.textContent   = entry.hits;
 
-                var safeURI = escapeHTML(entry.uri);
+                var safePath = escapeHTML(entry.path);
 
-                uri.innerHTML = '<a rel="nofollow" href="' + safeURI + '">' +
-                    safeURI + '</a>';
+                url.innerHTML = '<a rel="nofollow" href="' + safePath + '">' +
+                    safePath + '</a>';
 
                 filesEl.appendChild(tr);
             });
@@ -176,15 +176,15 @@ rawgithub = (function (doc) {
 
                 var number = tr.insertCell(-1),
                     hits   = tr.insertCell(-1),
-                    uri    = tr.insertCell(-1);
+                    url    = tr.insertCell(-1);
 
                 number.textContent = i + 1;
                 hits.textContent   = entry.hits;
 
-                var safeURI = escapeHTML(entry.uri);
+                var safeUrl = escapeHTML(entry.url);
 
-                uri.innerHTML = '<a rel="nofollow" href="' + safeURI + '">' +
-                    safeURI + '</a>';
+                url.innerHTML = '<a rel="nofollow" href="' + safeUrl + '">' +
+                    safeUrl + '</a>';
 
                 referrersEl.appendChild(tr);
             });

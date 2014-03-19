@@ -7,9 +7,10 @@
     },
 
     "dependencies": {
-        "accepts": "1.0.1",
-        "express": "3.4.7",
-        "mime"   : "1.2.11"
+        "accepts"  : "1.0.1",
+        "express"  : "3.4.7",
+        "lru-cache": "2.5.0",
+        "mime"     : "1.2.11"
     },
 
     "private": true,

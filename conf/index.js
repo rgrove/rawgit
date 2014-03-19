@@ -2,6 +2,8 @@
 
 "use strict";
 
+var path = require('path');
+
 module.exports = {
     // Whitelist of file extensions that will be proxied through rawgithub.com.
     // All others will be redirected to raw.github.com.
@@ -25,7 +27,7 @@ module.exports = {
     },
 
     // Public directory containing static files.
-    publicDir: require('fs').realpathSync(__dirname + '/../public'),
+    publicDir: path.join(__dirname, '/../public'),
 
     // Array of request header names that should be relayed from the user to
     // GitHub.
