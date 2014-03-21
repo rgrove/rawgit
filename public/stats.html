@@ -71,9 +71,11 @@
         <table class="stats">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Hits</th>
-                    <th>URI</th>
+                    <th><abbr title="Requests">Reqs</abbr></th>
+                    <th><abbr title="Requests per second">Reqs/s</abbr></th>
+                    <th><abbr title="Kilobytes">KB</abbr></th>
+                    <th><abbr title="Kilobytes per second">KB/s</abbr></th>
+                    <th>URL</th>
                 </tr>
             </thead>
 
@@ -86,9 +88,11 @@
         <table class="stats">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Hits</th>
-                    <th>URI</th>
+                    <th><abbr title="Requests">Reqs</abbr></th>
+                    <th><abbr title="Requests per second">Reqs/s</abbr></th>
+                    <th><abbr title="Kilobytes">KB</abbr></th>
+                    <th><abbr title="Kilobytes per second">KB/s</abbr></th>
+                    <th>URL</th>
                 </tr>
             </thead>
 
@@ -110,84 +114,7 @@
     <a href="https://github.com/rgrove/rawgithub"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
 </div>
 
-<script>
-rawgithub = (function (doc) {
-    var HTML_CHARS = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#x27;',
-        '/': '&#x2F;',
-        '`': '&#x60;'
-    };
-
-    var filesEl     = doc.getElementById('stats-files'),
-        referrersEl = doc.getElementById('stats-referrers'),
-        sinceEl     = doc.getElementById('stats-since');
-
-    function escapeHTML(string) {
-        return string.replace(/[&<>"'\/`]/g, function (match) {
-            return HTML_CHARS[match];
-        });
-    }
-
-    return {
-        loadStats: function (res) {
-            var files     = res.data.files,
-                referrers = res.data.referrers,
-                since     = new Date(res.data.since);
-
-            sinceEl.setAttribute('datetime', since.toISOString());
-            sinceEl.textContent = since.toLocaleString();
-
-            files.forEach(function (entry, i) {
-                var tr = doc.createElement('tr');
-
-                if (entry.blacklisted) {
-                    tr.className = 'stats-blacklisted';
-                }
-
-                var number = tr.insertCell(-1),
-                    hits   = tr.insertCell(-1),
-                    url    = tr.insertCell(-1);
-
-                number.textContent = i + 1;
-                hits.textContent   = entry.hits;
-
-                var safePath = escapeHTML(entry.path);
-
-                url.innerHTML = '<a rel="nofollow" href="' + safePath + '">' +
-                    safePath + '</a>';
-
-                filesEl.appendChild(tr);
-            });
-
-            referrers.forEach(function (entry, i) {
-                var tr = doc.createElement('tr');
-
-                if (entry.blacklisted) {
-                    tr.className = 'stats-blacklisted';
-                }
-
-                var number = tr.insertCell(-1),
-                    hits   = tr.insertCell(-1),
-                    url    = tr.insertCell(-1);
-
-                number.textContent = i + 1;
-                hits.textContent   = entry.hits;
-
-                var safeUrl = escapeHTML(entry.url);
-
-                url.innerHTML = '<a rel="nofollow" href="' + safeUrl + '">' +
-                    safeUrl + '</a>';
-
-                referrersEl.appendChild(tr);
-            });
-        }
-    };
-}(document));
-</script>
+<script src="/js/stats-client.js"></script>
 <script src="/api/stats?count=10&amp;callback=rawgithub.loadStats"></script>
 
 </body>

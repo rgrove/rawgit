@@ -19,7 +19,7 @@ if (app.get('env') === 'development') {
     app.use(express.logger('tiny'));
 }
 
-app.use(express.static(config.publicDir, {maxAge: 300000}));
+app.use(express.static(config.publicDir));
 
 // Global middleware to set some security-related headers.
 app.use(function (req, res, next) {
@@ -44,16 +44,16 @@ app.get('*/google[0-9a-f]{16}.html',
 // Public or private gist.
 app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
     middleware.stats,
-    middleware.blacklist,
     middleware.noRobots,
+    middleware.blacklist,
     middleware.fileRedirect('https://gist.githubusercontent.com'),
     middleware.proxyPath('https://gist.githubusercontent.com'));
 
 // Repo file.
 app.get('/:user/:repo/:branch/*',
     middleware.stats,
-    middleware.blacklist,
     middleware.noRobots,
+    middleware.blacklist,
     middleware.fileRedirect('https://raw.github.com'),
     middleware.proxyPath('https://raw.github.com'));
 
