@@ -37,6 +37,8 @@ window.rawgithub = (function (doc) {
                     tr.className = 'stats-blacklisted';
                 }
 
+                tr.title = 'Naughtiness: ' + entry.naughtiness;
+
                 var hits = tr.insertCell(-1),
                     hps  = tr.insertCell(-1),
                     kb   = tr.insertCell(-1),
@@ -62,6 +64,8 @@ window.rawgithub = (function (doc) {
                 if (entry.blacklisted) {
                     tr.className = 'stats-blacklisted';
                 }
+
+                tr.title = 'Naughtiness: ' + entry.naughtiness;
 
                 var hits = tr.insertCell(-1),
                     hps  = tr.insertCell(-1),
