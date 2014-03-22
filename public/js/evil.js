@@ -1,5 +1,8 @@
 alert("This website abuses rawgithub.com. You should complain to its owner.");
-throw(new Error("This website abuses rawgithub.com."));
+
+if (typeof console !== 'undefined') {
+  console.error("This website abuses rawgithub.com.");
+}
 
 /*
  * `evil.js` Version 42
