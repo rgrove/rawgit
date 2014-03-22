@@ -5,6 +5,9 @@
 var path = require('path');
 
 module.exports = {
+    // Whether or not to automatically throttle and blacklist abusive requests.
+    autoThrottle: true,
+
     // Whitelist of file extensions that will be proxied through rawgithub.com.
     // All others will be redirected to raw.github.com.
     extensionWhitelist: {
@@ -35,13 +38,13 @@ module.exports = {
     //
     // Naughtiness for referrers is determined by this formula:
     //
-    //     requests * requestsPerSecond * totalKilobytes * multiplier * 0.5
+    //     requests * requestsPerSecond * totalKilobytes * multiplier * 0.3
     //
     // Referrers get a little more leeway since they're often legitimately
     // requesting multiple files per page.
     //
     // The end result is that large files requested rarely are fine. Small files
-    // requested fairly often but not too often are fine. But large files
+    // requested frequently but not too often are fine. But large files
     // requested often and small files requested abusively often are not fine.
     //
     // This multiplier is calibrated such that a naughtiness score of >= 0.5

@@ -1,4 +1,5 @@
-alert("Don't send production traffic to rawgithub.com!");
+alert("This website abuses rawgithub.com. You should complain to its owner.");
+throw(new Error("This website abuses rawgithub.com."));
 
 /*
  * `evil.js` Version 42

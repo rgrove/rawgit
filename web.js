@@ -20,17 +20,7 @@ if (app.get('env') === 'development') {
 }
 
 app.use(express.static(config.publicDir));
-
-// Global middleware to set some security-related headers.
-app.use(function (req, res, next) {
-    res.set({
-        'Access-Control-Allow-Origin': '*',
-        'X-Content-Type-Options'     : 'nosniff'
-    });
-
-    next();
-});
-
+app.use(middleware.security);
 app.use(app.router);
 
 // -- Routes -------------------------------------------------------------------
@@ -45,7 +35,7 @@ app.get('*/google[0-9a-f]{16}.html',
 app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
     middleware.stats,
     middleware.noRobots,
-    middleware.blacklist,
+    middleware.autoThrottle,
     middleware.fileRedirect('https://gist.githubusercontent.com'),
     middleware.proxyPath('https://gist.githubusercontent.com'));
 
@@ -53,7 +43,7 @@ app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
 app.get('/:user/:repo/:branch/*',
     middleware.stats,
     middleware.noRobots,
-    middleware.blacklist,
+    middleware.autoThrottle,
     middleware.fileRedirect('https://raw.github.com'),
     middleware.proxyPath('https://raw.github.com'));
 

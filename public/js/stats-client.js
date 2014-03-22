@@ -33,8 +33,12 @@ window.rawgithub = (function (doc) {
             files.forEach(function (entry) {
                 var tr = doc.createElement('tr');
 
-                if (entry.blacklisted) {
+                if (entry.naughtiness >= 3) {
+                    tr.className = 'stats-shitlisted';
+                } else if (entry.naughtiness >= 1) {
                     tr.className = 'stats-blacklisted';
+                } else if (entry.naughtiness >= 0.5) {
+                    tr.className = 'stats-throttled';
                 }
 
                 tr.title = 'Naughtiness: ' + entry.naughtiness;
@@ -61,8 +65,12 @@ window.rawgithub = (function (doc) {
             referrers.forEach(function (entry) {
                 var tr = doc.createElement('tr');
 
-                if (entry.blacklisted) {
+                if (entry.naughtiness >= 3) {
+                    tr.className = 'stats-shitlisted';
+                } else if (entry.naughtiness >= 1) {
                     tr.className = 'stats-blacklisted';
+                } else if (entry.naughtiness >= 0.5) {
+                    tr.className = 'stats-throttled';
                 }
 
                 tr.title = 'Naughtiness: ' + entry.naughtiness;

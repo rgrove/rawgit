@@ -42,8 +42,18 @@
     }
 
     .stats tr.stats-blacklisted td {
-        background-color: #fcf8e3;
-        border-color: #fbeed5;
+        background-color: #FFE7C4;
+        border-color: #FFD382;
+    }
+
+    .stats tr.stats-shitlisted td {
+        background-color: #FCD9D9;
+        border-color: #FF7D7D;
+    }
+
+    .stats tr.stats-throttled td {
+        background-color: #FFF9CC;
+        border-color: #FFF396;
     }
     </style>
 </head>
@@ -62,10 +72,12 @@
         These statistics represent requests to rawgithub.com since <time id="stats-since"></time>. They get reset often, and should be used for entertainment purposes only.
         </p>
 
-<!--         <p>
-        Highlighted rows indicate files or referrers that have been blacklisted due to abuse.
+        <p>
+        Rows highlighted in yellow indicate requests that are being throttled,
+        an orange highlight indicates a blacklisted request, and a red highlight
+        indicates that evil CSS or JS is being served due to excessive abuse.
         </p>
- -->
+
         <h2 id="files">Top Files</h2>
 
         <table class="stats">
