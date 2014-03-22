@@ -6,6 +6,7 @@ var path = require('path');
 
 module.exports = {
     // Whether or not to automatically throttle and blacklist abusive requests.
+    // This works best if `upstreamRequestLog` is also set.
     autoThrottle: true,
 
     // Whitelist of file extensions that will be proxied through rawgithub.com.
@@ -71,8 +72,9 @@ module.exports = {
     ],
 
     // If rawgithub is fronted by Nginx, Apache, or something else that
-    // generates logs in Common Log Format, set the path to that file here to
-    // have rawgithub tail the log and use it for accurate request statistics.
+    // generates logs in Common/Combined Log Format, set the path to that file
+    // here to have rawgithub tail the log and use it for accurate request
+    // statistics.
     //
     // If this is not set or if the file doesn't exist or isn't readable,
     // rawgithub will track requests internally (but this may result in
