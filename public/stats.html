@@ -69,13 +69,15 @@
 
     <div class="bd">
         <p>
-        These statistics represent requests to rawgithub.com since <time id="stats-since"></time>. They get reset often, and should be used for entertainment purposes only.
+        These statistics represent recent requests to rawgithub.com. They get reset often, and should be used for entertainment purposes only.
         </p>
 
         <p>
-        Rows highlighted in yellow indicate requests that are being throttled,
-        an orange highlight indicates a blacklisted request, and a red highlight
-        indicates that evil CSS or JS is being served due to excessive abuse.
+        Requests are sorted in descending order by <em>naughtiness</em>, which is a score derived from the number of requests, rate of requests, and bandwidth consumed by those requests. Hover over a request to see a tooltip containing its naughtiness score. A request's score will be reset once it isn't seen for 30 minutes.
+        </p>
+
+        <p>
+        Rows highlighted in yellow indicate requests that are being throttled. An orange highlight indicates a blacklisted request, and a red highlight indicates that evil <a href="/css/evil.css">CSS</a> or <a href="/js/evil.js">JS</a> is being served due to excessive naughtiness.
         </p>
 
         <h2 id="files">Top Files</h2>
