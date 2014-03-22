@@ -12,8 +12,7 @@ window.rawgithub = (function (doc) {
     };
 
     var filesEl     = doc.getElementById('stats-files'),
-        referrersEl = doc.getElementById('stats-referrers'),
-        sinceEl     = doc.getElementById('stats-since');
+        referrersEl = doc.getElementById('stats-referrers');
 
     function escapeHTML(string) {
         return string.replace(/[&<>"'\/`]/g, function (match) {
@@ -24,11 +23,7 @@ window.rawgithub = (function (doc) {
     return {
         loadStats: function (res) {
             var files     = res.data.files,
-                referrers = res.data.referrers,
-                since     = new Date(res.data.since);
-
-            sinceEl.setAttribute('datetime', since.toISOString());
-            sinceEl.textContent = since.toLocaleString();
+                referrers = res.data.referrers;
 
             files.forEach(function (entry) {
                 var tr = doc.createElement('tr');
