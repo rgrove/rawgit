@@ -4,8 +4,6 @@
 
 "use strict";
 
-require('heapdump');
-
 var express    = require('express'),
     config     = require('./conf'),
     middleware = require('./lib/middleware'),
