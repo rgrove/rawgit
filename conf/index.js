@@ -39,7 +39,8 @@ module.exports = {
     //
     // Naughtiness for referrers is determined by this formula:
     //
-    //     requests * requestsPerSecond * totalKilobytes * multiplier * 0.5
+    //     requests * requestsPerSecond * totalKilobytes * multiplier *
+    //         referrerNaughtinessMultiplier
     //
     // Referrers get a little more leeway since they're often legitimately
     // requesting multiple files per page.
@@ -51,10 +52,16 @@ module.exports = {
     // This multiplier is calibrated such that a naughtiness score of >= 0.5
     // probably indicates requests should be throttled, and a score of >= 1.0
     // probably indicates requests should be blacklisted.
-    naughtinessMultiplier: 0.000002,
+    naughtinessMultiplier: 0.0000001,
 
     // Public directory containing static files.
     publicDir: path.join(__dirname, '/../public'),
+
+    // Additional multiplier to use when determining the naughtiness of a
+    // referrer. This is used to give referrers more leeway than individual
+    // files, since they're often legitimately requesting multiple files per
+    // page.
+    referrerNaughtinessMultiplier: 0.2,
 
     // Array of request header names that should be relayed from the user to
     // GitHub.
