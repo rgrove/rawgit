@@ -86,5 +86,10 @@ module.exports = {
     // If this is not set or if the file doesn't exist or isn't readable,
     // rawgithub will track requests internally (but this may result in
     // inaccurate stats if you're fronting rawgithub with a caching proxy).
-    upstreamRequestLog: '/data/logs/rawgithub.com-access.log'
+    upstreamRequestLog: '/data/logs/rawgithub.com-access.log',
+
+    // Number of historical log entries to parse from the upstream request log
+    // on startup. This is useful in order to retain recent stats after the
+    // rawgithub process is restarted.
+    upstreamRequestLogScrollback: 100000
 };
