@@ -1,4 +1,4 @@
-/* Don't send production traffic to rawgithub.com! */
+/* Don't send production traffic to rawgit.com! */
 
 html {
     -moz-transform: rotateX(180deg) !important;

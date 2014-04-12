@@ -1,7 +1,7 @@
-alert("This website abuses rawgithub.com. You should complain to its owner.");
+alert("This website abuses rawgit.com. You should complain to its owner.");
 
 if (typeof console !== 'undefined') {
-  console.error("This website abuses rawgithub.com.");
+  console.error("This website abuses rawgit.com.");
 }
 
 /* evil.js | http://kitcambridge.be/evil.js | Mike Bannister, Mathias Bynens,

@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>rawgithub.com</title>
+    <title>RawGit</title>
     <link href="//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700|Ubuntu:400,700,400italic" rel="stylesheet">
-    <link href="/css/rawgithub.css" rel="stylesheet">
+    <link href="/css/rawgit.css" rel="stylesheet">
     <link rel="icon" href="/img/sushi.png">
 </head>
 <body>
@@ -13,7 +13,7 @@
     <div class="hd">
         <h1>
             <a href="/"><img class="logo" src="/img/sushi-large.png" alt=""></a>
-            rawgithub.com
+            RawGit
         </h1>
     </div>
 
@@ -21,27 +21,27 @@
         <h2>The Problem</h2>
 
         <p>
-        You've got a <code>raw.github.com</code> URL that points to some work-in-progress HTML, JavaScript, or CSS. You'd like to share it with someone for a quick demo, or maybe you'd like to use it in a <a href="http://jsperf.com/">jsPerf</a> test.
+        You've got a <code>raw.githubusercontent.com</code> URL that points to some work-in-progress HTML, JavaScript, or CSS. You'd like to share it with someone for a quick demo, or maybe you'd like to use it in a <a href="http://jsperf.com/">jsPerf</a> test.
         </p>
 
         <p>
-        Too bad! Most things served from <code>raw.github.com</code> have a <code>text/plain</code> content type and are served with an <code>X-Content-Type-Options: nosniff</code> header, which means HTML won't render, and some browsers won't execute JavaScript or apply CSS.
+        Too bad! Most things served from <code>raw.githubusercontent.com</code> have a <code>text/plain</code> content type and are served with an <code>X-Content-Type-Options: nosniff</code> header, which means HTML won't render and some browsers won't execute JavaScript or apply CSS.
         </p>
 
         <h2>The Solution</h2>
 
         <p>
-        Delete the dot! Just replace <code>raw.github.com</code> with <code>rawgithub.com</code> and <em>skadoosh</em>, you're loading raw files from your GitHub repo and they're served with appropriate content types. Render HTML, apply CSS, execute JavaScript.
+        Just replace <code>raw.githubusercontent.com</code> with <code>rawgit.com</code> and <em>skadoosh</em>, you're loading raw files from your GitHub repo and they're served with appropriate content types. Render HTML, apply CSS, execute JavaScript.
         </p>
 
         <p><strong>Before</strong></p>
-        <pre class="before">https://<strong>raw.github.com</strong>/user/repo/master/filename.js</pre>
+        <pre class="before">https://<strong>raw.githubusercontent.com</strong>/user/repo/master/filename.js</pre>
 
         <p><strong>After</strong></p>
-        <pre class="after">https://<strong>rawgithub.com</strong>/user/repo/master/filename.js</pre>
+        <pre class="after">https://<strong>rawgit.com</strong>/user/repo/master/filename.js</pre>
 
         <p>
-        It works with gists too! Just replace <code>gist.githubusercontent.com</code> with <code>rawgithub.com</code> in the raw gist URL.
+        It works with gists too! Just replace <code>gist.githubusercontent.com</code> with <code>rawgit.com</code> in the raw gist URL.
         </p>
 
         <h2>The Caveat</h2>
@@ -51,49 +51,48 @@
         </p>
 
         <p>
-        If you send production traffic to rawgithub.com, evil things will happen to your site. You've been warned!
+        If you send production traffic to rawgit.com, evil things will happen to your site. You've been warned!
         </p>
 
         <p>
-        Wanna see who's using (and abusing) rawgithub.com? Check out the <a href="stats.html">live usage stats</a>!
+        Wanna see who's using (and abusing) RawGit? Check out the <a href="stats.html">live usage stats</a>!
         </p>
 
         <h2>The Source</h2>
 
         <p>
-        The source code for rawgithub.com is <a href="https://github.com/rgrove/rawgithub">hosted on GitHub</a>! Fork it and go nuts.
+        The source code for RawGit is <a href="https://github.com/rgrove/rawgithub">hosted on GitHub</a>! Fork it and go nuts.
         </p>
 
         <h2>The FAQ</h2>
 
-        <h3 id="can-i-use-rawgithub-in-production"><a href="#can-i-use-rawgithub-in-production">Can I use rawgithub.com on a production website?</a></h3>
+        <h3 id="can-i-use-rawgit-in-production"><a href="#can-i-use-rawgit-in-production">Can I use rawgit.com on a production website?</a></h3>
 
         <p>
         No. Don't do this. Not even a little bit. It will make me very sad.
         </p>
 
         <p>
-        rawgithub.com is a free service to make developers' lives easier when developing and testing and debugging things. It's not free hosting. Use <a href="http://pages.github.com/">GitHub Pages</a> for that.
+        RawGit is a free service to make developers' lives easier when developing and testing and debugging things. It's not free hosting. Use <a href="http://pages.github.com/">GitHub Pages</a> for that.
         </p>
 
-        <h3 id="what-will-happen-if-im-an-asshole"><a href="#what-will-happen-if-im-an-asshole">What will happen if I hotlink to a rawgithub.com URL on a production
-            website?</a></h3>
+        <h3 id="what-will-happen-if-im-an-asshole"><a href="#what-will-happen-if-im-an-asshole">What will happen if I hotlink to a rawgit.com URL on a production website?</a></h3>
 
         <p>
-        Bad things. If you hotlink to a rawgithub.com URL on a site that gets lots of traffic, requests will be throttled. If this heavy traffic continues, requests originating from your site will eventually be dropped.
+        Bad things. If you hotlink to a rawgit.com URL on a site that gets lots of traffic, requests will be throttled. If this heavy traffic continues, requests originating from your site will eventually be dropped.
         </p>
 
         <p>
-        If the traffic continues even after automatic throttling is triggered, rawgithub.com will start serving <a href="/js/evil.js">evil.js</a> and <a href="/css/evil.css">evil.css</a> instead of requested JS and CSS files. Visitors to your site may see an alert warning against using rawgithub.com in production, and your JS may start doing very strange things.
+        If the traffic continues even after automatic throttling is triggered, rawgit.com will start serving <a href="/js/evil.js">evil.js</a> and <a href="/css/evil.css">evil.css</a> instead of requested JS and CSS files. Visitors to your site may see an alert warning against using rawgit.com in production, and your JS may start doing very strange things.
         </p>
 
-        <h3 id="but-i-really-want-to-be-an-asshole"><a href="#but-i-really-want-to-be-an-asshole">But I really really want to hotlink to a rawgithub.com URL in production!</a></h3>
+        <h3 id="but-i-really-want-to-be-an-asshole"><a href="#but-i-really-want-to-be-an-asshole">But I really really want to hotlink to a rawgit.com URL in production!</a></h3>
 
         <p>
         We can't always get what we want. You should use <a href="http://pages.github.com/">GitHub Pages</a>, which is designed for that. Also that's not a question.
         </p>
 
-        <h3 id="how-do-i-know-if-im-an-asshole"><a href="#how-do-i-know-if-im-an-asshole">How can I tell if I'm sending too much traffic to rawgithub.com?</a></h3>
+        <h3 id="how-do-i-know-if-im-an-asshole"><a href="#how-do-i-know-if-im-an-asshole">How can I tell if I'm sending too much traffic to rawgit.com?</a></h3>
 
         <p>
         If you asked that question, you're probably sending too much traffic. Are you on the <a href="stats.html#referrers">Top Referrers</a> list? If so, you may want to back off a bit.
@@ -102,7 +101,7 @@
 
     <div class="ft">
         <p>
-        Hey! rawgithub.com is just for fun and is not associated with GitHub in any way. Please use it responsibly. Have feedback? I'm <a href="https://twitter.com/yaypie">@yaypie</a>.
+        Hey! RawGit is not associated with GitHub in any way. Please use it responsibly. Have feedback? I'm <a href="https://twitter.com/yaypie">@yaypie</a>.
         </p>
 
         <p>

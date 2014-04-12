@@ -9,8 +9,8 @@ module.exports = {
     // This works best if `upstreamRequestLog` is also set.
     autoThrottle: true,
 
-    // Whitelist of file extensions that will be proxied through rawgithub.com.
-    // All others will be redirected to raw.github.com.
+    // Whitelist of file extensions that will be proxied through rawgit.com. All
+    // others will be redirected to raw.githubusercontent.com.
     extensionWhitelist: {
         '.coffee': true,
         '.css'   : true,
@@ -86,7 +86,7 @@ module.exports = {
     // If this is not set or if the file doesn't exist or isn't readable,
     // rawgithub will track requests internally (but this may result in
     // inaccurate stats if you're fronting rawgithub with a caching proxy).
-    upstreamRequestLog: '/data/logs/rawgithub.com-access.log',
+    upstreamRequestLog: '/data/logs/rawgit.com-access.log',
 
     // Number of historical log entries to parse from the upstream request log
     // on startup. This is useful in order to retain recent stats after the

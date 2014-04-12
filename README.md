@@ -1,7 +1,7 @@
-rawgithub.com
-=============
+RawGit
+======
 
-This is the source code behind <http://rawgithub.com/>.
+This is the source code behind <http://rawgit.com/>.
 
 
 Installing
@@ -21,7 +21,7 @@ Installing
 
         $ ./web.js
 
-5. Browse to <http://localhost:5000/> and you should see rawgithub in action.
+5. Browse to <http://localhost:5000/> and you should see RawGit in action.
 
 
 Pull Requests
@@ -39,7 +39,7 @@ I'm not interested. If you're offended, maybe
 License
 -------
 
-Copyright (c) 2013 Ryan Grove (ryan@wonko.com).
+Copyright (c) 2014 Ryan Grove (ryan@wonko.com).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
