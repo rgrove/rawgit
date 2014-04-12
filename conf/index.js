@@ -11,6 +11,9 @@ module.exports = {
 
     // Whitelist of file extensions that will be proxied through rawgit.com. All
     // others will be redirected to raw.githubusercontent.com.
+    //
+    // Requests to cdn.rawgit.com bypass this whitelist and proxy all file
+    // types.
     extensionWhitelist: {
         '.coffee': true,
         '.css'   : true,

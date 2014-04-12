@@ -33,6 +33,7 @@ app.get('*/google[0-9a-f]{16}.html',
 
 // Public or private gist.
 app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
+    middleware.cdn,
     middleware.stats,
     middleware.noRobots,
     middleware.autoThrottle,
@@ -41,6 +42,7 @@ app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
 
 // Repo file.
 app.get('/:user/:repo/:branch/*',
+    middleware.cdn,
     middleware.stats,
     middleware.noRobots,
     middleware.autoThrottle,
@@ -67,38 +69,14 @@ app.get('/api/stats', function (req, res) {
 // -- Error handlers -----------------------------------------------------------
 app.use(function (req, res, next) {
     res.status(404);
-
-    res.set('Cache-Control', 'public, max-age=300'); // 5 minutes
-
-    if (req.accepts('html')) {
-        res.sendfile(config.publicDir + '/errors/404.html');
-        return;
-    }
-
-    if (req.accepts('json')) {
-        res.send({error: 'Not found.'});
-        return;
-    }
-
-    res.type('txt').send('Not found.');
+    res.set('Cache-Control', 'public, max-age=600'); // 10 minutes
+    res.sendfile(config.publicDir + '/errors/404.html');
 });
 
 app.use(function (err, req, res, next) {
     console.error(err.stack);
-
     res.status(err.status || 500);
-
-    if (req.accepts('html')) {
-        res.sendfile(config.publicDir + '/errors/500.html');
-        return;
-    }
-
-    if (req.accepts('json')) {
-        res.send({error: '500 Internal Server Error'});
-        return;
-    }
-
-    res.type('txt').send('Internal Server Error');
+    res.sendfile(config.publicDir + '/errors/500.html');
 });
 
 // -- Server -------------------------------------------------------------------
