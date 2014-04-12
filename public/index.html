@@ -97,6 +97,34 @@
         <p>
         If you asked that question, you're probably sending too much traffic. Are you on the <a href="stats.html#referrers">Top Referrers</a> list? If so, you may want to back off a bit.
         </p>
+
+        <h2 id="#cdn">The CDN Experiment!</h2>
+
+        <p>
+        You deserve a reward for reading this far! How about the chance to help test a brand new super awesome experimental RawGit feature?
+        </p>
+
+        <p>
+        The lovely people at <a href="http://www.maxcdn.com/">MaxCDN</a> have generously donated CDN hosting to RawGit, and I'd like to use it to provide blazing fast <em>production ready</em> service to RawGit users. That's right &mdash; you may actually be able to use RawGit in production without bad things happening!
+        </p>
+
+        <p>
+        To try it out, use the hostname <code>cdn.rawgit.com</code> instead of <code>rawgit.com</code>:
+        </p>
+
+        <pre class="after">https://<strong>cdn.</strong>rawgit.com/user/repo/tag/filename.js</pre>
+
+        <p>
+        I recommend requesting a URL containing a specific tag or commit hash, because once the URL is cached, it will never be updated from GitHub again.
+        </p>
+
+        <p>
+        When you use <code>cdn.rawgit.com</code>, files will be cached <em>permanently</em> on <a href="http://www.maxcdn.com/">MaxCDN</a>'s super fast global network of edge servers and served directly from the cache for all future requests. Requests to <code>cdn.rawgit.com</code> are not throttled or limited in any way and are not subject to the abuse blacklist (although I do still reserve the right to block blatantly abusive traffic that might affect other users).
+        </p>
+
+        <p>
+        This feature is currently experimental and may change (so beware!), but I hope to support it as first-class functionality of RawGit very soon.
+        </p>
     </div>
 
     <div class="ft">
