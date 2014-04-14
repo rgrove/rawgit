@@ -1,78 +1,217 @@
 html {
     background: #fff;
     color: #333;
-    font: 16px/1.5 Ubuntu, Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased
+}
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"],
+.pure-g-r [class *= "pure-u"] {
+    font: 16px/1.5 'Open Sans', Helvetica, sans-serif;
 }
 
 body {
-    padding: 0 1em;
+    padding: 0;
+}
+
+a {
+    color: #0000ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 code, pre {
-    font-family: 'Ubuntu Mono', 'Source Code Pro', 'DejaVu Sans Mono', Menlo, monospace;
-}
-
-code {
-    background: #f8f8f8;
-    border: 1px solid #efefef;
-    padding: 1px 4px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-    margin: 1.4em 0 0.5em;
-}
-
-h1 {
-    font-size: 2.8em;
-    margin-top: 1em;
-}
-
-h2 { font-size: 1.6em; }
-h3 { font-size: 1.2em; }
-h4, h5, h6 { font-size: 1em; }
-
-h3 a {
-    color: inherit;
-    margin-top: 1.8em;
-    text-decoration: none;
+    color: #444;
+    font-family: 'Droid Sans Mono', 'DejaVu Sans Mono', Menlo, monospace;
 }
 
 pre { overflow-x: auto; }
 
-#doc {
-    margin: 0 auto;
-    max-width: 800px;
-    min-width: 500px;
+.offscreen {
+    left: -9999px;
+    position: absolute;
 }
 
-.hd { text-align: center; }
-
-.logo {
-    display: block;
-    height: 54px;
-    margin: 0 auto;
-    width: 96px;
+.pure-g > *,
+.pure-g-r > * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+/* -- Header ---------------------------------------------------------------- */
+.hd {
+    background: #fff;
+    border-bottom: 1px solid #efefef;
+    padding: 0.5em 1em;
+}
+
+.hd .logo {
+    height: 32px;
+    margin: 0 0.2em 0 0.4em;
+    position: relative;
+    top: 4px;
+    width: 56px;
+}
+
+.hd .nav {
+    float: right;
+}
+
+.hd .nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.hd .nav li {
+    display: inline-block;
+    line-height: 48px;
+    margin: 0 0.6em;
+}
+
+.hd .nav a {
+    color: #555;
+    padding: 5px 8px;
+    text-decoration: none;
+}
+
+.hd .nav a:hover {
+    background: #efefef;
+}
+
+.hd .title {
+    color: #333;
+    font-size: 2em;
+    line-height: 48px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.hd .title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .hd .logo {
+        height: 24px;
+        width: auto;
+    }
+
+    .hd .nav {
+        float: none;
+    }
+
+    .hd .nav,
+    .hd .title {
+        text-align: center;
+    }
+
+    .hd .nav li {
+        margin-right: 0.3em;
+    }
+
+    .hd .nav a {
+        padding: 0;
+    }
+
+    .hd .title {
+        font-size: 1.4em;
+    }
+}
+
+/* -- Content --------------------------------------------------------------- */
+.bd,
 .ft {
-    font-size: 0.8em;
-    margin: 3em 11em 4em;
+    padding: 0 30px;
+}
+
+.bd {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+.beta {
+    color: orange;
+    font-size: 0.6em;
+    font-style: italic;
+    vertical-align: super;
+}
+
+.hero {
+    font-size: 2.5em;
+    line-height: 1.3;
+    padding: 0 3em;
     text-align: center;
 }
 
-.after, .before {
-    border: 1px solid;
-    padding: 4px 6px;
+.url {
+    background: #fbfbfb;
+    border: 1px solid #dfdfdf;
+    cursor: text;
+    padding-left: 6px;
+    padding-right: 6px;
+    text-align: center;
+    width: 100%;
 }
 
-.after {
+.url-helper { padding: 0 3em; }
+.url-helper .column { padding: 0 1.5em; }
+.url-helper h2 { text-align: center; }
+
+#url-form {
+    padding: 1em 0;
+    text-align: center;
+}
+
+#url {
+    font-size: 1.3em;
+    width: 80%;
+}
+
+@media (max-width: 768px) {
+    .bd,
+    .ft { padding: 0 1em; }
+
+    .hero {
+        font-size: 1.4em;
+        text-align: left;
+    }
+
+    .hero,
+    .url,
+    .url-helper,
+    .url-helper .column,
+    #url-form { padding: 0; }
+
+    .url,
+    #url { font-size: 0.9em; }
+
+    #url { width: 100%; }
+    .url-helper h2 { text-align: left; }
+}
+
+/* -- Misc ------------------------------------------------------------------ */
+.invalid {
+    background: #FFF7F7;
+    border-color: #FFCCCC;
+}
+
+.valid {
     background: #F2FFEB;
     border-color: #D0FFB5;
 }
 
-.before {
-    background: #FFF7F7;
-    border-color: #FFCCCC;
+/* -- Footer ---------------------------------------------------------------- */
+.ft {
+    border-top: 1px solid #efefef;
+    color: #888;
+    font-size: 0.8em;
+    margin: 3em 0 0;
+}
+
+.ft a {
+    color: inherit;
+    text-decoration: underline;
 }

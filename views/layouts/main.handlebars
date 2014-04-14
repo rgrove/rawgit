@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>{{#if title}}{{title}} - RawGit{{else}}RawGit{{/if}}</title>
+<meta name="viewport" content="width=device-width">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700|Droid+Sans+Mono:400">
+<link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.4.2/pure-min.css">
+<link rel="stylesheet" href="/css/rawgit.css">
+<link rel="icon" href="/img/sushi.png">
+
+<header class="hd">
+    <div class="pure-g-r">
+        <div class="pure-u-1-3">
+            <h1 class="title">
+                <a href="/"><img class="logo" src="/img/sushi-large.png" alt="" role="presentation"></a>
+                {{#if title}}{{title}}{{else}}RawGit{{/if}}
+            </h1>
+        </div>
+
+        <div class="pure-u-2-3">
+            <nav class="nav">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/stats">Stats</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="https://github.com/rgrove/rawgithub">Source</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="bd">
+    <div class="content">
+        {{{body}}}
+    </div>
+</div>
+
+<footer class="ft">
+    <p>
+    &copy; 2014 <a href="http://wonko.com/">Ryan Grove</a>.
+    Follow <a href="https://twitter.com/rawgit">@rawgit</a> on Twitter for news and status updates.<br>
+    <a href="http://thenounproject.com/noun/sushi/#icon-No14497">Sushi icon</a> designed by <a href="http://thenounproject.com/lnakanishi">Linda Yuki Nakanishi</a> from The Noun Project.
+    </p>
+</footer>
+
+</html>

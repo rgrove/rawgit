@@ -4,8 +4,9 @@
 
 "use strict";
 
-var express    = require('express'),
-    config     = require('./conf'),
+var config     = require('./conf'),
+    express    = require('express'),
+    hbs        = require('express3-handlebars'),
     middleware = require('./lib/middleware'),
     stats      = require('./lib/stats');
 
@@ -19,11 +20,29 @@ if (app.get('env') === 'development') {
     app.use(express.logger('tiny'));
 }
 
+app.engine('handlebars', hbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 app.use(express.static(config.publicDir));
-app.use(middleware.security);
 app.use(app.router);
 
 // -- Routes -------------------------------------------------------------------
+
+app.get('/', function (req, res) {
+    res.render('index');
+});
+
+app.get('/faq', function (req, res) {
+    res.render('faq', {title: 'FAQ'});
+});
+
+app.get('/stats', function (req, res) {
+    res.render('stats', {title: 'Usage Statistics'});
+});
+
+app.get('/stats.html', function (req, res) {
+    res.redirect(301, '/stats');
+});
 
 // Don't allow requests for Google Webmaster Central verification files, because
 // rawgithub.com isn't a hosting provider and people can't own URLs under its
@@ -35,6 +54,7 @@ app.get('*/google[0-9a-f]{16}.html',
 app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
     middleware.cdn,
     middleware.stats,
+    middleware.security,
     middleware.noRobots,
     middleware.autoThrottle,
     middleware.fileRedirect('https://gist.githubusercontent.com'),
@@ -44,6 +64,7 @@ app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
 app.get('/:user/:repo/:branch/*',
     middleware.cdn,
     middleware.stats,
+    middleware.security,
     middleware.noRobots,
     middleware.autoThrottle,
     middleware.fileRedirect('https://raw.githubusercontent.com'),

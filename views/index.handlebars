@@ -1,0 +1,50 @@
+<p class="hero">
+<strong>RawGit</strong> serves raw files directly from GitHub with proper <strong>Content-Type</strong> headers.
+</p>
+
+<div class="pure-g-r url-helper">
+    <div class="pure-u-1">
+        <div id="url-form">
+            <label for="url" class="offscreen">Raw GitHub URL:</label>
+            <input id="url" class="url" type="url" placeholder="Paste a GitHub raw file or gist URL here." autofocus>
+        </div>
+    </div>
+
+    <div class="column pure-u-1-2">
+        <h2>Development</h2>
+
+        <p>
+        <input id="url-dev" class="url" placeholder="https://rawgit.com/user/repo/branch/file" readonly>
+        </p>
+
+        <p>
+        Use <code>rawgit.com</code> during development to share <strong>temporary</strong> examples or demos with small numbers of people.
+        </p>
+
+        <p>
+        New changes pushed to GitHub will be picked up within minutes, but heavy traffic will be throttled and excessive traffic will be blacklisted.
+        </p>
+    </div>
+
+    <div class="column pure-u-1-2">
+        <h2>Production <a class="beta" href="/faq#beta" title="This feature is currently being tested and may change. You've been warned!">beta</a></h2>
+
+        <p>
+        <input id="url-prod" class="url" placeholder="https://cdn.rawgit.com/user/repo/branch/file" readonly>
+        </p>
+
+        <p>
+        Use <code>cdn.rawgit.com</code> in production or for large amounts of traffic. Files are cached <strong>permanently</strong> from GitHub on first use and served via <a href="http://www.maxcdn.com/">MaxCDN</a>'s super fast global network of edge servers.
+        </p>
+
+        <p>
+        Since files are not refreshed after the first request, it's best to use a specific tag or commit URL, not a branch URL.
+        </p>
+
+        <p>
+        CDN requests aren't subject to throttling or blacklists, but be aware that this is a free service and as such there is <a href="/faq#no-uptime-guarantee">no uptime guarantee or support</a>.
+        </p>
+    </div>
+</div>
+
+<script src="/js/url-formatter.js"></script>
