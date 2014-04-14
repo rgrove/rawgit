@@ -68,13 +68,13 @@ ST = Some State
 L = Some City
 O = Monkeys
 OU = Pants
-CN = cdn.rawgit.com
+CN = cdn-origin.rawgit.com
 emailAddress = nobody@example.com
 EOF
 
-openssl genrsa -out /data/ssl/cdn.rawgit.com.key 1024
-openssl req -config /tmp/openssl.cnf -new -key /data/ssl/cdn.rawgit.com.key -out /data/ssl/cdn.rawgit.com.csr
-openssl x509 -req -days 1826 -in /data/ssl/cdn.rawgit.com.csr -signkey /data/ssl/cdn.rawgit.com.key -out /data/ssl/cdn.rawgit.com.crt
+openssl genrsa -out /data/ssl/cdn-origin.rawgit.com.key 1024
+openssl req -config /tmp/openssl.cnf -new -key /data/ssl/cdn-origin.rawgit.com.key -out /data/ssl/cdn-origin.rawgit.com.csr
+openssl x509 -req -days 1826 -in /data/ssl/cdn-origin.rawgit.com.csr -signkey /data/ssl/cdn-origin.rawgit.com.key -out /data/ssl/cdn-origin.rawgit.com.crt
 
 start rawgithub
 /etc/init.d/nginx restart
