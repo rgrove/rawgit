@@ -14,7 +14,7 @@ apt-get install -y nginx nodejs
 
 adduser --system --no-create-home rawgithub
 
-mkdir -p /data/cache/nginx /data/logs /data/ssl
+mkdir -p /data/cache/nginx/cdn /data/cache/nginx/rawgit /data/logs /data/ssl
 rm /etc/nginx/sites-enabled/default
 ln -sf /data/www/rawgithub.com/conf/etc/rawgithub.nginx.conf /etc/nginx/sites-enabled/
 cp /data/www/rawgithub.com/conf/etc/rawgithub.upstart.conf /etc/init/rawgithub.conf
