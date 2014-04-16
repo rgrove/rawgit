@@ -93,7 +93,7 @@ pre { overflow-x: auto; }
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .hd .logo {
         height: 24px;
         width: auto;
@@ -161,7 +161,6 @@ pre { overflow-x: auto; }
 .url-helper h2 { text-align: center; }
 
 #url-form {
-    padding: 1em 0;
     text-align: center;
 }
 
@@ -170,10 +169,20 @@ pre { overflow-x: auto; }
     width: 80%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 975px) {
     .bd,
-    .ft { padding: 0 1em; }
+    .ft,
+    .url-helper .column {
+        padding: 0 1em;
+    }
 
+    .hero { font-size: 1.6em; }
+    .url-helper { padding: 0 1em; }
+    .url-helper h2 { font-size: 1.4em; }
+    #url { font-size: 1em; }
+}
+
+@media (max-width: 767px) {
     .hero {
         font-size: 1.4em;
         text-align: left;
@@ -189,7 +198,11 @@ pre { overflow-x: auto; }
     #url { font-size: 0.9em; }
 
     #url { width: 100%; }
-    .url-helper h2 { text-align: left; }
+
+    .url-helper h2 {
+        font-size: 1.2em;
+        text-align: left;
+    }
 }
 
 /* -- Misc ------------------------------------------------------------------ */
