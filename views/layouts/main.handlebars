@@ -4,6 +4,10 @@
 <title>{{#if title}}{{title}} - RawGit{{else}}RawGit{{/if}}</title>
 <meta name="viewport" content="width=device-width">
 
+{{#if includeMetaDescription}}
+    <meta name="description" content="RawGit serves raw files directly from GitHub with proper Content-Type headers.">
+{{/if}}
+
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700|Droid+Sans+Mono:400">
 <link rel="stylesheet" href="https://yui-s.yahooapis.com/pure/0.4.2/pure-min.css">
 <link rel="stylesheet" href="/css/rawgit.css">

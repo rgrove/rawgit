@@ -35,7 +35,7 @@ app.use(app.router);
 // -- Routes -------------------------------------------------------------------
 
 app.get('/', function (req, res) {
-    res.render('index');
+    res.render('index', {includeMetaDescription: true});
 });
 
 app.get('/faq', function (req, res) {
