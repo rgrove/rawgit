@@ -96,7 +96,6 @@ app.get('/api/stats', function (req, res) {
 // -- Error handlers -----------------------------------------------------------
 app.use(function (req, res, next) {
     res.status(404);
-    res.set('Cache-Control', 'public, max-age=600'); // 10 minutes
     res.sendfile(config.publicDir + '/errors/404.html');
 });
 
