@@ -81,18 +81,17 @@ module.exports = {
         'ETag'
     ],
 
-    // If rawgithub is fronted by Nginx, Apache, or something else that
-    // generates logs in Common/Combined Log Format, set the path to that file
-    // here to have rawgithub tail the log and use it for accurate request
-    // statistics.
+    // If rawgit is fronted by Nginx, Apache, or something else that generates
+    // logs in Common/Combined Log Format, set the path to that file here to
+    // have rawgit tail the log and use it for accurate request statistics.
     //
-    // If this is not set or if the file doesn't exist or isn't readable,
-    // rawgithub will track requests internally (but this may result in
-    // inaccurate stats if you're fronting rawgithub with a caching proxy).
+    // If this is not set or if the file doesn't exist or isn't readable, rawgit
+    // will track requests internally (but this may result in inaccurate stats
+    // if you're fronting rawgit with a caching proxy).
     upstreamRequestLog: '/data/logs/rawgit.com-access.log',
 
     // Number of historical log entries to parse from the upstream request log
     // on startup. This is useful in order to retain recent stats after the
-    // rawgithub process is restarted.
+    // rawgit process is restarted.
     upstreamRequestLogScrollback: 100000
 };
