@@ -16,8 +16,8 @@ var app = express();
 app.disable('x-powered-by');
 
 if (app.get('env') === 'development') {
-    app.use(express.responseTime());
-    app.use(express.logger('tiny'));
+    app.use(require('response-time')());
+    app.use(require('morgan')('tiny'));
 }
 
 app.engine('handlebars', hbs({
@@ -30,10 +30,8 @@ app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
 
 app.use(express.static(config.publicDir));
-app.use(app.router);
 
 // -- Routes -------------------------------------------------------------------
-
 app.get('/', function (req, res) {
     res.render('index', {includeMetaDescription: true});
 });
