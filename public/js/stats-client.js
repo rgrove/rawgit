@@ -1,4 +1,4 @@
-window.rawgithub = (function (doc) {
+window.rawgit = (function (doc) {
     "use strict";
 
     var HTML_CHARS = {

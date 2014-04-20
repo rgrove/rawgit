@@ -48,9 +48,7 @@ app.get('/stats.html', function (req, res) {
     res.redirect(301, '/stats');
 });
 
-// Don't allow requests for Google Webmaster Central verification files, because
-// rawgithub.com isn't a hosting provider and people can't own URLs under its
-// domain.
+// Don't allow requests for Google Webmaster Central verification files.
 app.get('*/google[0-9a-f]{16}.html',
     middleware.error403);
 

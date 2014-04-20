@@ -11,11 +11,11 @@ Installing
 
 2. Clone this git repo (fork it first if you plan to make changes).
 
-        $ git clone git://github.com/rgrove/rawgithub.git
+        $ git clone git://github.com/rgrove/rawgit.git
 
 3. Install dependencies using npm.
 
-        $ cd rawgithub && npm install
+        $ cd rawgit && npm install
 
 4. Start the local server.
 

@@ -12,12 +12,12 @@ apt-get update
 
 apt-get install -y nginx nodejs
 
-adduser --system --no-create-home rawgithub
+adduser --system --no-create-home rawgit
 
 mkdir -p /data/cache/nginx/cdn /data/cache/nginx/rawgit /data/logs /data/ssl
 rm /etc/nginx/sites-enabled/default
-ln -sf /data/www/rawgithub.com/conf/etc/rawgithub.nginx.conf /etc/nginx/sites-enabled/
-cp /data/www/rawgithub.com/conf/etc/rawgithub.upstart.conf /etc/init/rawgithub.conf
+ln -sf /data/www/rawgit.com/conf/etc/rawgit.nginx.conf /etc/nginx/sites-enabled/
+cp /data/www/rawgit.com/conf/etc/rawgit.upstart.conf /etc/init/rawgit.conf
 
 cat >> /tmp/openssl.cnf <<EOF
 [ req ]
@@ -76,5 +76,7 @@ openssl genrsa -out /data/ssl/cdn-origin.rawgit.com.key 1024
 openssl req -config /tmp/openssl.cnf -new -key /data/ssl/cdn-origin.rawgit.com.key -out /data/ssl/cdn-origin.rawgit.com.csr
 openssl x509 -req -days 1826 -in /data/ssl/cdn-origin.rawgit.com.csr -signkey /data/ssl/cdn-origin.rawgit.com.key -out /data/ssl/cdn-origin.rawgit.com.crt
 
-start rawgithub
-/etc/init.d/nginx restart
+stop rawgit
+start rawgit
+/etc/init.d/nginx stop
+/etc/init.d/nginx start
