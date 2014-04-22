@@ -86,7 +86,7 @@ app.get('/:user/:repo/:branch/*',
 app.get('/api/stats', function (req, res) {
     var count = Math.max(0, Math.min(20, req.query.count || 10));
 
-    res.set('Cache-Control', 'private, no-cache, no-store, max-age=0, must-revalidate');
+    res.setHeader('Cache-Control', 'private, no-cache, no-store, max-age=0, must-revalidate');
 
     res.jsonp({
         status: 'success',
