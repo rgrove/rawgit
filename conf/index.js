@@ -77,7 +77,6 @@ module.exports = {
     // Array of request header names that should be relayed from GitHub to the
     // user.
     relayResponseHeaders: [
-        'Content-Length',
         'Date',
         'ETag'
     ],
