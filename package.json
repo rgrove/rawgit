@@ -13,6 +13,7 @@
         "lru-cache"          : "2.5.0",
         "mime"               : "1.2.11",
         "morgan"             : "1.0.0",
+        "newrelic"           : "1.5.1",
         "response-time"      : "1.0.0"
     },
 

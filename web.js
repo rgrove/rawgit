@@ -4,6 +4,12 @@
 
 "use strict";
 
+// For details on how to set up New Relic reporting, see
+// https://docs.newrelic.com/docs/nodejs/configuring-nodejs-with-environment-variables
+if (process.env.RAWGIT_ENABLE_NEW_RELIC) {
+    require('newrelic');
+}
+
 var config     = require('./conf'),
     express    = require('express'),
     hbs        = require('express3-handlebars'),
