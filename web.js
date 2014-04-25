@@ -79,8 +79,8 @@ app.get('/:user/:repo/:branch/*',
     middleware.security,
     middleware.noRobots,
     middleware.autoThrottle,
-    middleware.fileRedirect('https://raw.github.com'),
-    middleware.proxyPath('https://raw.github.com'));
+    middleware.fileRedirect('https://raw.githubusercontent.com'),
+    middleware.proxyPath('https://raw.githubusercontent.com'));
 
 // Stats API.
 app.get('/api/stats', function (req, res) {
