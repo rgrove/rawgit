@@ -15,24 +15,24 @@ module.exports = {
     // Requests to cdn.rawgit.com bypass this whitelist and proxy all file
     // types.
     extensionWhitelist: {
-        '.coffee'   : true,
-        '.css'      : true,
-        '.eot'      : true,
-        '.htm'      : true,
-        '.html'     : true,
-        '.js'       : true,
-        '.json'     : true,
-        '.jsonld'   : true,
-        '.kml'      : true,
-        '.md'       : true,
-        '.otf'      : true,
-        '.rss'      : true,
-        '.svg'      : true,
-        '.swf'      : true,
-        '.ttc'      : true,
-        '.ttf'      : true,
-        '.woff'     : true,
-        '.xml'      : true
+        '.coffee': true,
+        '.css'   : true,
+        '.eot'   : true,
+        '.htm'   : true,
+        '.html'  : true,
+        '.js'    : true,
+        '.json'  : true,
+        '.jsonld': true,
+        '.kml'   : true,
+        '.md'    : true,
+        '.otf'   : true,
+        '.rss'   : true,
+        '.svg'   : true,
+        '.swf'   : true,
+        '.ttc'   : true,
+        '.ttf'   : true,
+        '.woff'  : true,
+        '.xml'   : true
     },
 
     // This multiplier is used to determine the naughtiness of a given request
