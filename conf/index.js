@@ -4,6 +4,11 @@
 
 var path = require('path');
 
+// Custom MIME types.
+require('mime').define({
+    'application/ld+json': ['jsonld']
+});
+
 module.exports = {
     // Whether or not to automatically throttle and blacklist abusive requests.
     // This works best if `upstreamRequestLog` is also set.
