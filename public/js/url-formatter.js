@@ -1,3 +1,4 @@
+/*global cdnDomain, devDomain*/
 (function (doc) {
 
 "use strict";
@@ -16,14 +17,14 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = encodeURI(url.replace(REGEX_RAW_URL, '$1://rawgit.com/$2/$3'));
-        prodEl.value = encodeURI(url.replace(REGEX_RAW_URL, '$1://cdn.rawgit.com/$2/$3'));
+        devEl.value  = encodeURI(url.replace(REGEX_RAW_URL, '$1://' + devDomain + '/$2/$3'));
+        prodEl.value = encodeURI(url.replace(REGEX_RAW_URL, '$1://' + cdnDomain + '/$2/$3'));
     } else if (REGEX_REPO_URL.test(url)) {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = encodeURI(url.replace(REGEX_REPO_URL, '$1://rawgit.com/$2/$3/$4'));
-        prodEl.value = encodeURI(url.replace(REGEX_REPO_URL, '$1://cdn.rawgit.com/$2/$3/$4'));
+        devEl.value  = encodeURI(url.replace(REGEX_REPO_URL, '$1://' + devDomain + '/$2/$3/$4'));
+        prodEl.value = encodeURI(url.replace(REGEX_REPO_URL, '$1://' + cdnDomain + '/$2/$3/$4'));
     } else {
         urlEl.classList.remove('valid');
 

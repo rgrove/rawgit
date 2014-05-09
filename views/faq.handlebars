@@ -19,7 +19,7 @@ They do this because serving raw files from a git repo is relatively inefficient
 </p>
 
 <p>
-RawGit acts as a caching proxy, forwarding requests to GitHub, caching the responses either for a short time (in the case of <code>rawgit.com</code> URLs) or permanently (in the case of <code>cdn.rawgit.com</code> URLs), and relaying them to your browser with the correct <code>Content-Type</code> headers.
+RawGit acts as a caching proxy, forwarding requests to GitHub, caching the responses either for a short time (in the case of <code>{{config.devDomain}}</code> URLs) or permanently (in the case of <code>{{config.cdnDomain}}</code> URLs), and relaying them to your browser with the correct <code>Content-Type</code> headers.
 </p>
 
 <p>
@@ -32,61 +32,61 @@ The caching layer ensures that minimal load is placed on GitHub, and you get qui
 Nope, RawGit is not associated with GitHub, Inc. in any way.
 </p>
 
-<h2 id="diff-between-rawgit-and-cdn"><a href="#diff-between-rawgit-and-cdn">What's the difference between rawgit.com and cdn.rawgit.com URLs?</a></h2>
+<h2 id="diff-between-rawgit-and-cdn"><a href="#diff-between-rawgit-and-cdn">What's the difference between {{config.devDomain}} and {{config.cdnDomain}} URLs?</a></h2>
 
 <p>
-When you make a request to a <code>rawgit.com</code> URL, the RawGit server loads the requested file from GitHub, serves it to your browser with the correct <code>Content-Type</code> header, and caches it for a very short time. If you push new changes to GitHub, you can reload and see them within a few minutes, which makes <code>rawgit.com</code> useful for low-traffic testing or sharing demos during development.
+When you make a request to a <code>{{config.devDomain}}</code> URL, the RawGit server loads the requested file from GitHub, serves it to your browser with the correct <code>Content-Type</code> header, and caches it for a very short time. If you push new changes to GitHub, you can reload and see them within a few minutes, which makes <code>{{config.devDomain}}</code> useful for low-traffic testing or sharing demos during development.
 </p>
 
 <p>
-Requests to <code>cdn.rawgit.com</code> are routed through <a href="http://www.maxcdn.com/">MaxCDN</a>'s super fast content delivery network, and are cached <strong>permanently</strong> the first time they're loaded. This results in the best performance and reduces load on RawGit and on GitHub, but it means that reloading won't fetch new changes from GitHub.
+Requests to <code>{{config.cdnDomain}}</code> are routed through <a href="http://www.maxcdn.com/">MaxCDN</a>'s super fast content delivery network, and are cached <strong>permanently</strong> the first time they're loaded. This results in the best performance and reduces load on RawGit and on GitHub, but it means that reloading won't fetch new changes from GitHub.
 </p>
 
 <p>
-During development, when freshness is more important than performance, use <code>rawgit.com</code>. For anything you share with the public or push to production, use <code>cdn.rawgit.com</code>.
+During development, when freshness is more important than performance, use <code>{{config.devDomain}}</code>. For anything you share with the public or push to production, use <code>{{config.cdnDomain}}</code>.
 </p>
 
-<h2 id="rawgit-com-in-production"><a href="#rawgit-com-in-production">Can I use a rawgit.com URL on a production website?</a></h2>
+<h2 id="rawgit-com-in-production"><a href="#rawgit-com-in-production">Can I use a {{config.devDomain}} URL on a production website?</a></h2>
 
 <p>
-No. Please use <code>cdn.rawgit.com</code> for anything that might result in heavy traffic. Only use <code>rawgit.com</code> URLs for low-traffic testing and sharing temporary examples or demos during development. When people misuse <code>rawgit.com</code>, it costs me money. Please don't be a jerk.
+No. Please use <code>{{config.cdnDomain}}</code> for anything that might result in heavy traffic. Only use <code>{{config.devDomain}}</code> URLs for low-traffic testing and sharing temporary examples or demos during development. When people misuse <code>{{config.devDomain}}</code>, it costs me money. Please don't be a jerk.
 </p>
 
-<h2 id="what-happens-to-jerks"><a href="#what-happens-to-jerks">What will happen if I send large amounts of traffic to a rawgit.com URL?</a></h2>
+<h2 id="what-happens-to-jerks"><a href="#what-happens-to-jerks">What will happen if I send large amounts of traffic to a {{config.devDomain}} URL?</a></h2>
 
 <p>
 Bad things.
 </p>
 
 <p>
-First, requests will be throttled and your site will load very slowly. If the traffic continues even after automatic throttling is triggered, rawgit.com will start serving <a href="/js/evil.js">evil.js</a> and <a href="/css/evil.css">evil.css</a> instead of requested JS and CSS files. Visitors to your site may see an annoying alert warning against using rawgit.com in production, and your JS and CSS may start doing very strange things.
+First, requests will be throttled and your site will load very slowly. If the traffic continues even after automatic throttling is triggered, {{config.devDomain}} will start serving <a href="/js/evil.js">evil.js</a> and <a href="/css/evil.css">evil.css</a> instead of requested JS and CSS files. Visitors to your site may see an annoying alert warning against using {{config.devDomain}} in production, and your JS and CSS may start doing very strange things.
 </p>
 
 <p>
-This is designed to get your attention and encourage you to stop being a jerk. Only use <code>cdn.rawgit.com</code> in production; never <code>rawgit.com</code>.
+This is designed to get your attention and encourage you to stop being a jerk. Only use <code>{{config.cdnDomain}}</code> in production; never <code>{{config.devDomain}}</code>.
 </p>
 
-<h2 id="how-do-i-know-if-im-a-jerk"><a href="#how-do-i-know-if-im-a-jerk">How can I tell if I'm sending too much traffic to rawgit.com?</a></h2>
+<h2 id="how-do-i-know-if-im-a-jerk"><a href="#how-do-i-know-if-im-a-jerk">How can I tell if I'm sending too much traffic to {{config.devDomain}}?</a></h2>
 
 <p>
-If you have to ask this question, you're probably sending too much traffic. Are you on the <a href="/stats#files">Top Files</a> or <a href="/stats#referrers">Top Referrers</a> lists? If so, you may want to back off a bit or use <code>cdn.rawgit.com</code> instead.
+If you have to ask this question, you're probably sending too much traffic. Are you on the <a href="/stats#files">Top Files</a> or <a href="/stats#referrers">Top Referrers</a> lists? If so, you may want to back off a bit or use <code>{{config.cdnDomain}}</code> instead.
 </p>
 
-<h2 id="no-uptime-guarantee"><a href="#no-uptime-guarantee">I need guaranteed 100% uptime. Should I use cdn.rawgit.com?</a></h2>
+<h2 id="no-uptime-guarantee"><a href="#no-uptime-guarantee">I need guaranteed 100% uptime. Should I use {{config.cdnDomain}}?</a></h2>
 
 <p>
 Probably not. Sorry.
 </p>
 
 <p>
-RawGit is a free service and cannot provide any uptime guarantees, even for <code>cdn.rawgit.com</code>. While I (Ryan) do my best to keep things running, things sometimes go wrong. Sometimes there are network or provider issues outside my control, and sometimes I break things (although I try really hard not to).
+RawGit is a free service and cannot provide any uptime guarantees, even for <code>{{config.cdnDomain}}</code>. While I (Ryan) do my best to keep things running, things sometimes go wrong. Sometimes there are network or provider issues outside my control, and sometimes I break things (although I try really hard not to).
 </p>
 
 <p>
 Since I run RawGit with my own money (and with CDN hosting generously donated by <a href="http://www.maxcdn.com/">MaxCDN</a>), it has a budget that's probably less than you pay for lattes in a given month. My goal is to help other open source developers get their projects up and running, but if you need to serve files that are crucial to your business, you should probably pay for a host with well-funded infrastructure and uptime guarantees.
 </p>
 
-<h2 id="beta"><a href="#beta">What does it mean that cdn.rawgit.com is in beta?</a></h2>
+<h2 id="beta"><a href="#beta">What does it mean that {{config.cdnDomain}} is in beta?</a></h2>
 
 <p>
 It's a new feature, and there may still be some kinks. I'm keeping a close eye on traffic patterns to make sure the CDN sufficiently shields RawGit's origin server and GitHub from load; if there end up being unexpected problems, I may need to make adjustments to how the feature works.

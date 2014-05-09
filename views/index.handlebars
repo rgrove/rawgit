@@ -14,11 +14,11 @@
         <h2>Development</h2>
 
         <p>
-        <input id="url-dev" class="url" placeholder="https://rawgit.com/user/repo/branch/file" readonly>
+        <input id="url-dev" class="url" placeholder="https://{{config.devDomain}}/user/repo/branch/file" readonly>
         </p>
 
         <p>
-        Use <code>rawgit.com</code> during development to share <strong>temporary</strong> examples or demos with small numbers of people.
+        Use <code>{{config.devDomain}}</code> during development to share <strong>temporary</strong> examples or demos with small numbers of people.
         </p>
 
         <p>
@@ -30,11 +30,11 @@
         <h2>Production <a class="beta" href="/faq#beta" title="This feature is currently being tested and may change. You've been warned!">beta</a></h2>
 
         <p>
-        <input id="url-prod" class="url" placeholder="https://cdn.rawgit.com/user/repo/branch/file" readonly>
+        <input id="url-prod" class="url" placeholder="https://{{config.cdnDomain}}/user/repo/branch/file" readonly>
         </p>
 
         <p>
-        Use <code>cdn.rawgit.com</code> in production or for large amounts of traffic. Files are cached <strong>permanently</strong> from GitHub on first use and served via <a href="http://www.maxcdn.com/">MaxCDN</a>'s super fast global network of edge servers.
+        Use <code>{{config.cdnDomain}}</code> in production or for large amounts of traffic. Files are cached <strong>permanently</strong> from GitHub on first use and served via <a href="http://www.maxcdn.com/">MaxCDN</a>'s super fast global network of edge servers.
         </p>
 
         <p>
@@ -47,4 +47,8 @@
     </div>
 </div>
 
+<script>
+var cdnDomain = '{{config.cdnDomain}}',
+    devDomain = '{{config.devDomain}}';
+</script>
 <script src="/js/url-formatter.js"></script>

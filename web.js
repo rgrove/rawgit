@@ -35,6 +35,8 @@ app.engine('handlebars', hbs({
 app.set('view engine', 'handlebars');
 app.set('views', __dirname + '/views');
 
+app.locals.config = config;
+
 if (process.env.GOOGLE_ANALYTICS_ID) {
     app.locals.googleAnalyticsId = process.env.GOOGLE_ANALYTICS_ID;
 }

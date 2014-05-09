@@ -14,10 +14,16 @@ module.exports = {
     // This works best if `upstreamRequestLog` is also set.
     autoThrottle: true,
 
-    // Whitelist of file extensions that will be proxied through rawgit.com. All
+    // Domain to use for CDN requests to RawGit.
+    cdnDomain: 'cdn.rawgit.com',
+
+    // Domain to use for dev requests to RawGit.
+    devDomain: 'rawgit.com',
+
+    // Whitelist of file extensions that will be proxied through RawGit. All
     // others will be redirected to raw.githubusercontent.com.
     //
-    // Requests to cdn.rawgit.com bypass this whitelist and proxy all file
+    // Requests to the cdnDomain will bypass this whitelist and proxy all file
     // types.
     extensionWhitelist: {
         '.coffee': true,
@@ -88,17 +94,17 @@ module.exports = {
         'ETag'
     ],
 
-    // If rawgit is fronted by Nginx, Apache, or something else that generates
+    // If RawGit is fronted by Nginx, Apache, or something else that generates
     // logs in Common/Combined Log Format, set the path to that file here to
-    // have rawgit tail the log and use it for accurate request statistics.
+    // have RawGit tail the log and use it for accurate request statistics.
     //
-    // If this is not set or if the file doesn't exist or isn't readable, rawgit
+    // If this is not set or if the file doesn't exist or isn't readable, RawGit
     // will track requests internally (but this may result in inaccurate stats
-    // if you're fronting rawgit with a caching proxy).
+    // if you're fronting RawGit with a caching proxy).
     upstreamRequestLog: '/data/logs/rawgit.com-access.log',
 
     // Number of historical log entries to parse from the upstream request log
     // on startup. This is useful in order to retain recent stats after the
-    // rawgit process is restarted.
+    // RawGit process is restarted.
     upstreamRequestLogScrollback: 100000
 };
