@@ -6,7 +6,7 @@
 apt-get update
 apt-get install -y g++ make python python-software-properties
 
-add-apt-repository -y ppa:nginx/development
+add-apt-repository -y ppa:nginx/stable
 add-apt-repository -y ppa:chris-lea/node.js
 apt-get update
 
