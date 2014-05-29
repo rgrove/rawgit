@@ -65,7 +65,7 @@ app.get('*/google[0-9a-f]{16}.html',
     middleware.error403);
 
 // Public or private gist.
-app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\//,
+app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/,
     middleware.cdn,
     middleware.stats,
     middleware.security,
