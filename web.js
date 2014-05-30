@@ -65,24 +65,34 @@ app.get('*/google[0-9a-f]{16}.html',
     middleware.error403);
 
 // Public or private gist.
-app.get(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/,
-    middleware.cdn,
-    middleware.stats,
-    middleware.security,
-    middleware.noRobots,
-    middleware.autoThrottle,
-    middleware.fileRedirect('https://gist.githubusercontent.com'),
-    middleware.proxyPath('https://gist.githubusercontent.com'));
+app.route(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/)
+    .all(
+        middleware.cdn,
+        middleware.stats,
+        middleware.security,
+        middleware.noRobots,
+        middleware.autoThrottle,
+        middleware.accessControl
+    )
+    .get(
+        middleware.fileRedirect('https://gist.githubusercontent.com'),
+        middleware.proxyPath('https://gist.githubusercontent.com')
+    );
 
 // Repo file.
-app.get('/:user/:repo/:branch/*',
-    middleware.cdn,
-    middleware.stats,
-    middleware.security,
-    middleware.noRobots,
-    middleware.autoThrottle,
-    middleware.fileRedirect('https://raw.githubusercontent.com'),
-    middleware.proxyPath('https://raw.githubusercontent.com'));
+app.route('/:user/:repo/:branch/*')
+    .all(
+        middleware.cdn,
+        middleware.stats,
+        middleware.security,
+        middleware.noRobots,
+        middleware.autoThrottle,
+        middleware.accessControl
+    )
+    .get(
+        middleware.fileRedirect('https://raw.githubusercontent.com'),
+        middleware.proxyPath('https://raw.githubusercontent.com')
+    );
 
 // Stats API.
 app.get('/api/stats', function (req, res) {
