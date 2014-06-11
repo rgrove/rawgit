@@ -19,7 +19,7 @@ Installing
 
 4. Start the local server.
 
-        $ ./web.js
+        $ npm start
 
 5. Browse to <http://localhost:5000/> and you should see RawGit in action.
 
