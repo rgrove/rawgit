@@ -94,6 +94,13 @@ module.exports = {
         'ETag'
     ],
 
+    // Hash of paths that should not be included in stats. This is mainly useful
+    // if you use monitoring tools that ping a given URL every few minutes and
+    // you don't want them affecting stats rankings.
+    statsIgnorePaths: {
+        '/rgrove/rawgit/master/web.js': true
+    },
+
     // If RawGit is fronted by Nginx, Apache, or something else that generates
     // logs in Common/Combined Log Format, set the path to that file here to
     // have RawGit tail the log and use it for accurate request statistics.
