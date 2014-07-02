@@ -55,15 +55,15 @@ No. Please use <code>{{config.cdnDomain}}</code> for anything that might result 
 <h2 id="what-happens-to-jerks"><a href="#what-happens-to-jerks">What will happen if I send large amounts of traffic to a {{config.devDomain}} URL?</a></h2>
 
 <p>
-Bad things.
+First, requests will be throttled and your site will load very slowly. If the traffic continues even after automatic throttling is triggered, {{config.devDomain}} will start serving an error page instead of the requested file. If traffic reaches truly excessive levels, then an error message may be displayed directly on your actual website asking your users to notify you of the problem.
 </p>
 
 <p>
-First, requests will be throttled and your site will load very slowly. If the traffic continues even after automatic throttling is triggered, {{config.devDomain}} will start serving <a href="/js/evil.js">evil.js</a> and <a href="/css/evil.css">evil.css</a> instead of requested JS and CSS files. Visitors to your site may see an annoying alert warning against using {{config.devDomain}} in production, and your JS and CSS may start doing very strange things.
+This is designed to get your attention as quickly as possible before the excessive traffic truly becomes a problem for RawGit and starts costing me large amounts of money or impacting other users of this service.
 </p>
 
 <p>
-This is designed to get your attention and encourage you to stop being a jerk. Only use <code>{{config.cdnDomain}}</code> in production; never <code>{{config.devDomain}}</code>.
+Remember, only use <code>{{config.cdnDomain}}</code> in production; never <code>{{config.devDomain}}</code>.
 </p>
 
 <h2 id="how-do-i-know-if-im-a-jerk"><a href="#how-do-i-know-if-im-a-jerk">How can I tell if I'm sending too much traffic to {{config.devDomain}}?</a></h2>
