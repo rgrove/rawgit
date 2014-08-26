@@ -26,6 +26,7 @@ module.exports = {
     // Requests to the cdnDomain will bypass this whitelist and proxy all file
     // types.
     extensionWhitelist: {
+        '.appcache': true,
         '.coffee': true,
         '.css'   : true,
         '.eot'   : true,
