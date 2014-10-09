@@ -22,7 +22,6 @@ var app = express();
 app.disable('x-powered-by');
 
 if (app.get('env') === 'development') {
-    app.use(require('response-time')());
     app.use(require('morgan')('dev'));
 }
 
