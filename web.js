@@ -12,7 +12,7 @@ if (process.env.RAWGIT_ENABLE_NEW_RELIC) {
 
 var config     = require('./conf'),
     express    = require('express'),
-    hbs        = require('express3-handlebars'),
+    hbs        = require('express-handlebars'),
     middleware = require('./lib/middleware'),
     stats      = require('./lib/stats');
 
@@ -33,7 +33,6 @@ app.engine('handlebars', hbs({
 }));
 
 app.set('view engine', 'handlebars');
-app.set('views', __dirname + '/views');
 
 app.locals.config = config;
 
