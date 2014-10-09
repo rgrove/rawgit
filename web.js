@@ -114,13 +114,13 @@ app.get('/api/stats', function (req, res) {
 // -- Error handlers -----------------------------------------------------------
 app.use(function (req, res, next) {
     res.status(404);
-    res.sendfile(config.publicDir + '/errors/404.html');
+    res.sendFile(config.publicDir + '/errors/404.html');
 });
 
 app.use(function (err, req, res, next) {
     console.error(err.stack);
     res.status(err.status || 500);
-    res.sendfile(config.publicDir + '/errors/500.html');
+    res.sendFile(config.publicDir + '/errors/500.html');
 });
 
 // -- Server -------------------------------------------------------------------
