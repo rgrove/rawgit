@@ -20,8 +20,8 @@ For details, see http://rawgit.com/faq
         return void alert(message);
     }
 
-    var div   = doc.createElement('div'),
-        style = div.style;
+    var div   = doc.createElement('div');
+    var style = div.style;
 
     div.innerHTML = message;
 
@@ -41,4 +41,4 @@ For details, see http://rawgit.com/faq
     setTimeout(function () {
         doc.body.appendChild(div);
     }, 500);
-}(this.document))
+}(this.document));

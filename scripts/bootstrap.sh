@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Bootstraps an Ubuntu 12.04 LTS server to run RawGit fronted by Nginx.
+# Bootstraps an Ubuntu dev server to run RawGit fronted by Nginx.
 #
 
 apt-get update

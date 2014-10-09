@@ -11,8 +11,8 @@ window.rawgit = (function (doc) {
         '`': '&#x60;'
     };
 
-    var filesEl     = doc.getElementById('stats-files'),
-        referrersEl = doc.getElementById('stats-referrers');
+    var filesEl     = doc.getElementById('stats-files');
+    var referrersEl = doc.getElementById('stats-referrers');
 
     function escapeHTML(string) {
         return string.replace(/[&<>"'\/`]/g, function (match) {
@@ -22,8 +22,8 @@ window.rawgit = (function (doc) {
 
     return {
         loadStats: function (res) {
-            var files     = res.data.files,
-                referrers = res.data.referrers;
+            var files     = res.data.files;
+            var referrers = res.data.referrers;
 
             files.forEach(function (entry) {
                 var tr = doc.createElement('tr');
@@ -38,11 +38,11 @@ window.rawgit = (function (doc) {
 
                 tr.title = 'Naughtiness: ' + entry.naughtiness;
 
-                var hits = tr.insertCell(-1),
-                    hps  = tr.insertCell(-1),
-                    kb   = tr.insertCell(-1),
-                    kbps = tr.insertCell(-1),
-                    url  = tr.insertCell(-1);
+                var hits = tr.insertCell(-1);
+                var hps  = tr.insertCell(-1);
+                var kb   = tr.insertCell(-1);
+                var kbps = tr.insertCell(-1);
+                var url  = tr.insertCell(-1);
 
                 hits.textContent = entry.hits;
                 hps.textContent  = entry.hitsPerSecond;
@@ -51,8 +51,7 @@ window.rawgit = (function (doc) {
 
                 var safePath = escapeHTML(entry.path);
 
-                url.innerHTML = '<a rel="nofollow" href="' + safePath + '">' +
-                    safePath + '</a>';
+                url.innerHTML = '<a rel="nofollow" href="' + safePath + '">' + safePath + '</a>';
 
                 filesEl.appendChild(tr);
             });
@@ -70,11 +69,11 @@ window.rawgit = (function (doc) {
 
                 tr.title = 'Naughtiness: ' + entry.naughtiness;
 
-                var hits = tr.insertCell(-1),
-                    hps  = tr.insertCell(-1),
-                    kb   = tr.insertCell(-1),
-                    kbps = tr.insertCell(-1),
-                    url  = tr.insertCell(-1);
+                var hits = tr.insertCell(-1);
+                var hps  = tr.insertCell(-1);
+                var kb   = tr.insertCell(-1);
+                var kbps = tr.insertCell(-1);
+                var url  = tr.insertCell(-1);
 
                 hits.textContent = entry.hits;
                 hps.textContent  = entry.hitsPerSecond;
@@ -83,8 +82,7 @@ window.rawgit = (function (doc) {
 
                 var safeUrl = escapeHTML(entry.url);
 
-                url.innerHTML = '<a rel="nofollow" href="' + safeUrl + '">' +
-                    safeUrl + '</a>';
+                url.innerHTML = '<a rel="nofollow" href="' + safeUrl + '">' + safeUrl + '</a>';
 
                 referrersEl.appendChild(tr);
             });

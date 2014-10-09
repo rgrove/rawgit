@@ -10,11 +10,11 @@ if (process.env.RAWGIT_ENABLE_NEW_RELIC) {
     require('newrelic');
 }
 
-var config     = require('./conf'),
-    express    = require('express'),
-    hbs        = require('express-handlebars'),
-    middleware = require('./lib/middleware'),
-    stats      = require('./lib/stats');
+var config     = require('./conf');
+var express    = require('express');
+var hbs        = require('express-handlebars');
+var middleware = require('./lib/middleware');
+var stats      = require('./lib/stats');
 
 // -- Configure Express --------------------------------------------------------
 var app = express();
