@@ -17,6 +17,16 @@ module.exports = {
     // Domain to use for CDN requests to RawGit.
     cdnDomain: 'cdn.rawgit.com',
 
+    // GitHub "username/repo" from which RawGit's own static assets should be
+    // loaded via the CDN. Set this to a falsy value to disable loading static
+    // assets from the CDN.
+    cdnRepo: 'rgrove/rawgit',
+
+    // Git tag that points to the GitHub commit from which RawGit's own static
+    // assets should be loaded via the CDN. Set this to a falsy value to
+    // disable loading static assets from the CDN.
+    cdnTag: 'cdn-20141009',
+
     // Domain to use for dev requests to RawGit.
     devDomain: 'rawgit.com',
 
@@ -46,6 +56,10 @@ module.exports = {
         '.woff'    : true,
         '.xml'     : true
     },
+
+    // Whether we're running in a production environment (true) or
+    // development/test (false).
+    isProduction: process.env.NODE_ENV === 'production',
 
     // This multiplier is used to determine the naughtiness of a given request
     // based on internal stats about the requested file and the referrer.

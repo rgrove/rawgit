@@ -27,6 +27,7 @@ if (app.get('env') === 'development') {
 
 app.engine('handlebars', hbs({
     defaultLayout: 'main',
+    helpers      : require('./lib/helpers'),
     layoutsDir   : __dirname + '/views/layouts',
     partialsDir  : __dirname + '/views/partials'
 }));

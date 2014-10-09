@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/stats.css">
+<link rel="stylesheet" href="{{{assetUrl "/css/stats.css"}}}">
 
 <p>
 These statistics represent recent non-CDN requests to {{config.devDomain}}.
@@ -46,5 +46,5 @@ Rows highlighted in yellow indicate requests that are being throttled. An orange
     </tbody>
 </table>
 
-<script src="/js/stats-client.js"></script>
+<script src="{{{assetUrl "/js/stats-client.js"}}}"></script>
 <script src="/api/stats?count=10&amp;callback=rawgit.loadStats"></script>
