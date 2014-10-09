@@ -34,6 +34,10 @@ app.engine('handlebars', hbs({
 
 app.set('view engine', 'handlebars');
 
+// Need to set the views directory explicitly or RawGit will break if it's run
+// from any directory other than its own root.
+app.set('views', __dirname + '/views');
+
 app.locals.config = config;
 
 if (process.env.GOOGLE_ANALYTICS_ID) {
