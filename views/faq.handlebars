@@ -29,7 +29,7 @@ The caching layer ensures that minimal load is placed on GitHub, and you get qui
 <h2 id="associated-with-github"><a href="#associated-with-github">Is RawGit associated with GitHub?</a></h2>
 
 <p>
-Nope, RawGit is not associated with GitHub, Inc. in any way.
+Nope, RawGit is not associated with GitHub, Inc. in any way. Please don't contact GitHub asking for help with RawGit.
 </p>
 
 <h2 id="diff-between-rawgit-and-cdn"><a href="#diff-between-rawgit-and-cdn">What's the difference between {{config.devDomain}} and {{config.cdnDomain}} URLs?</a></h2>
@@ -43,7 +43,7 @@ Requests to <code>{{config.cdnDomain}}</code> are routed through <a href="http:/
 </p>
 
 <p>
-During development, when freshness is more important than performance, use <code>{{config.devDomain}}</code>. For anything you share with the public or push to production, use <code>{{config.cdnDomain}}</code>.
+During development, when traffic is low and freshness is more important than performance, use <code>{{config.devDomain}}</code>. For anything you share with the public or push to production, use <code>{{config.cdnDomain}}</code>.
 </p>
 
 <h2 id="rawgit-com-in-production"><a href="#rawgit-com-in-production">Can I use a {{config.devDomain}} URL on a production website?</a></h2>
@@ -55,11 +55,11 @@ No. Please use <code>{{config.cdnDomain}}</code> for anything that might result 
 <h2 id="what-happens-to-jerks"><a href="#what-happens-to-jerks">What will happen if I send large amounts of traffic to a {{config.devDomain}} URL?</a></h2>
 
 <p>
-First, requests will be throttled and your site will load very slowly. If the traffic continues even after automatic throttling is triggered, {{config.devDomain}} will start serving an error page instead of the requested file. If traffic reaches truly excessive levels, then an error message may be displayed directly on your actual website asking your users to notify you of the problem.
+First, requests will be throttled and your site will start to load very slowly. If the traffic continues even after automatic throttling is triggered, {{config.devDomain}} will start serving an error page instead of the requested file. If traffic reaches truly excessive levels, then an error message may be displayed directly on your website asking your users to notify you of the problem.
 </p>
 
 <p>
-This is designed to get your attention as quickly as possible before the excessive traffic truly becomes a problem for RawGit and starts costing me large amounts of money or impacting other users of this service.
+This is designed to get your attention as quickly as possible before the excessive traffic  becomes a major problem for RawGit and starts costing me large amounts of money or impacting other users of this service.
 </p>
 
 <p>
@@ -79,23 +79,21 @@ Probably not. Sorry.
 </p>
 
 <p>
-RawGit is a free service and cannot provide any uptime guarantees, even for <code>{{config.cdnDomain}}</code>. While I (Ryan) do my best to keep things running, things sometimes go wrong. Sometimes there are network or provider issues outside my control, and sometimes I break things (although I try really hard not to).
+RawGit is a free service and cannot provide any uptime or support guarantees, even for <code>{{config.cdnDomain}}</code>. While I do my best to keep things running, things sometimes go wrong. Sometimes there are network or provider issues outside my control, sometimes abusive traffic temporarily affects response times, and sometimes I break things (although I try really hard not to).
 </p>
 
 <p>
-Since I run RawGit with my own money (and with CDN hosting generously donated by <a href="http://www.maxcdn.com/">MaxCDN</a>), it has a budget that's probably less than you pay for lattes in a given month. My goal is to help other open source developers get their projects up and running, but if you need to serve files that are crucial to your business, you should probably pay for a host with well-funded infrastructure and uptime guarantees.
-</p>
-
-<h2 id="beta"><a href="#beta">What does it mean that {{config.cdnDomain}} is in beta?</a></h2>
-
-<p>
-It's a new feature, and there may still be some kinks. I'm keeping a close eye on traffic patterns to make sure the CDN sufficiently shields RawGit's origin server and GitHub from load; if there end up being unexpected problems, I may need to make adjustments to how the feature works.
+Since I run RawGit in my spare time, with my own money and with CDN hosting generously donated by <a href="http://www.maxcdn.com/">MaxCDN</a>, it has a budget that's probably less than you pay for coffee in a given month. My goal is to help other open source developers get their projects up and running, but if you need to serve files that are crucial to your business, you should probably pay for a host with well-funded infrastructure and uptime guarantees.
 </p>
 
 <h2 id="feedback"><a href="#feedback">I have feedback or want to report a bug! Who can I contact?</a></h2>
 
 <p>
-To report a critical issue like RawGit being broken or to share general feedback, send a tweet to <a href="https://twitter.com/rawgit">@rawgit</a> or <a href="https://twitter.com/yaypie">@yaypie</a>. To report a non-critical bug, <a href="https://github.com/rgrove/rawgit/issues">file an issue</a>.
+To report a critical issue like RawGit being broken or to share general feedback, send a tweet to <a href="https://twitter.com/rawgit">@rawgit</a> or <a href="https://twitter.com/yaypie">@yaypie</a>. To report a non-critical bug, please <a href="https://github.com/rgrove/rawgit/issues">file an issue</a>.
+</p>
+
+<p>
+To report a security concern, please email security@rawgit.com. Feel free to encrypt your email using <a href="https://rawgit.com/public-key.txt">my public key</a> if you're paranoid. Expect a response within 48 hours.
 </p>
 
 </div>
