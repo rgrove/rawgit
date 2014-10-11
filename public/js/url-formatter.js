@@ -20,18 +20,27 @@ urlEl.addEventListener('input', function () {
 
         devEl.value  = encodeURI(url.replace(REGEX_RAW_URL, '$1://' + devDomain + '/$2/$3'));
         prodEl.value = encodeURI(url.replace(REGEX_RAW_URL, '$1://' + cdnDomain + '/$2/$3'));
+
+        devEl.classList.add('valid');
+        prodEl.classList.add('valid');
     } else if (REGEX_REPO_URL.test(url)) {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
         devEl.value  = encodeURI(url.replace(REGEX_REPO_URL, '$1://' + devDomain + '/$2/$3/$4'));
         prodEl.value = encodeURI(url.replace(REGEX_REPO_URL, '$1://' + cdnDomain + '/$2/$3/$4'));
+
+        devEl.classList.add('valid');
+        prodEl.classList.add('valid');
     } else if (REGEX_GIST_URL.test(url)) {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
         devEl.value  = encodeURI(url.replace(REGEX_GIST_URL, '$1://' + devDomain + '/$2/$3/raw/'));
         prodEl.value = encodeURI(url.replace(REGEX_GIST_URL, '$1://' + cdnDomain + '/$2/$3/raw/'));
+
+        devEl.classList.add('valid');
+        prodEl.classList.add('valid');
     } else {
         urlEl.classList.remove('valid');
 
@@ -43,6 +52,9 @@ urlEl.addEventListener('input', function () {
 
         devEl.value  = '';
         prodEl.value = '';
+
+        devEl.classList.remove('valid');
+        prodEl.classList.remove('valid');
     }
 }, false);
 
