@@ -9,22 +9,25 @@ html, button, input, select, textarea,
     font: 16px/1.5 'Open Sans', Helvetica, sans-serif;
 }
 
-body {
-    padding: 0;
-}
+body { padding: 0; }
 
 a {
     color: #0000ff;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
+a:hover { text-decoration: underline; }
 
 code, pre {
     color: #444;
-    font-family: 'Droid Sans Mono', 'DejaVu Sans Mono', Menlo, monospace;
+    font-family: 'Source Code Pro', 'Droid Sans Mono', 'DejaVu Sans Mono', Menlo, monospace;
+}
+
+code {
+    background: #f8f8f8;
+    border: 1px solid #f0f0f0;
+    border-radius: 2px;
+    padding: 0 4px 1px;
 }
 
 pre { overflow-x: auto; }
@@ -213,7 +216,7 @@ pre { overflow-x: auto; }
 
 .valid {
     background: #F2FFEB;
-    border-color: #D0FFB5;
+    border-color: #98f9a0;
 }
 
 /* -- Footer ---------------------------------------------------------------- */
