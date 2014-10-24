@@ -6,7 +6,8 @@ var path = require('path');
 
 // Custom MIME types.
 require('mime').define({
-    'application/ld+json': ['jsonld']
+    'application/ld+json'     : ['jsonld'],
+    'application/vnd.geo+json': ['geojson']
 });
 
 module.exports = {
