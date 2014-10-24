@@ -40,6 +40,7 @@ module.exports = {
         '.coffee'  : true,
         '.css'     : true,
         '.eot'     : true,
+        '.geojson' : true,
         '.htm'     : true,
         '.html'    : true,
         '.js'      : true,
