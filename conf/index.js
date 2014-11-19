@@ -6,6 +6,7 @@ var path = require('path');
 
 // Custom MIME types.
 require('mime').define({
+    'application/font-woff2'  : ['woff2'],
     'application/ld+json'     : ['jsonld'],
     'application/vnd.geo+json': ['geojson']
 });
@@ -56,6 +57,7 @@ module.exports = {
         '.ttc'     : true,
         '.ttf'     : true,
         '.woff'    : true,
+        '.woff2'   : true,
         '.xht'     : true,
         '.xhtml'   : true,
         '.xml'     : true
