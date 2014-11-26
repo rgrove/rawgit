@@ -8,7 +8,8 @@ var path = require('path');
 require('mime').define({
     'application/font-woff2'  : ['woff2'],
     'application/ld+json'     : ['jsonld'],
-    'application/vnd.geo+json': ['geojson']
+    'application/vnd.geo+json': ['geojson'],
+    'text/yaml'               : ['yaml', 'yml']
 });
 
 module.exports = {
@@ -60,7 +61,9 @@ module.exports = {
         '.woff2'   : true,
         '.xht'     : true,
         '.xhtml'   : true,
-        '.xml'     : true
+        '.xml'     : true,
+        '.yaml'    : true,
+        '.yml'     : true
     },
 
     // Whether we're running in a production environment (true) or
