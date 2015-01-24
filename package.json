@@ -7,7 +7,7 @@
     },
 
     "dependencies": {
-        "express"           : "4.9.6",
+        "express"           : "4.11.1",
         "express-handlebars": "1.1.0",
         "lru-cache"         : "2.5.0",
         "mime"              : "1.2.11",
