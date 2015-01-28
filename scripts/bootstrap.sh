@@ -30,51 +30,13 @@ ST = Some State
 L = Some City
 O = Monkeys
 OU = Pants
-CN = rawgithub.com
+CN = localhost
 emailAddress = nobody@example.com
 EOF
 
-openssl genrsa -out /data/ssl/rawgithub.com.key 1024
-openssl req -config /tmp/openssl.cnf -new -key /data/ssl/rawgithub.com.key -out /data/ssl/rawgithub.com.csr
-openssl x509 -req -days 1826 -in /data/ssl/rawgithub.com.csr -signkey /data/ssl/rawgithub.com.key -out /data/ssl/rawgithub.com.crt
-
-cat >> /tmp/openssl.cnf <<EOF
-[ req ]
-prompt = no
-distinguished_name = req_distinguished_name
-
-[ req_distinguished_name ]
-C = US
-ST = Some State
-L = Some City
-O = Monkeys
-OU = Pants
-CN = rawgit.com
-emailAddress = nobody@example.com
-EOF
-
-openssl genrsa -out /data/ssl/rawgit.com.key 1024
-openssl req -config /tmp/openssl.cnf -new -key /data/ssl/rawgit.com.key -out /data/ssl/rawgit.com.csr
-openssl x509 -req -days 1826 -in /data/ssl/rawgit.com.csr -signkey /data/ssl/rawgit.com.key -out /data/ssl/rawgit.com.crt
-
-cat >> /tmp/openssl.cnf <<EOF
-[ req ]
-prompt = no
-distinguished_name = req_distinguished_name
-
-[ req_distinguished_name ]
-C = US
-ST = Some State
-L = Some City
-O = Monkeys
-OU = Pants
-CN = cdn-origin.rawgit.com
-emailAddress = nobody@example.com
-EOF
-
-openssl genrsa -out /data/ssl/cdn-origin.rawgit.com.key 1024
-openssl req -config /tmp/openssl.cnf -new -key /data/ssl/cdn-origin.rawgit.com.key -out /data/ssl/cdn-origin.rawgit.com.csr
-openssl x509 -req -days 1826 -in /data/ssl/cdn-origin.rawgit.com.csr -signkey /data/ssl/cdn-origin.rawgit.com.key -out /data/ssl/cdn-origin.rawgit.com.crt
+openssl genrsa 2048 > /data/ssl/rawgit-key.pem
+openssl req -config /tmp/openssl.cnf -new -key /data/ssl/rawgit-key.pem -out /data/ssl/rawgit.csr
+openssl x509 -req -days 1826 -in /data/ssl/rawgit.csr -signkey /data/ssl/rawgit-key.pem -out /data/ssl/rawgit.crt
 
 stop rawgit
 start rawgit
