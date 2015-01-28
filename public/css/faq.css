@@ -1,8 +1,24 @@
-.faq h2 {
-    font-size: 1.3em;
-    line-height: 1.3;
-    margin: 1.3em 0 0;
+.question {
+    border: 1px solid transparent;
+    margin: 1em -1em;
+    padding: 0.5em 1em;
 }
 
-.faq h2 a { color: inherit; }
-.faq h2:target { color: red; }
+.question h2 {
+    font-size: 1.3em;
+    line-height: 1.3;
+    margin: 0 0 0.7em;
+}
+
+.question h2 a {
+    color: inherit;
+}
+
+.question > p:last-child {
+    margin-bottom: 0;
+}
+
+.question:target {
+    background: rgba(255, 255, 0, 0.1);
+    border-color: rgba(255, 255, 0, 0.5);
+}
