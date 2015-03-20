@@ -1,4 +1,4 @@
-/*global cdnDomain, devDomain*/
+/* global cdnDomain, devDomain */
 (function (doc) {
 
 "use strict";

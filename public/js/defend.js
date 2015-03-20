@@ -1,3 +1,5 @@
+/* eslint no-alert: 0, no-console: 0 */
+
 /*
 This request has been blacklisted for sending too much traffic to rawgit.com.
 

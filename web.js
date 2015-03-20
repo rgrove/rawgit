@@ -1,7 +1,4 @@
 #!/usr/bin/env node
-
-/*jshint node:true */
-
 "use strict";
 
 // For details on how to set up New Relic reporting, see
@@ -14,6 +11,7 @@ var config     = require('./conf');
 var express    = require('express');
 var hbs        = require('express-handlebars');
 var middleware = require('./lib/middleware');
+var path       = require('path');
 var stats      = require('./lib/stats');
 
 // -- Configure Express --------------------------------------------------------
@@ -28,15 +26,15 @@ if (app.get('env') === 'development') {
 app.engine('handlebars', hbs({
     defaultLayout: 'main',
     helpers      : require('./lib/helpers'),
-    layoutsDir   : __dirname + '/views/layouts',
-    partialsDir  : __dirname + '/views/partials'
+    layoutsDir   : path.join(__dirname, 'views', 'layouts'),
+    partialsDir  : path.join(__dirname, 'views', 'partials')
 }));
 
 app.set('view engine', 'handlebars');
 
 // Need to set the views directory explicitly or RawGit will break if it's run
 // from any directory other than its own root.
-app.set('views', __dirname + '/views');
+app.set('views', path.join(__dirname, 'views'));
 
 app.locals.config = config;
 
@@ -115,12 +113,13 @@ app.get('/api/stats', function (req, res) {
 });
 
 // -- Error handlers -----------------------------------------------------------
-app.use(function (req, res, next) {
+app.use(function (req, res) {
     res.status(404);
     res.sendFile(config.publicDir + '/errors/404.html');
 });
 
 app.use(function (err, req, res, next) {
+    /* eslint no-unused-vars: 0 */
     console.error(err.stack);
     res.status(err.status || 500);
     res.sendFile(config.publicDir + '/errors/500.html');
