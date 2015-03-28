@@ -6,6 +6,10 @@ var path = require('path');
 require('mime').define({
     'application/font-woff2'  : ['woff2'],
     'application/ld+json'     : ['jsonld'],
+    'text/turtle'             : ['ttl'],
+    'text/n3'                 : ['n3'],
+    'application/n-triples'   : ['nt'],
+    'application/rdf+xml'     : ['rdf'],
     'application/vnd.geo+json': ['geojson'],
     'text/yaml'               : ['yaml', 'yml']
 });
