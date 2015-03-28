@@ -2,14 +2,6 @@
 
 var path = require('path');
 
-// Custom MIME types.
-require('mime').define({
-    'application/font-woff2'  : ['woff2'],
-    'application/ld+json'     : ['jsonld'],
-    'application/vnd.geo+json': ['geojson'],
-    'text/yaml'               : ['yaml', 'yml']
-});
-
 module.exports = {
     // Whether or not to automatically throttle and blacklist abusive requests.
     // This works best if `upstreamRequestLog` is also set.
@@ -35,7 +27,7 @@ module.exports = {
     // others will be redirected to raw.githubusercontent.com.
     //
     // Requests to the cdnDomain will bypass this whitelist and proxy all file
-    // types.
+    // types. Please keep this list alphabetized.
     extensionWhitelist: {
         '.appcache': true,
         '.coffee'  : true,
@@ -49,12 +41,16 @@ module.exports = {
         '.jsonld'  : true,
         '.kml'     : true,
         '.md'      : true,
+        '.n3'      : true,
+        '.nt'      : true,
         '.otf'     : true,
+        '.rdf'     : true,
         '.rss'     : true,
         '.svg'     : true,
         '.swf'     : true,
         '.ttc'     : true,
         '.ttf'     : true,
+        '.ttl'     : true,
         '.woff'    : true,
         '.woff2'   : true,
         '.xht'     : true,
