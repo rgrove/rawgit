@@ -105,7 +105,7 @@ module.exports = {
         'User-Agent'
     ],
 
-    // Array of request header names that should be relayed from GitHub to the
+    // Array of response header names that should be relayed from GitHub to the
     // user.
     relayResponseHeaders: [
         'Date',
