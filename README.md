@@ -1,39 +1,43 @@
 RawGit
 ======
 
-This is the source code behind <http://rawgit.com/>.
+This is the source code behind <https://rawgit.com/>.
 
 
 Installing
 ----------
 
-1. Install Node.js from <http://nodejs.org/>.
+1. Install Node.js or io.js.
 
 2. Clone this git repo (fork it first if you plan to make changes).
 
-        $ git clone git://github.com/rgrove/rawgit.git
+        git clone git://github.com/rgrove/rawgit.git
 
-3. Install dependencies using npm.
+3. Install dependencies.
 
-        $ cd rawgit && npm install
+        cd rawgit && npm install
 
 4. Start the local server.
 
-        $ npm start
+        npm start
 
 5. Browse to <http://localhost:5000/> and you should see RawGit in action.
 
 
-Pull Requests
+Running Tests
 -------------
+
+```
+npm test
+```
+
+
+Contributing
+------------
 
 Want to add a feature or fix a bug? If it's something small, just send a pull
 request. If it's something big, please get in touch and ask if I'm interested
 before working on it.
-
-I'm pretty picky, so don't be alarmed if I ask you to change things or just say
-I'm not interested. If you're offended, maybe
-[a kitten](http://emergencykitten.com/) will help cheer you up?
 
 
 License
