@@ -1,0 +1,30 @@
+[
+    {
+        "scope": "https://raw.githubusercontent.com:443",
+        "method": "GET",
+        "path": "/rgrove/bogus/bogus/bogus.js",
+        "body": "",
+        "status": 404,
+        "response": "Not Found",
+        "headers": {
+            "date": "Sun, 29 Mar 2015 19:36:14 GMT",
+            "server": "Apache",
+            "access-control-allow-origin": "https://render.githubusercontent.com",
+            "content-security-policy": "default-src 'none'",
+            "x-xss-protection": "1; mode=block",
+            "x-frame-options": "deny",
+            "x-content-type-options": "nosniff",
+            "strict-transport-security": "max-age=31536000",
+            "content-length": "9",
+            "accept-ranges": "bytes",
+            "via": "1.1 varnish",
+            "x-served-by": "cache-sea1926-SEA",
+            "x-cache": "MISS",
+            "x-cache-hits": "0",
+            "vary": "Authorization,Accept-Encoding",
+            "expires": "Sun, 29 Mar 2015 19:41:14 GMT",
+            "source-age": "0",
+            "connection": "close"
+        }
+    }
+]

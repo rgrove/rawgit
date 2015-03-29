@@ -1,0 +1,42 @@
+[
+    {
+        "scope": "https://gist.githubusercontent.com:443",
+        "method": "GET",
+        "path": "/rgrove/46e9059641b76d019af0/raw/67d94dc523758f45815946195c9c951b52b403b7/rawgit-test.js",
+        "body": "",
+        "status": 200,
+        "response": [
+            "1f8b08000000000000032b2e4d4e4e2d2e560400ac2d6bbb08000000"
+        ],
+        "headers": {
+            "date": "Sun, 29 Mar 2015 19:36:14 GMT",
+            "server": "GitHub.com",
+            "content-type": "text/plain",
+            "status": "200 OK",
+            "strict-transport-security": "max-age=31536000",
+            "x-frame-options": "deny",
+            "x-xss-protection": "1; mode=block",
+            "x-content-type-options": "nosniff",
+            "content-security-policy": "default-src *; script-src 'self' https://gist-assets.github.com *.google-analytics.com https://collector-cdn.github.com; frame-src 'self' render.githubusercontent.com https://gist-assets.github.com *.google-analytics.com https://collector-cdn.github.com; style-src 'self' 'unsafe-inline' https://gist-assets.github.com; object-src https://gist-assets.github.com; report-uri /_/csp_reports",
+            "access-control-allow-origin": "*",
+            "etag": "W/\"5fb8a6ac030daf307d0babb719cb8d42\"",
+            "content-disposition": "inline",
+            "content-transfer-encoding": "binary",
+            "cache-control": "max-age=300, public",
+            "x-request-id": "934745bd-9135-4052-bd2b-19bad349ed1f",
+            "x-runtime": "0.011351",
+            "x-github-request-id": "C71B4A19:7937:E0E1E5:5518542D",
+            "content-encoding": "gzip",
+            "content-length": "28",
+            "accept-ranges": "bytes",
+            "via": "1.1 varnish",
+            "x-served-by": "b623e174d90eee91279334e37dfb12ce, cache-sea1927-SEA",
+            "x-cache": "MISS",
+            "x-cache-hits": "0",
+            "expires": "Sun, 29 Mar 2015 19:41:14 GMT",
+            "source-age": "0",
+            "vary": "AuthorizationAccept-Encoding",
+            "connection": "close"
+        }
+    }
+]

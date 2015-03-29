@@ -1,6 +1,7 @@
 {
-    "name": "rawgit",
+    "name"   : "rawgit",
     "version": "0.0.1",
+    "private": true,
 
     "engines": {
         "node": ">=0.10"
@@ -16,9 +17,17 @@
         "on-finished"       : "2.1.0"
     },
 
-    "private": true,
+    "devDependencies": {
+        "chai"     : "^2.2.0",
+        "mocha"    : "^2.2.1",
+        "nock"     : "^1.3.0",
+        "supertest": "0.15.0"
+    },
 
     "scripts": {
-        "start": "node web.js"
+        "clean-fixtures": "scripts/clean-fixtures.js test/fixtures/*.json",
+        "record-fixtures": "NOCK_BACK_MODE=record npm test && npm run-script clean-fixtures",
+        "start": "node web.js",
+        "test": "NODE_ENV=test mocha -R dot test/**/test.*.js"
     }
 }

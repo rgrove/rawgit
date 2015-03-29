@@ -1,0 +1,42 @@
+[
+    {
+        "scope": "https://gist.githubusercontent.com:443",
+        "method": "GET",
+        "path": "/rgrove/c8a5c5311b19c5cb117f/raw/690361e0338b7e305e1e0b2531b13ee7e4894bff/absolute-302-implied.js",
+        "body": "",
+        "status": 200,
+        "response": [
+            "1f8b0800000000000003532c4a2c4fcf2cd12d4a4dc92c4a4d2e51c8282929b0d2d74fad48cc2dc849d54bcecfd5b70600bf7e2e5225000000"
+        ],
+        "headers": {
+            "date": "Sun, 29 Mar 2015 19:36:13 GMT",
+            "server": "GitHub.com",
+            "content-type": "text/plain",
+            "status": "200 OK",
+            "strict-transport-security": "max-age=31536000",
+            "x-frame-options": "deny",
+            "x-xss-protection": "1; mode=block",
+            "x-content-type-options": "nosniff",
+            "content-security-policy": "default-src *; script-src 'self' https://gist-assets.github.com *.google-analytics.com https://collector-cdn.github.com; frame-src 'self' render.githubusercontent.com https://gist-assets.github.com *.google-analytics.com https://collector-cdn.github.com; style-src 'self' 'unsafe-inline' https://gist-assets.github.com; object-src https://gist-assets.github.com; report-uri /_/csp_reports",
+            "access-control-allow-origin": "*",
+            "etag": "W/\"fe1ca7cab16c589c8a8e6cbe8c4d0fb0\"",
+            "content-disposition": "inline",
+            "content-transfer-encoding": "binary",
+            "cache-control": "max-age=300, public",
+            "x-request-id": "b94c253b-bf2f-4fc4-88aa-bdb1902f6e8b",
+            "x-runtime": "0.010661",
+            "x-github-request-id": "C71B4A19:7932:96ED7E:5518542C",
+            "content-encoding": "gzip",
+            "content-length": "57",
+            "accept-ranges": "bytes",
+            "via": "1.1 varnish",
+            "x-served-by": "b623e174d90eee91279334e37dfb12ce, cache-sea1922-SEA",
+            "x-cache": "MISS",
+            "x-cache-hits": "0",
+            "expires": "Sun, 29 Mar 2015 19:41:13 GMT",
+            "source-age": "0",
+            "vary": "AuthorizationAccept-Encoding",
+            "connection": "close"
+        }
+    }
+]

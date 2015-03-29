@@ -1,0 +1,33 @@
+[
+    {
+        "scope": "https://gist.githubusercontent.com:443",
+        "method": "GET",
+        "path": "/rgrove/123beef/raw/456beef/bogus.js",
+        "body": "",
+        "status": 404,
+        "response": [
+            "1f8b08000000000000038d54db8edb36107ddfaf9872d122052ccb4e364560cb428a74917d08b2011ca0e823458e246229512547f63a8bfc7b86922ce7d202910d591e71cecc3973c97ef9ebfecdc77f3edc424d8dcdafb2f10720ab51eafc0af8ca1a24c9efa94bf0dfde1c76e28d6b095b4ae8d4a10035fedb09c2474a23c016542d7d40daf55426afc48443862ce67bf407f470ebbdf3f05b63b476b485b72650968e27c6a8814e16218698905508021ad446ee44501eb19d80010aa74ff034f8c5ab90eaa1f2ae6ff506aecb75fc6ce79725a79b94b231f6b4017187f68064947c8f3d26ef4c559358c06c5dc09fde48bb8020db9004f4a6bc2045be89c756b3b9ad36e03a328df984efb03285b1864e97b3c9118b07c38163f4d03847f5e0235b627c2303ea2d7cbe9ab25c464da56959a72768a4af4cbb81f56ad53d82ecc96de16834d51bf8239ab63024c228159f525c18f45f61498650ce3acf5adcac5fbd5037938346e5bc24e3d8ab752d469f513fb939986008f50fae5f1da95d2ce3d318fcbfb026b07acd872c126795844eaa8176b28e795b6698d418458f5ca269d48745fcc6709cceb004db598f0bf5504bed8e1b5801c3f2fdba2ccb0b9beec2c257857cb65ac0f45dbefcfd02f73caabb829b0176ae446fd9bb709e6b9c90ebb80a7c2a386b345c2ba52287c0058dbd7a56f15caf11700b9dd47a207d369c65b686b1b5099d95dc8a240b8b89426b2715cea40b67f55cf1f5af6762593a448db395a5e769cde2244ce3a6cd01949521ecc4dc4ef3c464f53abfbf83f7f7b7fb0573be5932c67a7464bc2eff1b212036400e6a7940684ce01605aa11326cf26a18577e0057b251d277d693ebe1881ec13af7c0e4b9ae9e43747304d6d5e89dc0b80592d0571586d889614e307662664d9ef1eaf158ee445c406193a695a1ba2f78429a74a0a548e47121f103ecfbae739e33937996b2f33cf4ff831548521f96174891ef0713ecb9fd7f1a868e26b6f790d38825f2d7e3c3f71859daf39a1dc78c65ce4c5341f0ea077ae1c55236f2936be5310cb8c3e24b1b5e0a945857b965d75602a4a59d786be8ae2f04539ef4cd52aefdd818633f707187f5fe0506bbbacaef050000"
+        ],
+        "headers": {
+            "date": "Sun, 29 Mar 2015 19:36:14 GMT",
+            "server": "GitHub.com",
+            "content-type": "text/html; charset=utf-8",
+            "status": "404 Not Found",
+            "strict-transport-security": "max-age=31536000",
+            "x-request-id": "cbf3e0e7-b325-49cf-87e1-43976d6fec4f",
+            "x-runtime": "0.001013",
+            "x-github-request-id": "C71B4A1B:7936:1B61930:5518542E",
+            "content-encoding": "gzip",
+            "content-length": "807",
+            "accept-ranges": "bytes",
+            "via": "1.1 varnish",
+            "x-served-by": "cache-sea1924-SEA",
+            "x-cache": "MISS",
+            "x-cache-hits": "0",
+            "expires": "Sun, 29 Mar 2015 19:41:14 GMT",
+            "source-age": "0",
+            "vary": "AuthorizationAccept-Encoding",
+            "connection": "close"
+        }
+    }
+]

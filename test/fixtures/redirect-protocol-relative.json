@@ -1,0 +1,42 @@
+[
+    {
+        "scope": "https://gist.githubusercontent.com:443",
+        "method": "GET",
+        "path": "/rgrove/c8a5c5311b19c5cb117f/raw/99c7ca22c3bef2f56dd5fb00bf59f84bda17640e/protocol-relative.js",
+        "body": "",
+        "status": 200,
+        "response": [
+            "1f8b0800000000000003532c4a2c4fcf2cd12d4a4dc92c4a4d2e51d0d74fad48cc2dc849d54bcecfd5b706005beb1daa20000000"
+        ],
+        "headers": {
+            "date": "Sun, 29 Mar 2015 19:36:13 GMT",
+            "server": "GitHub.com",
+            "content-type": "text/plain",
+            "status": "200 OK",
+            "strict-transport-security": "max-age=31536000",
+            "x-frame-options": "deny",
+            "x-xss-protection": "1; mode=block",
+            "x-content-type-options": "nosniff",
+            "content-security-policy": "default-src *; script-src 'self' https://gist-assets.github.com *.google-analytics.com https://collector-cdn.github.com; frame-src 'self' render.githubusercontent.com https://gist-assets.github.com *.google-analytics.com https://collector-cdn.github.com; style-src 'self' 'unsafe-inline' https://gist-assets.github.com; object-src https://gist-assets.github.com; report-uri /_/csp_reports",
+            "access-control-allow-origin": "*",
+            "etag": "W/\"b5c156962d223b758cf6bbcdb25b9440\"",
+            "content-disposition": "inline",
+            "content-transfer-encoding": "binary",
+            "cache-control": "max-age=300, public",
+            "x-request-id": "3efef992-1e0a-463c-883e-01e93f8843eb",
+            "x-runtime": "0.010289",
+            "x-github-request-id": "C71B4A16:7936:1B6171C:5518542D",
+            "content-encoding": "gzip",
+            "content-length": "52",
+            "accept-ranges": "bytes",
+            "via": "1.1 varnish",
+            "x-served-by": "2edabd6bdfd7bd7312378c4cd846997f, cache-sea1921-SEA",
+            "x-cache": "MISS",
+            "x-cache-hits": "0",
+            "expires": "Sun, 29 Mar 2015 19:41:13 GMT",
+            "source-age": "0",
+            "vary": "AuthorizationAccept-Encoding",
+            "connection": "close"
+        }
+    }
+]
