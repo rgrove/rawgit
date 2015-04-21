@@ -12,7 +12,7 @@ var prodEl = doc.getElementById('url-prod');
 var urlEl  = doc.getElementById('url');
 
 urlEl.addEventListener('input', function () {
-    var url = decodeURI(urlEl.value.trim());
+    var url = decodeURIComponent(urlEl.value.trim());
 
     if (REGEX_RAW_URL.test(url)) {
         urlEl.classList.remove('invalid');
