@@ -154,10 +154,21 @@ describe("gist", function () {
   describe("200", function () {
     helpers.useNockFixture('gist-200.json');
 
-    it("should return the requested file", function (done) {
+    it("should return the requested file, cacheable for 5 minutes", function (done) {
       agent.get(url)
         .expect(200, 'success!')
+        .expect('cache-control', 'max-age=300')
         .end(done);
+    });
+
+    describe("CDN", function () {
+      it("should return the requested file, cacheable for 10 years", function (done) {
+        agent.get(url)
+          .set('rawgit-cdn', 'Yup')
+          .expect(200, 'success!')
+          .expect('cache-control', 'max-age=315569000')
+          .end(done);
+      });
     });
 
     proxyRoutes(url);
@@ -166,10 +177,21 @@ describe("gist", function () {
   describe("404", function () {
     helpers.useNockFixture('gist-404.json');
 
-    it("upstream 404 should result in a 404", function (done) {
+    it("upstream 404 should result in a 404, cacheable for 5 minutes", function (done) {
       agent.get('/rgrove/123beef/raw/456beef/bogus.js')
         .expect(404)
+        .expect('cache-control', 'max-age=300')
         .end(done);
+    });
+
+    describe("CDN", function () {
+      it("upstream 404 should result in a 404, cacheable for 5 minutes", function (done) {
+        agent.get('/rgrove/123beef/raw/456beef/bogus.js')
+          .set('rawgit-cdn', 'Yup')
+          .expect(404)
+          .expect('cache-control', 'max-age=300')
+          .end(done);
+      });
     });
   });
 });
@@ -180,10 +202,21 @@ describe("repo", function () {
 
     var url = '/rgrove/rawgit/e8c43410/web.js';
 
-    it("should return the requested file", function (done) {
+    it("should return the requested file, cacheable for 5 minutes", function (done) {
       agent.get(url)
         .expect(200, /^#!\/usr\/bin\/env node/)
+        .expect('cache-control', 'max-age=300')
         .end(done);
+    });
+
+    describe("CDN", function () {
+      it("should return the requested file, cacheable for 10 years", function (done) {
+        agent.get(url)
+          .set('rawgit-cdn', 'Yup')
+          .expect(200, /^#!\/usr\/bin\/env node/)
+          .expect('cache-control', 'max-age=315569000')
+          .end(done);
+      });
     });
 
     proxyRoutes(url);
@@ -192,11 +225,21 @@ describe("repo", function () {
   describe("404", function () {
     helpers.useNockFixture('repo-404.json');
 
-    it("upstream 404 should result in a 404", function (done) {
+    it("upstream 404 should result in a 404, cacheable for 5 minutes", function (done) {
       agent.get('/rgrove/bogus/bogus/bogus.js')
         .expect(404)
         .expect('cache-control', 'max-age=300')
         .end(done);
+    });
+
+    describe("CDN", function () {
+      it("upstream 404 should result in a 404, cacheable for 5 minutes", function (done) {
+        agent.get('/rgrove/bogus/bogus/bogus.js')
+          .set('rawgit-cdn', 'Yup')
+          .expect(404)
+          .expect('cache-control', 'max-age=300')
+          .end(done)
+      });
     });
   });
 });
