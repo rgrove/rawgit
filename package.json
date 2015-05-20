@@ -9,7 +9,7 @@
 
     "dependencies": {
         "express"           : "4.12.3",
-        "express-handlebars": "2.0.0",
+        "express-handlebars": "2.0.1",
         "lru-cache"         : "2.5.0",
         "mime-db"           : "1.8.0",
         "morgan"            : "1.5.2",
