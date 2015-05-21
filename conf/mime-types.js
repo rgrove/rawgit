@@ -24,4 +24,10 @@ db['application/vnd.geo+json'] = {
     extensions  : ['geojson']
 };
 
+db['text/x-handlebars-template'] = {
+    charset     : 'utf-8',
+    compressible: true,
+    extensions  : ['handlebars', 'hbs']
+};
+
 module.exports = db;
