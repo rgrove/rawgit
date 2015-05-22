@@ -59,6 +59,8 @@ module.exports = {
         '.xht'       : true,
         '.xhtml'     : true,
         '.xml'       : true,
+        '.xsl'       : true,
+        '.xslt'      : true,
         '.yaml'      : true,
         '.yml'       : true
     },
