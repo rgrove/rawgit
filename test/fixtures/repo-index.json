@@ -16,7 +16,7 @@
             "x-content-type-options": "nosniff",
             "strict-transport-security": "max-age=31536000",
             "etag": "\"4b032b553644dad4e8519b3a5840ec931c3eae81\"",
-            "content-type": "text/plain; charset=utf-8",
+            "content-type": "text/html; charset=utf-8",
             "cache-control": "max-age=300",
             "content-length": "12",
             "accept-ranges": "bytes",
