@@ -242,6 +242,17 @@ describe("repo", function () {
       });
     });
   });
+
+  describe("index", function () {
+    helpers.useNockFixture('repo-index.json');
+
+    it("should return index.html when path is a directory, cacheable for 5 minutes", function (done) {
+      agent.get('/jekyll/jekyll/gh-pages/')
+        .expect(200, 'Hello world!')
+        .expect('cache-control', 'max-age=300')
+        .end(done);
+    });
+  });
 });
 
 });
