@@ -18,6 +18,11 @@ db['application/n-triples'] = {
     extensions  : ['nt']
 };
 
+db['application/rdf+xml'] = {
+    compressible: true,
+    extensions  : ['rdf', 'owl']
+};
+
 db['application/vnd.geo+json'] = {
     charset     : 'utf-8',
     compressible: true,

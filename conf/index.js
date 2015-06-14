@@ -47,6 +47,7 @@ module.exports = {
         '.n3'        : true,
         '.nt'        : true,
         '.otf'       : true,
+        '.owl'       : true,
         '.pdf'       : true,
         '.rdf'       : true,
         '.rss'       : true,
