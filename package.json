@@ -3,24 +3,21 @@
     "version": "0.0.1",
     "private": true,
 
-    "engines": {
-        "node": ">=0.10"
-    },
-
     "dependencies": {
-        "express"           : "4.12.3",
+        "express"           : "4.13.1",
         "express-handlebars": "2.0.1",
-        "lru-cache"         : "2.5.0",
-        "mime-db"           : "1.8.0",
-        "morgan"            : "1.5.2",
-        "newrelic"          : "1.19.1",
-        "on-finished"       : "2.2.0"
+        "lru-cache"         : "2.6.5",
+        "mime-db"           : "1.15.0",
+        "morgan"            : "1.6.1",
+        "newrelic"          : "1.21.1",
+        "on-finished"       : "2.3.0"
     },
 
     "devDependencies": {
-        "chai"     : "^2.2.0",
-        "mocha"    : "^2.2.1",
-        "nock"     : "^1.3.0",
+        "chai"     : "^3.1.0",
+        "eslint"   : "^0.24.1",
+        "mocha"    : "^2.2.5",
+        "nock"     : "^2.7.0",
         "supertest": "0.15.0"
     },
 
