@@ -56,6 +56,7 @@ module.exports = {
         '.ttc'       : true,
         '.ttf'       : true,
         '.ttl'       : true,
+        '.vtt'       : true,
         '.woff'      : true,
         '.woff2'     : true,
         '.xht'       : true,
