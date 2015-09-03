@@ -3,7 +3,7 @@
 
 "use strict";
 
-var REGEX_GIST_URL = /^(https?):\/\/gist\.github\.com\/(.+?)\/([^\/]+)/i;
+var REGEX_GIST_URL = /^(https?):\/\/gist\.githubusercontent\.com\/(.+?\/[0-9a-f]+\/raw\/(?:[0-9a-f]+\/)?.+\..+)$/i;
 var REGEX_RAW_URL  = /^(https?):\/\/(?:gist|raw)\.github(?:usercontent)?\.com\/([^\/]+\/[^\/]+\/[^\/]+|[0-9A-Za-z-]+\/[0-9a-f]+\/raw)\/(.+)/i;
 var REGEX_REPO_URL = /^(https?):\/\/github\.com\/(.+?)\/(.+?)\/(?:(?:blob|raw)\/)?(.+?\/.+)/i;
 
@@ -36,8 +36,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = url.replace(REGEX_GIST_URL, '$1://' + devDomain + '/$2/$3/raw/');
-        prodEl.value = url.replace(REGEX_GIST_URL, '$1://' + cdnDomain + '/$2/$3/raw/');
+        devEl.value  = url.replace(REGEX_GIST_URL, '$1://' + devDomain + '/$2');
+        prodEl.value = url.replace(REGEX_GIST_URL, '$1://' + cdnDomain + '/$2');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');
