@@ -12,14 +12,14 @@ var prodEl = doc.getElementById('url-prod');
 var urlEl  = doc.getElementById('url');
 
 urlEl.addEventListener('input', function () {
-    var url = decodeURIComponent(urlEl.value.trim());
+    var url = urlEl.value.trim();
 
     if (REGEX_RAW_URL.test(url)) {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = encodeURI(url.replace(REGEX_RAW_URL, '$1://' + devDomain + '/$2/$3'));
-        prodEl.value = encodeURI(url.replace(REGEX_RAW_URL, '$1://' + cdnDomain + '/$2/$3'));
+        devEl.value  = url.replace(REGEX_RAW_URL, '$1://' + devDomain + '/$2/$3');
+        prodEl.value = url.replace(REGEX_RAW_URL, '$1://' + cdnDomain + '/$2/$3');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');
@@ -27,8 +27,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = encodeURI(url.replace(REGEX_REPO_URL, '$1://' + devDomain + '/$2/$3/$4'));
-        prodEl.value = encodeURI(url.replace(REGEX_REPO_URL, '$1://' + cdnDomain + '/$2/$3/$4'));
+        devEl.value  = url.replace(REGEX_REPO_URL, '$1://' + devDomain + '/$2/$3/$4');
+        prodEl.value = url.replace(REGEX_REPO_URL, '$1://' + cdnDomain + '/$2/$3/$4');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');
@@ -36,8 +36,8 @@ urlEl.addEventListener('input', function () {
         urlEl.classList.remove('invalid');
         urlEl.classList.add('valid');
 
-        devEl.value  = encodeURI(url.replace(REGEX_GIST_URL, '$1://' + devDomain + '/$2/$3/raw/'));
-        prodEl.value = encodeURI(url.replace(REGEX_GIST_URL, '$1://' + cdnDomain + '/$2/$3/raw/'));
+        devEl.value  = url.replace(REGEX_GIST_URL, '$1://' + devDomain + '/$2/$3/raw/');
+        prodEl.value = url.replace(REGEX_GIST_URL, '$1://' + cdnDomain + '/$2/$3/raw/');
 
         devEl.classList.add('valid');
         prodEl.classList.add('valid');
