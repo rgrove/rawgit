@@ -9,7 +9,7 @@
         "lru-cache"         : "2.6.5",
         "mime-db"           : "1.15.0",
         "morgan"            : "1.6.1",
-        "newrelic"          : "1.21.1",
+        "newrelic"          : "1.22.1",
         "on-finished"       : "2.3.0"
     },
 
