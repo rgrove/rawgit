@@ -103,7 +103,7 @@ module.exports = {
     // referrer. This is used to give referrers more leeway than individual
     // files, since they're often legitimately requesting multiple files per
     // page.
-    referrerNaughtinessMultiplier: 0.3,
+    referrerNaughtinessMultiplier: 0.5,
 
     // Array of request header names that should be relayed from the user to
     // GitHub.
