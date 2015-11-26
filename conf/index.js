@@ -24,9 +24,11 @@ module.exports = {
     devDomain: 'rawgit.com',
 
     // Domain to use for redirect and proxy path.
-    gitDomain: '',
+    // like 'https://gist.githubusercontent.com'
+    gitDomain: 'https://gist.githubusercontent.com',
 
     // config http authorization
+    // like 'username:access_token'
     auth: '',
 
     // Whitelist of file extensions that will be proxied through RawGit. All
