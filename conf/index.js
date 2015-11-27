@@ -23,6 +23,15 @@ module.exports = {
     // Domain to use for dev requests to RawGit.
     devDomain: 'rawgit.com',
 
+    // Domain to use for Public or private gist.
+    // like 'https://gist.githubusercontent.com'
+    gistDomain: '',
+
+
+    // Domain to use for repo file.
+    // like 'https://raw.githubusercontent.com'
+    rawGitDomain: '',
+
     // Whitelist of file extensions that will be proxied through RawGit. All
     // others will be redirected to raw.githubusercontent.com.
     //
