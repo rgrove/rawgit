@@ -28,7 +28,7 @@ module.exports = {
     gistDomain: '',
 
 
-    // Domain to use for Public or private gist.
+    // Domain to use for repo file.
     // like 'https://raw.githubusercontent.com'
     rawGitDomain: '',
 
