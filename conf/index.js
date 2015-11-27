@@ -7,6 +7,12 @@ module.exports = {
     // This works best if `upstreamRequestLog` is also set.
     autoThrottle: true,
 
+    // Base URL to use for requesting gist files.
+    baseGistUrl: 'https://gist.githubusercontent.com',
+
+    // Base URL to use for requesting repo files.
+    baseRepoUrl: 'https://raw.githubusercontent.com',
+
     // Domain to use for CDN requests to RawGit.
     cdnDomain: 'cdn.rawgit.com',
 
