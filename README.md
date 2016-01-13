@@ -24,12 +24,24 @@ Installing
 5. Browse to <http://localhost:5000/> and you should see RawGit in action.
 
 
-Running Tests
+Running Built-in Tests
 -------------
 
 ```
 npm test
 ```
+
+Checking your local installation
+------------
+
+To check your installation, point a local web browser to a github file you want
+rawgit to render, using the following syntax:
+
+localhost:5000/user/repo/branch/file
+
+For example
+
+localhost:5000/rgrove/rawgit/master/file_to_render
 
 
 Contributing
