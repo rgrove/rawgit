@@ -44,7 +44,7 @@ module.exports = {
         '.handlebars': true,
         '.hbs'       : true,
         '.htm'       : true,
-        '.html'      : true,
+        '.html'      : false,
         '.js'        : true,
         '.json'      : true,
         '.jsonld'    : true,
@@ -115,7 +115,7 @@ module.exports = {
     // GitHub.
     relayRequestHeaders: [
         // 'If-Modified-Since',
-        'If-None-Match',
+        // 'If-None-Match',
         'User-Agent'
     ],
 
