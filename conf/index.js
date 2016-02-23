@@ -27,7 +27,7 @@ module.exports = {
     cdnTag: 'cdn-20150903-1',
 
     // Domain to use for dev requests to RawGit.
-    devDomain: 'rawgit.com',
+    devDomain: 'pgit.herokuapp.com',
 
     // Whitelist of file extensions that will be proxied through RawGit. All
     // others will be redirected to raw.githubusercontent.com.
@@ -114,7 +114,7 @@ module.exports = {
     // Array of request header names that should be relayed from the user to
     // GitHub.
     relayRequestHeaders: [
-        'If-Modified-Since',
+        // 'If-Modified-Since',
         'If-None-Match',
         'User-Agent'
     ],
@@ -122,8 +122,8 @@ module.exports = {
     // Array of response header names that should be relayed from GitHub to the
     // user.
     relayResponseHeaders: [
-        'Date',
-        'ETag'
+        // 'Date',
+        // 'ETag'
     ],
 
     // Hash of paths that should not be included in stats. This is mainly useful
