@@ -44,7 +44,7 @@ module.exports = {
         '.handlebars': true,
         '.hbs'       : true,
         '.htm'       : true,
-        '.html'      : false,
+        '.html'      : true,
         '.js'        : true,
         '.json'      : true,
         '.jsonld'    : true,
