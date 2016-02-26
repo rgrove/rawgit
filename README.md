@@ -1,11 +1,9 @@
-RawGit
-======
+# RawGit
 
 This is the source code behind <https://rawgit.com/>.
 
 
-Installing
-----------
+## Installing
 
 1. Install Node.js or io.js.
 
@@ -24,12 +22,20 @@ Installing
 5. Browse to <http://localhost:5000/> and you should see RawGit in action.
 
 
-Running Tests
--------------
+## Running Tests
 
 ```
 npm test
 ```
+
+## Checking your local installation
+
+To check your installation, point a local web browser to a GitHub file you want
+RawGit to serve, using the following URL format:
+
+    http://localhost:5000/user/repo/branch/file
+
+For example: <http://localhost:5000/rgrove/rawgit/master/web.js>
 
 
 Contributing
@@ -43,7 +49,7 @@ before working on it.
 License
 -------
 
-Copyright (c) 2015 Ryan Grove (ryan@wonko.com).
+Copyright (c) 2016 Ryan Grove (ryan@wonko.com).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
