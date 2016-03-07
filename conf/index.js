@@ -7,6 +7,12 @@ module.exports = {
     // This works best if `upstreamRequestLog` is also set.
     autoThrottle: true,
 
+    // Base URL to use for requesting gist files.
+    baseGistUrl: 'https://gist.githubusercontent.com',
+
+    // Base URL to use for requesting repo files.
+    baseRepoUrl: 'https://raw.githubusercontent.com',
+
     // Domain to use for CDN requests to RawGit.
     cdnDomain: 'cdn.rawgit.com',
 
@@ -18,7 +24,7 @@ module.exports = {
     // Git tag that points to the GitHub commit from which RawGit's own static
     // assets should be loaded via the CDN. Set this to a falsy value to disable
     // loading static assets from the CDN.
-    cdnTag: 'cdn-20150903-1',
+    cdnTag: 'cdn-20160302',
 
     // Domain to use for dev requests to RawGit.
     devDomain: 'rawgit.com',
