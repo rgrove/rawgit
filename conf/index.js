@@ -112,7 +112,7 @@ module.exports = {
         '.xslt'      : true,
         '.yaml'      : true,
         '.yml'       : true
-    }
+    },
 
     // Whether we're running in a production environment (true) or
     // development/test (false).
