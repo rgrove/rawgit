@@ -73,6 +73,9 @@ module.exports = {
         '.yaml'      : true,
         '.yml'       : true
     },
+    extensionNoCache : {
+        'html'      : true,
+    }
 
     // Whether we're running in a production environment (true) or
     // development/test (false).
