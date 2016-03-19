@@ -122,7 +122,8 @@ module.exports = {
   // user.
   relayResponseHeaders: [
     'Date',
-    'ETag'
+    'ETag',
+    'Location'
   ],
 
   // Hash of paths that should not be included in stats. This is mainly useful
