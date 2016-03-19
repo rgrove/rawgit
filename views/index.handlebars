@@ -2,41 +2,39 @@
   <strong>RawGit</strong> serves raw files directly from GitHub with proper <strong>Content-Type</strong> headers.
 </p>
 
-<div class="pure-g-r url-helper">
-  <div class="pure-u-1">
+<div class="url-helper">
+  <div class="url-paste">
     <p id="url-form">
       <label for="url" class="offscreen">GitHub URL:</label>
       <input id="url" class="url" type="url" placeholder="Paste a GitHub file or gist URL here." autofocus>
     </p>
   </div>
 
-  <div class="column pure-u-1-2">
-    <h2>Use this URL for dev/testing</h2>
-
-    <p>
-      <input id="url-dev" class="url" placeholder="https://{{config.devDomain}}/user/repo/branch/file" readonly>
-    </p>
-
-    <ul>
-      <li><p>For sharing <strong>low-traffic, temporary examples or demos</strong> with small numbers of people.
-      <li><p>Excessive traffic may lead to throttling and blacklisting.
-      <li><p>New changes you push to GitHub will be reflected within minutes.
-      <li><p>If excessive traffic continues after throttling and blacklisting, RawGit may display an error message to users on your site to try to get your attention.
-    </ul>
-  </div>
-
-  <div class="column pure-u-1-2">
-    <h2>Use this URL in production</h2>
+  <div class="column">
+    <h2>Use this URL in <strong>production</strong></h2>
 
     <p>
       <input id="url-prod" class="url" placeholder="https://{{config.cdnDomain}}/user/repo/tag/file" readonly>
     </p>
 
     <ul>
-      <li><p>For use on production websites with <strong>any amount of traffic</strong>. Files are served via <a href="http://www.maxcdn.com/">MaxCDN</a>'s super fast global CDN.
-      <li><p>No traffic limits or throttling.
-      <li><p>It's best to use a specific tag or commit hash in the URL (not a branch). Files are cached permanently after the first request.
+      <li><p>No traffic limits or throttling. Files are served via <a href="http://www.maxcdn.com/">MaxCDN</a>'s super fast global CDN.
+      <li><p>Use a specific tag or commit hash in the URL (not a branch). Files are cached permanently based on the URL. Query strings are ignored.
       <li><p>The catch: this is a free service, so there are <a href="/faq#no-uptime-guarantee">no uptime or support guarantees</a>.
+    </ul>
+  </div>
+
+  <div class="column">
+    <h2>Use this URL for <strong>development</strong></h2>
+
+    <p>
+      <input id="url-dev" class="url" placeholder="https://{{config.devDomain}}/user/repo/branch/file" readonly>
+    </p>
+
+    <ul>
+      <li><p>New changes you push to GitHub will be reflected within minutes.
+      <li><p>Excessive traffic will be throttled and blacklisted.
+      <li><p>If excessive traffic continues, RawGit will display a prominent error message on your website to try to get your attention.
     </ul>
   </div>
 </div>
