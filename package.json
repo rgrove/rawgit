@@ -13,8 +13,8 @@
     },
 
     "devDependencies": {
-        "eslint"   : "^0.24.1",
         "chai"     : "^3.5.0",
+        "eslint"   : "^2.4.0",
         "mocha"    : "^2.2.5",
         "morgan"   : "^1.7.0",
         "nock"     : "^2.7.0",
@@ -23,6 +23,7 @@
 
     "scripts": {
         "clean-fixtures": "scripts/clean-fixtures.js test/fixtures/*.json",
+        "lint": "eslint .",
         "record-fixtures": "NOCK_BACK_MODE=record npm test && npm run-script clean-fixtures",
         "start": "node web.js",
         "test": "NODE_ENV=test mocha -R dot test/**/test.*.js"

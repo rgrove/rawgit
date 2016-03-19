@@ -1,0 +1,113 @@
+env:
+  node: true
+
+parserOptions:
+  ecmaVersion: 6
+  sourceType: module
+
+rules:
+  accessor-pairs: 1
+  arrow-spacing: [1, {after: true, before: true}]
+  block-scoped-var: 2
+  brace-style: [1, 1tbs, {allowSingleLine: true}]
+  callback-return: [1, [callback, cb, next]]
+  constructor-super: 2
+  curly: [2, all]
+  dot-location: [1, property]
+  dot-notation: 1
+  eol-last: 1
+  eqeqeq: [1, allow-null]
+  handle-callback-err: [1, "^(err|error)$"]
+  jsx-quotes: [1, prefer-double]
+  keyword-spacing: 1
+  linebreak-style: [2, unix]
+  indent: [1, 2, {SwitchCase: 1}]
+  new-parens: 1
+  no-alert: 1
+  no-caller: 2
+  no-case-declarations: 1
+  no-class-assign: 1
+  no-cond-assign: [1, except-parens]
+  no-confusing-arrow: [1, allowParens: true]
+  no-const-assign: 2
+  no-constant-condition: 1
+  no-debugger: 2
+  no-delete-var: 1
+  no-dupe-args: 2
+  no-dupe-class-members: 2
+  no-dupe-keys: 2
+  no-empty: 1
+  no-empty-character-class: 1
+  no-empty-function: [1, allow: [arrowFunctions]]
+  no-empty-pattern: 1
+  no-eval: 2
+  no-ex-assign: 1
+  no-extend-native: 2
+  no-extra-bind: 1
+  no-extra-boolean-cast: 1
+  no-extra-label: 1
+  no-extra-semi: 1
+  no-fallthrough: 1
+  no-floating-decimal: 1
+  no-func-assign: 1
+  no-implicit-globals: 1
+  no-implied-eval: 2
+  no-inner-declarations: 1
+  no-invalid-regexp: 2
+  no-irregular-whitespace: 2
+  no-label-var: 1
+  no-labels: 1
+  no-mixed-spaces-and-tabs: 2
+  no-native-reassign: 2
+  no-negated-condition: 1
+  no-negated-in-lhs: 2
+  no-nested-ternary: 1
+  no-new-func: 2
+  no-new-object: 1
+  no-new-require: 1
+  no-new-symbol: 2
+  no-new-wrappers: 1
+  no-obj-calls: 2
+  no-octal: 2
+  no-octal-escape: 1
+  no-path-concat: 1
+  no-process-exit: 1
+  no-proto: 2
+  no-redeclare: 1
+  no-regex-spaces: 1
+  no-script-url: 2
+  no-self-assign: 1
+  no-self-compare: 1
+  no-sequences: 1
+  no-shadow-restricted-names: 2
+  no-spaced-func: 1
+  no-sparse-arrays: 1
+  no-this-before-super: 2
+  no-throw-literal: 2
+  no-undef: 2
+  no-undef-init: 1
+  no-unexpected-multiline: 2
+  no-unmodified-loop-condition: 1
+  no-unneeded-ternary: 1
+  no-unreachable: 1
+  no-unused-labels: 1
+  no-unused-vars: 1
+  no-use-before-define: [2, nofunc]
+  no-useless-call: 1
+  no-useless-constructor: 1
+  no-var: 1
+  no-warning-comments: [1, {location: start, terms: [fixme, xxx]}]
+  no-whitespace-before-property: 1
+  no-with: 2
+  object-shorthand: [1, methods]
+  one-var: [1, never]
+  prefer-rest-params: 1
+  prefer-spread: 1
+  quotes: 0
+  radix: 2
+  semi: 1
+  space-infix-ops: 1
+  space-unary-ops: [1, {words: true, nonwords: false}]
+  use-isnan: 1
+  valid-typeof: 1
+  wrap-iife: [1, any]
