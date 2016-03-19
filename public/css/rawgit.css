@@ -1,162 +1,162 @@
 html {
-    background: #fff;
-    color: #333;
+  background: #fff;
+  color: #333;
 }
 
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"],
 .pure-g-r [class *= "pure-u"] {
-    font: 16px/1.5 'Open Sans', Helvetica, sans-serif;
+  font: 16px/1.5 'Open Sans', Helvetica, sans-serif;
 }
 
 body { padding: 0; }
 
 a {
-    color: #0000ff;
-    text-decoration: none;
+  color: #0000ff;
+  text-decoration: none;
 }
 
 a:hover { text-decoration: underline; }
 
 code, pre {
-    color: #444;
-    font-family: 'Source Code Pro', 'Droid Sans Mono', 'DejaVu Sans Mono', Menlo, monospace;
+  color: #444;
+  font-family: 'Source Code Pro', 'Droid Sans Mono', 'DejaVu Sans Mono', Menlo, monospace;
 }
 
 code {
-    background: #f8f8f8;
-    border: 1px solid #f0f0f0;
-    border-radius: 2px;
-    padding: 0 4px 1px;
+  background: #f8f8f8;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+  padding: 0 4px 1px;
 }
 
 pre { overflow-x: auto; }
 
 .offscreen {
-    left: -9999px;
-    position: absolute;
+  left: -9999px;
+  position: absolute;
 }
 
 .pure-g > *,
 .pure-g-r > * {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* -- Header ---------------------------------------------------------------- */
 .hd {
-    background: #fff;
-    border-bottom: 1px solid #efefef;
-    padding: 0.5em 1em;
+  background: #fff;
+  border-bottom: 1px solid #efefef;
+  padding: 0.5em 1em;
 }
 
 .hd .logo {
-    height: 32px;
-    margin: 0 0.2em 0 0.4em;
-    position: relative;
-    top: 4px;
-    width: 56px;
+  height: 32px;
+  margin: 0 0.2em 0 0.4em;
+  position: relative;
+  top: 4px;
+  width: 56px;
 }
 
 .hd .nav {
-    float: right;
+  float: right;
 }
 
 .hd .nav ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .hd .nav li {
-    display: inline-block;
-    line-height: 48px;
-    margin: 0 0.6em;
+  display: inline-block;
+  line-height: 48px;
+  margin: 0 0.6em;
 }
 
 .hd .nav a {
-    color: #555;
-    padding: 5px 8px;
-    text-decoration: none;
+  color: #555;
+  padding: 5px 8px;
+  text-decoration: none;
 }
 
 .hd .nav a:hover {
-    background: #efefef;
+  background: #efefef;
 }
 
 .hd .title {
-    color: #333;
-    font-size: 2em;
-    line-height: 48px;
-    margin: 0;
-    white-space: nowrap;
+  color: #333;
+  font-size: 2em;
+  line-height: 48px;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .hd .title a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 @media (max-width: 767px) {
-    .hd .logo {
-        height: 24px;
-        width: auto;
-    }
+  .hd .logo {
+    height: 24px;
+    width: auto;
+  }
 
-    .hd .nav {
-        float: none;
-    }
+  .hd .nav {
+    float: none;
+  }
 
-    .hd .nav,
-    .hd .title {
-        text-align: center;
-    }
+  .hd .nav,
+  .hd .title {
+    text-align: center;
+  }
 
-    .hd .nav li {
-        margin-right: 0.3em;
-    }
+  .hd .nav li {
+    margin-right: 0.3em;
+  }
 
-    .hd .nav a {
-        padding: 0;
-    }
+  .hd .nav a {
+    padding: 0;
+  }
 
-    .hd .title {
-        font-size: 1.4em;
-    }
+  .hd .title {
+    font-size: 1.4em;
+  }
 }
 
 /* -- Content --------------------------------------------------------------- */
 .bd,
 .ft {
-    padding: 0 30px;
+  padding: 0 30px;
 }
 
 .bd {
-    margin: 0 auto;
-    max-width: 1440px;
+  margin: 0 auto;
+  max-width: 1440px;
 }
 
 .beta {
-    color: orange;
-    font-size: 0.6em;
-    font-style: italic;
-    vertical-align: super;
+  color: orange;
+  font-size: 0.6em;
+  font-style: italic;
+  vertical-align: super;
 }
 
 .hero {
-    font-size: 2.5em;
-    line-height: 1.3;
-    padding: 0 3em;
-    text-align: center;
+  font-size: 2.5em;
+  line-height: 1.3;
+  padding: 0 3em;
+  text-align: center;
 }
 
 .url {
-    background: #fbfbfb;
-    border: 1px solid #dfdfdf;
-    cursor: text;
-    padding-left: 6px;
-    padding-right: 6px;
-    text-align: center;
-    width: 100%;
+  background: #fbfbfb;
+  border: 1px solid #dfdfdf;
+  cursor: text;
+  padding-left: 6px;
+  padding-right: 6px;
+  text-align: center;
+  width: 100%;
 }
 
 .url-helper { padding: 0 3em; }
@@ -164,70 +164,70 @@ pre { overflow-x: auto; }
 .url-helper h2 { text-align: center; }
 
 #url-form {
-    text-align: center;
+  text-align: center;
 }
 
 #url {
-    font-size: 1.3em;
-    width: 80%;
+  font-size: 1.3em;
+  width: 80%;
 }
 
 @media (max-width: 975px) {
-    .bd,
-    .ft,
-    .url-helper .column {
-        padding: 0 1em;
-    }
+  .bd,
+  .ft,
+  .url-helper .column {
+    padding: 0 1em;
+  }
 
-    .hero { font-size: 1.6em; }
-    .url-helper { padding: 0 1em; }
-    .url-helper h2 { font-size: 1.4em; }
-    #url { font-size: 1em; }
+  .hero { font-size: 1.6em; }
+  .url-helper { padding: 0 1em; }
+  .url-helper h2 { font-size: 1.4em; }
+  #url { font-size: 1em; }
 }
 
 @media (max-width: 767px) {
-    .hero {
-        font-size: 1.4em;
-        text-align: left;
-    }
+  .hero {
+    font-size: 1.4em;
+    text-align: left;
+  }
 
-    .hero,
-    .url,
-    .url-helper,
-    .url-helper .column,
-    #url-form { padding: 0; }
+  .hero,
+  .url,
+  .url-helper,
+  .url-helper .column,
+  #url-form { padding: 0; }
 
-    .url,
-    #url { font-size: 0.9em; }
+  .url,
+  #url { font-size: 0.9em; }
 
-    #url { width: 100%; }
+  #url { width: 100%; }
 
-    .url-helper h2 {
-        font-size: 1.2em;
-        text-align: left;
-    }
+  .url-helper h2 {
+    font-size: 1.2em;
+    text-align: left;
+  }
 }
 
 /* -- Misc ------------------------------------------------------------------ */
 .invalid {
-    background: #FFF7F7;
-    border-color: #FFCCCC;
+  background: #FFF7F7;
+  border-color: #FFCCCC;
 }
 
 .valid {
-    background: #F2FFEB;
-    border-color: #98f9a0;
+  background: #F2FFEB;
+  border-color: #98f9a0;
 }
 
 /* -- Footer ---------------------------------------------------------------- */
 .ft {
-    border-top: 1px solid #efefef;
-    color: #888;
-    font-size: 0.8em;
-    margin: 3em 0 0;
+  border-top: 1px solid #efefef;
+  color: #888;
+  font-size: 0.8em;
+  margin: 3em 0 0;
 }
 
 .ft a {
-    color: inherit;
-    text-decoration: underline;
+  color: inherit;
+  text-decoration: underline;
 }

@@ -7,32 +7,32 @@ overrides.
 See <https://github.com/jshttp/mime-db> for details on the format.
 **/
 
-var db = require('mime-db');
+const db = require('mime-db');
 
 // If you add a new type here, make sure its extensions are also in the
 // extension whitelist in ./index.js or RawGit won't proxy requests for that
 // type. Please keep definitions in alphabetical order.
 db['application/n-triples'] = {
-    charset     : 'utf-8',
-    compressible: true,
-    extensions  : ['nt']
+  charset     : 'utf-8',
+  compressible: true,
+  extensions  : ['nt']
 };
 
 db['application/rdf+xml'] = {
-    compressible: true,
-    extensions  : ['rdf', 'owl']
+  compressible: true,
+  extensions  : ['rdf', 'owl']
 };
 
 db['application/vnd.geo+json'] = {
-    charset     : 'utf-8',
-    compressible: true,
-    extensions  : ['geojson']
+  charset     : 'utf-8',
+  compressible: true,
+  extensions  : ['geojson']
 };
 
 db['text/x-handlebars-template'] = {
-    charset     : 'utf-8',
-    compressible: true,
-    extensions  : ['handlebars', 'hbs']
+  charset     : 'utf-8',
+  compressible: true,
+  extensions  : ['handlebars', 'hbs']
 };
 
 module.exports = db;

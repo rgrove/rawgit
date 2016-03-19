@@ -1,47 +1,47 @@
 #since {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .stats {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
 }
 
 .stats td,
 .stats th {
-    padding: 6px;
+  padding: 6px;
 }
 
 .stats td {
-    border-top: 1px solid #ddd;
+  border-top: 1px solid #ddd;
 }
 
 .stats td:last-child {
-    word-break: break-all;
+  word-break: break-all;
 }
 
 .stats th {
-    border-bottom: 2px solid #ddd;
-    font-weight: bold;
-    text-align: left;
+  border-bottom: 2px solid #ddd;
+  font-weight: bold;
+  text-align: left;
 }
 
 .stats tr:nth-child(odd) td {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 
 .stats tr.stats-blacklisted td {
-    background-color: #FFE7C4;
-    border-color: #FFD382;
+  background-color: #FFE7C4;
+  border-color: #FFD382;
 }
 
 .stats tr.stats-shitlisted td {
-    background-color: #FCD9D9;
-    border-color: #FF7D7D;
+  background-color: #FCD9D9;
+  border-color: #FF7D7D;
 }
 
 .stats tr.stats-throttled td {
-    background-color: #FFF9CC;
-    border-color: #FFF396;
+  background-color: #FFF9CC;
+  border-color: #FFF396;
 }

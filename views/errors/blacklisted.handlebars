@@ -4,15 +4,15 @@
 
 <style>
 html {
-    background: #fff;
-    color: #444;
-    font: 16px/1.5 Helvetica, sans-serif;
+  background: #fff;
+  color: #444;
+  font: 16px/1.5 Helvetica, sans-serif;
 }
 
 body {
-    margin: 0 auto;
-    max-width: 1024px;
-    padding: 0 1em;
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 0 1em;
 }
 
 h1 { color: red; }
@@ -20,63 +20,63 @@ td, th { padding: 0 0.5em 0 0; }
 th { text-align: right; }
 
 .faq {
-    background: #fdfdfd;
-    border: 1px solid #efefef;
-    margin: 2em -1.5em;
-    padding: 0 1.5em;
+  background: #fdfdfd;
+  border: 1px solid #efefef;
+  margin: 2em -1.5em;
+  padding: 0 1.5em;
 }
 </style>
 
 <h1>Blacklisted for abuse</h1>
 
 <p>
-This request has been blacklisted for sending too much traffic to <code>{{config.devDomain}}</code>. Please contact the owner of the site that sent you here and ask them to use <code>{{config.cdnDomain}}</code> instead, which has no traffic limit.
+  This request has been blacklisted for sending too much traffic to <code>{{config.devDomain}}</code>. Please contact the owner of the site that sent you here and ask them to use <code>{{config.cdnDomain}}</code> instead, which has no traffic limit.
 </p>
 
 <p>
-<strong>Blacklisted URL:</strong> <code>{{devUrl}}</code>
+  <strong>Blacklisted URL:</strong> <code>{{devUrl}}</code>
 </p>
 
 <div class="faq">
-    <h2>Why am I seeing this?</h2>
+  <h2>Why am I seeing this?</h2>
 
-    <p>
+  <p>
     <a href="https://rawgit.com/">RawGit</a> is a free service that makes it easy to load source code directly from GitHub. The <code>{{config.devDomain}}</code> domain is meant to be used for testing and development, and as such it imposes traffic limits. The <code>{{config.cdnDomain}}</code> domain is intended for production use, and has no traffic limits. Both are completely free to use.
-    </p>
+  </p>
 
-    <p>
+  <p>
     The site that sent you here is sending too much traffic to <code>{{config.devDomain}}</code>, which probably means they accidentally forgot to switch to <code>{{config.cdnDomain}}</code> in production.
-    </p>
+  </p>
 
-    <h2>How can I fix this?</h2>
+  <h2>How can I fix this?</h2>
 
-    <p>
+  <p>
     If you're the owner of the site that generated this request, replace any <code>{{config.devDomain}}</code> URLs on your site with <code>{{config.cdnDomain}}</code> URLs.
-    </p>
+  </p>
 
-    <table>
-        <tr>
-            <th scope="row">Bad:</th>
-            <td><code>{{devUrl}}</code></td>
-        </tr>
+  <table>
+    <tr>
+      <th scope="row">Bad:</th>
+      <td><code>{{devUrl}}</code></td>
+    </tr>
 
-        <tr>
-            <th scope="row">Good:</th>
-            <td><code>{{cdnUrl}}</code></td>
-        </tr>
-    </table>
+    <tr>
+      <th scope="row">Good:</th>
+      <td><code>{{cdnUrl}}</code></td>
+    </tr>
+  </table>
 
-    <p>
+  <p>
     If you're just a visitor, please try to contact the owner of the site that sent you here and give them the information on this page.
-    </p>
+  </p>
 
-    <h2>I can't believe you're blocking this site! You're a bad person, etc.</h2>
+  <h2>I can't believe you're blocking this site! You're a bad person, etc.</h2>
 
-    <p>
+  <p>
     RawGit is a free service that I operate using my own money. Excessive traffic to <code>{{config.devDomain}}</code> costs me money. I have a good job, but I'm not rich. I have to draw the line somewhere. If this makes you angry, please don't use RawGit.
-    </p>
+  </p>
 
-    <p>
+  <p>
     The bandwidth for <code>{{config.cdnDomain}}</code> is generously donated by MaxCDN, which is why that domain has no traffic limits. If you expect to generate large amounts of traffic, you should use <code>{{config.cdnDomain}}</code>.
-    </p>
+  </p>
 </div>

@@ -1,5 +1,7 @@
 /* eslint-env mocha */
-var path = require('path');
+'use strict';
+
+const path = require('path');
 
 /**
 Test helpers.
@@ -11,14 +13,14 @@ Uses the Nock fixture in the given _filename_ for the duration of the current
 
 @param {String} filename
 **/
-exports.useNockFixture = function (filename) {
-  var nock = require('nock');
-  var nockDone;
+exports.useNockFixture = filename => {
+  let nock = require('nock');
+  let nockDone;
 
   nock.back.fixtures = path.join(__dirname, 'fixtures');
 
-  beforeEach(function (done) {
-    nock.back(filename, function (cb) {
+  beforeEach((done) => {
+    nock.back(filename, cb => {
       nockDone = cb;
 
       // Nock fucks everything up unless we keep re-enabling connections to
@@ -29,7 +31,7 @@ exports.useNockFixture = function (filename) {
     });
   });
 
-  afterEach(function () {
+  afterEach(() => {
     nockDone();
   });
 };

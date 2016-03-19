@@ -1,49 +1,49 @@
 <link rel="stylesheet" href="{{{assetUrl "/css/stats.css"}}}">
 
 <p>
-These statistics represent recent non-CDN requests to {{config.devDomain}}.
+  These statistics represent recent non-CDN requests to {{config.devDomain}}.
 </p>
 
 <p>
-Requests are sorted in descending order by <a href="https://medium.com/p/9a61872c61cd">naughtiness</a>, which is a score derived from the number of requests, rate of requests, and bandwidth consumed by those requests. Hover over a request to see a tooltip containing its naughtiness score. A request's score will be reset once it isn't seen for 30 minutes.
+  Requests are sorted in descending order by <a href="https://medium.com/p/9a61872c61cd">naughtiness</a>, which is a score derived from the number of requests, rate of requests, and bandwidth consumed by those requests. Hover over a request to see a tooltip containing its naughtiness score. A request's score will be reset once it isn't seen for 30 minutes.
 </p>
 
 <p>
-Rows highlighted in yellow indicate requests that are being throttled. An orange highlight indicates a blacklisted request, and a red highlight indicates that requested CSS or JS files will display an error message to the users of the requesting site due to excessive naughtiness.
+  Rows highlighted in yellow indicate requests that are being throttled. An orange highlight indicates a blacklisted request, and a red highlight indicates that requested CSS or JS files will display an error message to the users of the requesting site due to excessive naughtiness.
 </p>
 
 <h2 id="files">Top Files</h2>
 
 <table class="stats">
-    <thead>
-        <tr>
-            <th><abbr title="Requests">Reqs</abbr></th>
-            <th><abbr title="Requests per second">Reqs/s</abbr></th>
-            <th><abbr title="Kilobytes">KB</abbr></th>
-            <th><abbr title="Kilobytes per second">KB/s</abbr></th>
-            <th>URL</th>
-        </tr>
-    </thead>
+  <thead>
+    <tr>
+      <th><abbr title="Requests">Reqs</abbr></th>
+      <th><abbr title="Requests per second">Reqs/s</abbr></th>
+      <th><abbr title="Kilobytes">KB</abbr></th>
+      <th><abbr title="Kilobytes per second">KB/s</abbr></th>
+      <th>URL</th>
+    </tr>
+  </thead>
 
-    <tbody id="stats-files">
-    </tbody>
+  <tbody id="stats-files">
+  </tbody>
 </table>
 
 <h2 id="referrers">Top Referrers</h2>
 
 <table class="stats">
-    <thead>
-        <tr>
-            <th><abbr title="Requests">Reqs</abbr></th>
-            <th><abbr title="Requests per second">Reqs/s</abbr></th>
-            <th><abbr title="Kilobytes">KB</abbr></th>
-            <th><abbr title="Kilobytes per second">KB/s</abbr></th>
-            <th>URL</th>
-        </tr>
-    </thead>
-
-    <tbody id="stats-referrers">
-    </tbody>
+  <thead>
+    <tr>
+      <th><abbr title="Requests">Reqs</abbr></th>
+      <th><abbr title="Requests per second">Reqs/s</abbr></th>
+      <th><abbr title="Kilobytes">KB</abbr></th>
+      <th><abbr title="Kilobytes per second">KB/s</abbr></th>
+      <th>URL</th>
+    </tr>
+  </thead>
+  
+  <tbody id="stats-referrers">
+  </tbody>
 </table>
 
 <script src="{{{assetUrl "/js/stats-client.js"}}}"></script>
