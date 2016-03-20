@@ -51,7 +51,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/faq', (req, res) => {
-  res.render('faq', {title: 'FAQ'});
+  res.redirect('https://github.com/rgrove/rawgit/wiki/Frequently-Asked-Questions');
 });
 
 app.get('/stats', (req, res) => {
