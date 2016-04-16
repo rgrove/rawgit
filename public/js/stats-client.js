@@ -1,24 +1,8 @@
 window.rawgit = (function (doc) {
   "use strict";
 
-  var HTML_CHARS = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#x27;',
-    '/': '&#x2F;',
-    '`': '&#x60;'
-  };
-
   var filesEl     = doc.getElementById('stats-files');
   var referrersEl = doc.getElementById('stats-referrers');
-
-  function escapeHTML(string) {
-    return string.replace(/[&<>"'\/`]/g, function (match) {
-      return HTML_CHARS[match];
-    });
-  }
 
   return {
     loadStats: function (res) {
@@ -38,21 +22,24 @@ window.rawgit = (function (doc) {
 
         tr.title = 'Naughtiness: ' + entry.naughtiness;
 
-        var hits = tr.insertCell(-1);
-        var hps  = tr.insertCell(-1);
-        var kb   = tr.insertCell(-1);
-        var kbps = tr.insertCell(-1);
+        // var hits = tr.insertCell(-1);
+        // var hps  = tr.insertCell(-1);
+        // var kb   = tr.insertCell(-1);
+        // var kbps = tr.insertCell(-1);
         var url  = tr.insertCell(-1);
 
-        hits.textContent = entry.hits;
-        hps.textContent  = entry.hitsPerSecond;
-        kb.textContent   = entry.kilobytes;
-        kbps.textContent = entry.kilobytesPerSecond;
+        // hits.textContent = entry.hits;
+        // hps.textContent  = entry.hitsPerSecond;
+        // kb.textContent   = entry.kilobytes;
+        // kbps.textContent = entry.kilobytesPerSecond;
 
-        var safePath = escapeHTML(entry.path);
+        var link = doc.createElement('a');
 
-        url.innerHTML = '<a rel="nofollow" href="' + safePath + '">' + safePath + '</a>';
+        link.href        = entry.path;
+        link.rel         = 'nofollow';
+        link.textContent = entry.path;
 
+        url.appendChild(link);
         filesEl.appendChild(tr);
       });
 
@@ -69,21 +56,24 @@ window.rawgit = (function (doc) {
 
         tr.title = 'Naughtiness: ' + entry.naughtiness;
 
-        var hits = tr.insertCell(-1);
-        var hps  = tr.insertCell(-1);
-        var kb   = tr.insertCell(-1);
-        var kbps = tr.insertCell(-1);
+        // var hits = tr.insertCell(-1);
+        // var hps  = tr.insertCell(-1);
+        // var kb   = tr.insertCell(-1);
+        // var kbps = tr.insertCell(-1);
         var url  = tr.insertCell(-1);
 
-        hits.textContent = entry.hits;
-        hps.textContent  = entry.hitsPerSecond;
-        kb.textContent   = entry.kilobytes;
-        kbps.textContent = entry.kilobytesPerSecond;
+        // hits.textContent = entry.hits;
+        // hps.textContent  = entry.hitsPerSecond;
+        // kb.textContent   = entry.kilobytes;
+        // kbps.textContent = entry.kilobytesPerSecond;
 
-        var safeUrl = escapeHTML(entry.url);
+        var link = doc.createElement('a');
 
-        url.innerHTML = '<a rel="nofollow" href="' + safeUrl + '">' + safeUrl + '</a>';
+        link.href        = entry.url;
+        link.rel         = 'nofollow';
+        link.textContent = entry.url;
 
+        url.appendChild(link);
         referrersEl.appendChild(tr);
       });
     }
