@@ -145,6 +145,22 @@ pre { overflow-x: auto; }
   width: 100%;
 }
 
+.url-container {
+  display: flex;
+}
+
+.clipboard-btn {
+  cursor: pointer;
+}
+
+.clipboard-btn:disabled {
+  cursor: not-allowed;
+}
+
+.clipboard-btn:disabled img {
+  opacity: 0.3;
+}
+
 .url-helper {
   display: flex;
   flex-wrap: wrap;

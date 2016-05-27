@@ -13,8 +13,11 @@
   <div class="column">
     <h2>Use this URL in <strong>production</strong></h2>
 
-    <p>
+    <p class="url-container">
       <input id="url-prod" class="url" placeholder="https://{{config.cdnDomain}}/user/repo/tag/file" readonly>
+      <button id="url-prod-btn" class="clipboard-btn" data-clipboard-target="#url-prod" disabled>
+        <img src="/img/clippy.png" width="13" alt="Copy to clipboard">
+      </button>
     </p>
 
     <ul>
@@ -27,8 +30,11 @@
   <div class="column">
     <h2>Use this URL for <strong>development</strong></h2>
 
-    <p>
+    <p class="url-container">
       <input id="url-dev" class="url" placeholder="https://{{config.devDomain}}/user/repo/branch/file" readonly>
+      <button id="url-dev-btn" class="clipboard-btn" data-clipboard-target="#url-dev" disabled>
+        <img src="/img/clippy.png" width="13" alt="Copy to clipboard">
+      </button>
     </p>
 
     <ul>
@@ -43,4 +49,6 @@
 var cdnDomain = '{{config.cdnDomain}}';
 var devDomain = '{{config.devDomain}}';
 </script>
+
+<script src="//cdn.rawgit.com/zenorocha/clipboard.js/v1.5.10/dist/clipboard.min.js"></script>
 <script src="{{{assetUrl "/js/url-formatter.js"}}}"></script>

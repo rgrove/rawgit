@@ -9,6 +9,10 @@
   var devEl  = doc.getElementById('url-dev');
   var prodEl = doc.getElementById('url-prod');
   var urlEl  = doc.getElementById('url');
+  
+  var devBtn = doc.getElementById('url-dev-btn');
+  var prodBtn = doc.getElementById('url-prod-btn');
+  var clipboard = new Clipboard(".clipboard-btn");
 
   urlEl.addEventListener('input', function () {
     var url = urlEl.value.trim();
@@ -22,6 +26,9 @@
 
       devEl.classList.add('valid');
       prodEl.classList.add('valid');
+
+      devBtn.disabled = false;
+      prodBtn.disabled = false;
     } else if (REGEX_REPO_URL.test(url)) {
       urlEl.classList.remove('invalid');
       urlEl.classList.add('valid');
@@ -31,6 +38,9 @@
 
       devEl.classList.add('valid');
       prodEl.classList.add('valid');
+
+      devBtn.disabled = false;
+      prodBtn.disabled = false;
     } else if (REGEX_GIST_URL.test(url)) {
       urlEl.classList.remove('invalid');
       urlEl.classList.add('valid');
@@ -40,6 +50,9 @@
 
       devEl.classList.add('valid');
       prodEl.classList.add('valid');
+
+      devBtn.disabled = false;
+      prodBtn.disabled = false;
     } else {
       urlEl.classList.remove('valid');
 
@@ -54,6 +67,9 @@
 
       devEl.classList.remove('valid');
       prodEl.classList.remove('valid');
+
+      devBtn.disabled = true;
+      prodBtn.disabled = true;
     }
   }, false);
 
