@@ -17,8 +17,8 @@
       urlEl.classList.remove('invalid');
       urlEl.classList.add('valid');
 
-      devEl.value  = url.replace(REGEX_RAW_URL, '$1://' + devDomain + '/$2/$3');
-      prodEl.value = url.replace(REGEX_RAW_URL, '$1://' + cdnDomain + '/$2/$3');
+      devEl.value  = url.replace(REGEX_RAW_URL, 'https://' + devDomain + '/$2/$3');
+      prodEl.value = url.replace(REGEX_RAW_URL, 'https://' + cdnDomain + '/$2/$3');
 
       devEl.classList.add('valid');
       prodEl.classList.add('valid');
@@ -26,8 +26,8 @@
       urlEl.classList.remove('invalid');
       urlEl.classList.add('valid');
 
-      devEl.value  = url.replace(REGEX_REPO_URL, '$1://' + devDomain + '/$2/$3/$4');
-      prodEl.value = url.replace(REGEX_REPO_URL, '$1://' + cdnDomain + '/$2/$3/$4');
+      devEl.value  = url.replace(REGEX_REPO_URL, 'https://' + devDomain + '/$2/$3/$4');
+      prodEl.value = url.replace(REGEX_REPO_URL, 'https://' + cdnDomain + '/$2/$3/$4');
 
       devEl.classList.add('valid');
       prodEl.classList.add('valid');
@@ -35,8 +35,8 @@
       urlEl.classList.remove('invalid');
       urlEl.classList.add('valid');
 
-      devEl.value  = url.replace(REGEX_GIST_URL, '$1://' + devDomain + '/$2');
-      prodEl.value = url.replace(REGEX_GIST_URL, '$1://' + cdnDomain + '/$2');
+      devEl.value  = url.replace(REGEX_GIST_URL, 'https://' + devDomain + '/$2');
+      prodEl.value = url.replace(REGEX_GIST_URL, 'https://' + cdnDomain + '/$2');
 
       devEl.classList.add('valid');
       prodEl.classList.add('valid');
