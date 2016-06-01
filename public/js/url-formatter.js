@@ -13,6 +13,11 @@
   var devBtn = doc.getElementById('url-dev-btn');
   var prodBtn = doc.getElementById('url-prod-btn');
   var clipboard = new Clipboard(".clipboard-btn");
+  
+  if (document.queryCommandSupported && document.queryCommandSupported('copy')) {
+    devBtn.style.display = "inline-block";
+    prodBtn.style.display = "inline-block";
+  }
 
   urlEl.addEventListener('input', function () {
     var url = urlEl.value.trim();

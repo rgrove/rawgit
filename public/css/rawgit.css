@@ -151,6 +151,8 @@ pre { overflow-x: auto; }
 
 .clipboard-btn {
   cursor: pointer;
+  display: none;
+  margin-left: 0;
 }
 
 .clipboard-btn:disabled {
