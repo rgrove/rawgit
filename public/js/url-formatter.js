@@ -1,4 +1,4 @@
-/* global cdnDomain, devDomain */
+/* global Clipboard, cdnDomain, devDomain */
 (function (doc) {
   "use strict";
 
@@ -9,6 +9,16 @@
   var devEl  = doc.getElementById('url-dev');
   var prodEl = doc.getElementById('url-prod');
   var urlEl  = doc.getElementById('url');
+
+  new Clipboard('.clipboard-btn');
+
+  var devCopyButton  = doc.getElementById('url-dev-copy');
+  var prodCopyButton = doc.getElementById('url-prod-copy');
+
+  if (doc.queryCommandSupported && doc.queryCommandSupported('copy')) {
+    devCopyButton.style.display  = 'inline-block';
+    prodCopyButton.style.display = 'inline-block';
+  }
 
   urlEl.addEventListener('input', function () {
     var url = urlEl.value.trim();
@@ -22,6 +32,9 @@
 
       devEl.classList.add('valid');
       prodEl.classList.add('valid');
+
+      devCopyButton.disabled  = false;
+      prodCopyButton.disabled = false;
     } else if (REGEX_REPO_URL.test(url)) {
       urlEl.classList.remove('invalid');
       urlEl.classList.add('valid');
@@ -31,6 +44,9 @@
 
       devEl.classList.add('valid');
       prodEl.classList.add('valid');
+
+      devCopyButton.disabled  = false;
+      prodCopyButton.disabled = false;
     } else if (REGEX_GIST_URL.test(url)) {
       urlEl.classList.remove('invalid');
       urlEl.classList.add('valid');
@@ -40,6 +56,9 @@
 
       devEl.classList.add('valid');
       prodEl.classList.add('valid');
+
+      devCopyButton.disabled  = false;
+      prodCopyButton.disabled = false;
     } else {
       urlEl.classList.remove('valid');
 
@@ -54,6 +73,9 @@
 
       devEl.classList.remove('valid');
       prodEl.classList.remove('valid');
+
+      devCopyButton.disabled  = true;
+      prodCopyButton.disabled = true;
     }
   }, false);
 
