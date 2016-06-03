@@ -149,18 +149,35 @@ pre { overflow-x: auto; }
   display: flex;
 }
 
-.clipboard-btn {
+.url-copy-button {
+  background: none;
+  border: 1px solid transparent;
   cursor: pointer;
   display: none;
-  margin-left: 0;
 }
 
-.clipboard-btn:disabled {
+.url-copy-button:hover {
+  background: #f5f5f5;
+  border-color: #efefef;
+}
+
+.url-copy-button:active {
+  background: #badeff;
+  border-color: #8cc3f6;
+}
+
+.url-copy-button:disabled {
+  background: none;
+  border-color: transparent;
   cursor: not-allowed;
 }
 
-.clipboard-btn:disabled img {
+.url-copy-button:disabled img {
   opacity: 0.3;
+}
+
+.url-copy-button img {
+  display: block;
 }
 
 .url-helper {
