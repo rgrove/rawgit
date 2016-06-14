@@ -83,15 +83,15 @@ app.route(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/)
 // Repo file.
 app.route('/:user/:repo/:branch/*')
   .all(
-    // middleware.cdn,
-    // middleware.stats,
-    // middleware.security,
-    // middleware.noRobots,
-    // middleware.autoThrottle,
-    // middleware.accessControl
+    middleware.cdn,
+    middleware.stats,
+    middleware.security,
+    middleware.noRobots,
+    middleware.autoThrottle,
+    middleware.accessControl
   )
   .get(
-    // middleware.fileRedirect(config.baseRepoUrl),
+    middleware.fileRedirect(config.baseRepoUrl),
     middleware.proxyPath(config.baseRepoUrl)
   );
 
