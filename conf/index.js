@@ -38,7 +38,7 @@ module.exports = {
   extensionWhitelist: {
     '.appcache'  : true,
     '.coffee'    : true,
-    '.scss'      : false,
+    '.scss'      : true,
     '.css'       : true,
     '.csv'       : true,
     '.eot'       : true,
