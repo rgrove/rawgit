@@ -1,7 +1,7 @@
 /*
 This request has been blacklisted for sending too much traffic to rawgit.com.
 
-Do not use rawgit.com URLs in production; that domain is for testing and
+Do not use rawgit.com URLs in production. That domain is for testing and
 development only, and excessive traffic will result in blacklisting.
 
 Only use cdn.rawgit.com in production. It has no traffic limits.
@@ -10,18 +10,18 @@ For details, see http://rawgit.com/faq
 */
 
 html > body:before {
-    background: #ff0000;
-    background: rgba(255, 0, 0, 0.8);
-    border: 5px solid #333;
-    border-left: none;
-    border-right: none;
-    content: 'This site or app is sending too much traffic to rawgit.com. Please contact its owner and ask them to use cdn.rawgit.com instead, which has no traffic limit.';
-    color: #fff;
-    font: bold 26px/1.4 Helvetica, sans-serif;
-    left: 0;
-    padding: 1em;
-    position: fixed;
-    right: 0;
-    top: 30%;
-    z-index: 9999;
+  background: #ff0000 !important;
+  background: rgba(255, 0, 0, 0.8) !important;
+  border: 5px solid #333 !important;
+  border-left: none !important;
+  border-right: none !important;
+  content: 'This site or app is sending too much traffic to rawgit.com. Please contact its owner and ask them to use cdn.rawgit.com instead, which has no traffic limit.' !important;
+  color: #fff !important;
+  font: bold 26px/1.4 Helvetica, sans-serif !important;
+  left: 0 !important;
+  padding: 1em !important;
+  position: fixed !important;
+  right: 0 !important;
+  top: 30% !important;
+  z-index: 9999 !important;
 }

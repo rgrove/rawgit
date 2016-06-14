@@ -1,30 +1,29 @@
 {
-    "name"   : "rawgit",
-    "version": "0.0.1",
-    "private": true,
-
-    "dependencies": {
-        "express"           : "4.13.1",
-        "express-handlebars": "2.0.1",
-        "lru-cache"         : "2.6.5",
-        "mime-db"           : "1.15.0",
-        "morgan"            : "1.6.1",
-        "newrelic"          : "1.22.1",
-        "on-finished"       : "2.3.0"
-    },
-
-    "devDependencies": {
-        "chai"     : "^3.1.0",
-        "eslint"   : "^0.24.1",
-        "mocha"    : "^2.2.5",
-        "nock"     : "^2.7.0",
-        "supertest": "0.15.0"
-    },
-
-    "scripts": {
-        "clean-fixtures": "scripts/clean-fixtures.js test/fixtures/*.json",
-        "record-fixtures": "NOCK_BACK_MODE=record npm test && npm run-script clean-fixtures",
-        "start": "node web.js",
-        "test": "NODE_ENV=test mocha -R dot test/**/test.*.js"
-    }
+  "name": "rawgit",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "4.13.4",
+    "express-handlebars": "3.0.0",
+    "lru-cache": "4.0.0",
+    "mime-db": "1.22.0",
+    "newrelic": "1.25.5",
+    "on-finished": "2.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^2.4.0",
+    "mocha": "^2.2.5",
+    "morgan": "^1.7.0",
+    "nock": "^2.7.0",
+    "nodemon": "^1.9.1",
+    "supertest": "0.15.0"
+  },
+  "scripts": {
+    "clean-fixtures": "scripts/clean-fixtures.js test/fixtures/*.json",
+    "lint": "eslint .",
+    "record-fixtures": "NOCK_BACK_MODE=record npm test && npm run-script clean-fixtures",
+    "start": "NODE_ENV=development nodemon web.js",
+    "test": "NODE_ENV=test mocha -R dot test/**/test.*.js"
+  }
 }
