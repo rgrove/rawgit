@@ -38,6 +38,7 @@ module.exports = {
         '.appcache'  : true,
         '.coffee'    : true,
         '.css'       : true,
+        '.scss'       : true,
         '.csv'       : true,
         '.eot'       : true,
         '.geojson'   : true,
