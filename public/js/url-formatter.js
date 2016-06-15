@@ -10,7 +10,7 @@
   var prodEl = doc.getElementById('url-prod');
   var urlEl  = doc.getElementById('url');
 
-  new Clipboard('.clipboard-btn');
+  new Clipboard('.url-copy-button');
 
   var devCopyButton  = doc.getElementById('url-dev-copy');
   var prodCopyButton = doc.getElementById('url-prod-copy');
