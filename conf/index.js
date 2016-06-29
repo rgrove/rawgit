@@ -73,7 +73,11 @@ module.exports = {
     '.xsl'       : true,
     '.xslt'      : true,
     '.yaml'      : true,
-    '.yml'       : true
+    '.yml'       : true,
+    '.png'       : true,
+    '.gif'       : true,
+    '.jpg'       : true,
+    '.jpeg'      : true
   },
    extensionNoCache : {
         '.appcache'  : true,
