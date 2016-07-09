@@ -29,6 +29,12 @@ db['application/vnd.geo+json'] = {
   extensions  : ['geojson']
 };
 
+db['application/x-bat'] = {
+  charset     : 'utf-8',
+  compressible: true,
+  extensions  : ['bat']
+};
+
 db['text/x-handlebars-template'] = {
   charset     : 'utf-8',
   compressible: true,
