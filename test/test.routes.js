@@ -131,7 +131,6 @@ describe("Routes", () => {
 
   [
     '/',
-    '/faq',
     '/stats'
   ].forEach(url => {
     describe(url, () => {
