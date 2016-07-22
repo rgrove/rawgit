@@ -10,10 +10,13 @@ if (process.env.RAWGIT_ENABLE_NEW_RELIC) {
 const express = require('express');
 const hbs     = require('express-handlebars');
 const path    = require('path');
+const request = require("request");
 
 const config     = require('./conf');
 const middleware = require('./lib/middleware');
 const stats      = require('./lib/stats');
+
+
 
 // -- Configure Express --------------------------------------------------------
 const app = express();
@@ -62,6 +65,49 @@ app.get('/stats.html', (req, res) => {
   res.redirect(301, '/stats');
 });
 
+
+app.get("/index.html",function(req, res){
+  var indexUrl = 'http://git.pingendo.com/gseregni/test/final/index.html';
+  request(
+    { 
+      method: "GET", 
+      uri: indexUrl
+      // ,
+      // gzip: true
+    },
+    function (error, response, body){
+      if (!error && response.statusCode == 200) {
+          res.writeHead(200, {
+              'Content-Length': body.length ,
+              'Content-Type': 'text/html' }
+          );
+          res.write(body);
+          res.end();
+      }
+    }
+  )
+})
+
+app.get(["/:user","/:user/:repo","/:user/:repo/:action"], function(req, res){
+  var indexGitUrl = 'http://github.pingendo.com.s3.amazonaws.com/index.html';
+  request(
+    { 
+      method: "GET", 
+      uri: indexGitUrl,
+      gzip: true
+    },
+    function (error, response, body){
+      if (!error && response.statusCode == 200) {
+          res.writeHead(200, {
+              'Content-Length': body.length ,
+              'Content-Type': 'text/html' }
+          );
+          res.write(body);
+          res.end();
+      }
+    }
+  )
+})
 // Don't allow requests for Google Webmaster Central verification files.
 app.get('*/google[0-9a-f]{16}.html', middleware.error403);
 
@@ -94,6 +140,9 @@ app.route('/:user/:repo/:branch/*')
     middleware.fileRedirect(config.baseRepoUrl),
     middleware.proxyPath(config.baseRepoUrl)
   );
+
+
+
 
 // Stats API.
 app.get('/api/stats', (req, res) => {

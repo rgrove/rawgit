@@ -8,7 +8,8 @@
     "lru-cache": "4.0.0",
     "mime-db": "1.22.0",
     "newrelic": "1.25.5",
-    "on-finished": "2.3.0"
+    "on-finished": "2.3.0",
+    "request": "^2.72.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
