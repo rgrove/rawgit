@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "express": "4.13.4",
+    "express": "4.14.0",
     "express-handlebars": "3.0.0",
-    "mime-db": "1.22.0",
-    "newrelic": "1.25.5",
+    "mime-db": "1.23.0",
+    "newrelic": "1.28.3",
     "on-finished": "2.3.0"
   },
   "devDependencies": {
