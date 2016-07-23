@@ -57,7 +57,7 @@ app.get('/faq', (req, res) => {
 app.get('*/google[0-9a-f]{16}.html', middleware.error403);
 
 // Public or private gist.
-app.route(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/)
+app.route(/^\/[0-9A-Za-z-]{1,100}\/[0-9a-f]{1,100}\/raw\/?/)
   .all(
     middleware.cdn,
     middleware.security,
