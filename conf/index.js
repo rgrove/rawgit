@@ -3,10 +3,6 @@
 const path = require('path');
 
 module.exports = {
-  // Whether to automatically throttle and blacklist abusive requests. This
-  // works best if `upstreamRequestLog` is also set.
-  autoThrottle: true,
-
   // Base URL to use when requesting gist files.
   baseGistUrl: 'https://gist.githubusercontent.com',
 
