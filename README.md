@@ -2,25 +2,23 @@
 
 This is the source code behind <https://rawgit.com/>.
 
-
 ## Installing
 
-1. Install Node.js or io.js.
+1.  Install Node.js.
 
-2. Clone this git repo (fork it first if you plan to make changes).
+2.  Clone this git repo (fork it first if you plan to make changes).
 
         git clone git://github.com/rgrove/rawgit.git
 
-3. Install dependencies.
+3.  Install dependencies.
 
         cd rawgit && npm install
 
-4. Start the local server.
+4.  Start the local server.
 
         npm start
 
-5. Browse to <http://localhost:5000/> and you should see RawGit in action.
-
+5.  Browse to <http://localhost:5000/> and you should see RawGit in action.
 
 ## Running Tests
 
@@ -28,26 +26,13 @@ This is the source code behind <https://rawgit.com/>.
 npm test
 ```
 
-## Checking your local installation
+## Contributing
 
-To check your installation, point a local web browser to a GitHub file you want
-RawGit to serve, using the following URL format:
+Want to fix a bug? If it's something small, just send a pull request. If you
+want to add a new feature or make significant changes, please get in touch and
+ask if I'm interested before doing the work.
 
-    http://localhost:5000/user/repo/branch/file
-
-For example: <http://localhost:5000/rgrove/rawgit/master/web.js>
-
-
-Contributing
-------------
-
-Want to add a feature or fix a bug? If it's something small, just send a pull
-request. If it's something big, please get in touch and ask if I'm interested
-before working on it.
-
-
-License
--------
+## License
 
 Copyright (c) 2016 Ryan Grove (ryan@wonko.com).
 
