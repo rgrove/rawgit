@@ -131,7 +131,6 @@ describe("Routes", () => {
 
   [
     '/',
-    '/stats'
   ].forEach(url => {
     describe(url, () => {
       allRoutes(url);

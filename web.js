@@ -13,7 +13,6 @@ const path    = require('path');
 
 const config     = require('./conf');
 const middleware = require('./lib/middleware');
-const stats      = require('./lib/stats');
 
 // -- Configure Express --------------------------------------------------------
 const app = express();
@@ -54,14 +53,6 @@ app.get('/faq', (req, res) => {
   res.redirect('https://github.com/rgrove/rawgit/wiki/Frequently-Asked-Questions');
 });
 
-app.get('/stats', (req, res) => {
-  res.render('stats', {title: 'Usage Statistics'});
-});
-
-app.get('/stats.html', (req, res) => {
-  res.redirect(301, '/stats');
-});
-
 // Don't allow requests for Google Webmaster Central verification files.
 app.get('*/google[0-9a-f]{16}.html', middleware.error403);
 
@@ -69,10 +60,8 @@ app.get('*/google[0-9a-f]{16}.html', middleware.error403);
 app.route(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/)
   .all(
     middleware.cdn,
-    middleware.stats,
     middleware.security,
     middleware.noRobots,
-    middleware.autoThrottle,
     middleware.accessControl
   )
   .get(
@@ -84,33 +73,14 @@ app.route(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/)
 app.route('/:user/:repo/:branch/*')
   .all(
     middleware.cdn,
-    middleware.stats,
     middleware.security,
     middleware.noRobots,
-    middleware.autoThrottle,
     middleware.accessControl
   )
   .get(
     middleware.fileRedirect(config.baseRepoUrl),
     middleware.proxyPath(config.baseRepoUrl)
   );
-
-// Stats API.
-app.get('/api/stats', (req, res) => {
-  const count = Math.max(0, Math.min(20, req.query.count || 10));
-
-  res.setHeader('Cache-Control', 'private, no-cache, no-store, max-age=0, must-revalidate');
-
-  res.jsonp({
-    status: 'success',
-
-    data: {
-      since    : stats.since,
-      files    : stats.files().slice(0, count),
-      referrers: stats.referrers().slice(0, count)
-    }
-  });
-});
 
 // -- Error handlers -----------------------------------------------------------
 app.use((req, res) => {

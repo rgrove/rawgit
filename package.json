@@ -5,7 +5,6 @@
   "dependencies": {
     "express": "4.13.4",
     "express-handlebars": "3.0.0",
-    "lru-cache": "4.0.0",
     "mime-db": "1.22.0",
     "newrelic": "1.25.5",
     "on-finished": "2.3.0"
