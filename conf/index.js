@@ -79,7 +79,7 @@ module.exports = {
   proxyTimeout: 10000,
 
   // Public directory containing static files.
-  publicDir: path.join(__dirname, '/../public'),
+  publicDir: path.join(__dirname, '..', 'public'),
 
   // Array of request header names that should be relayed from the user to
   // GitHub.
