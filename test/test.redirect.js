@@ -5,7 +5,7 @@ const assert  = require('chai').assert;
 const nock    = require('nock');
 const request = require('supertest');
 
-const app     = require('../web');
+const app     = require('../');
 const helpers = require('./helpers');
 
 const agent = request.agent(app);
