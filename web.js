@@ -49,9 +49,9 @@ if (process.env.GOOGLE_ANALYTICS_ID) {
 app.use(express.static(config.publicDir));
 
 // -- Routes -------------------------------------------------------------------
-app.get('/', (req, res) => {
-  res.render('index', {includeMetaDescription: true});
-});
+// app.get('/', (req, res) => {
+//   res.render('index', {includeMetaDescription: true});
+// });
 
 app.get('/faq', (req, res) => {
   res.redirect('https://github.com/rgrove/rawgit/wiki/Frequently-Asked-Questions');
@@ -66,12 +66,11 @@ app.get('/stats.html', (req, res) => {
 });
 
 
-app.get("/index.html",function(req, res){
-  var indexUrl = 'http://git.pingendo.com/gseregni/test/final/index.html';
+app.get(["/", "/index.html"],function(req, res){
   request(
     { 
       method: "GET", 
-      uri: indexUrl
+      uri: config.routing.www
       // ,
       // gzip: true
     },
@@ -176,7 +175,7 @@ app.use((err, req, res, next) => {
 
 // -- Server -------------------------------------------------------------------
 if (app.get('env') !== 'test') {
-  const port = process.env.PORT || 5000;
+  const port = process.env.PORT || 5001;
 
   app.listen(port, () => {
     console.log('Listening on port ' + port);

@@ -191,5 +191,15 @@ module.exports = {
   // Number of historical log entries to parse from the upstream request log on
   // startup. This is useful in order to retain recent stats after the RawGit
   // process is restarted.
-  upstreamRequestLogScrollback: 100000
+  upstreamRequestLogScrollback: 100000,
+  routing: {
+    "dev" : {
+      "www" : "http://git.pingendo.com/gseregni/test/test-https/index.html",
+    },
+    "prod" : {
+      "www" : "http://git.pingendo.com/gseregni/test/test-https/index.html",  
+    }
+    
+  },
+
 };
