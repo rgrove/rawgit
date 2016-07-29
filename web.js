@@ -66,13 +66,21 @@ app.get('/stats.html', (req, res) => {
 });
 
 
-app.get(["/", "/index.html"],function(req, res){
+// site 
+app.get(["/", "/index.html" , "/pricing.html", "/docs.html" ],function(req, res){
+
+  var env = process.env.NODE_ENV || 'dev';
+  if(req.path == "/" || "/index.html")
+    var uri = config.routing[env].www;
+  if (req.path == "/pricing.html")
+    var uri = config.routing[env].pricing;
+  if (req.path == "/docs.html")
+    var uri = config.routing[env].docs;
+
   request(
     { 
       method: "GET", 
-      uri: config.routing.www
-      // ,
-      // gzip: true
+      uri: uri
     },
     function (error, response, body){
       if (!error && response.statusCode == 200) {
@@ -82,17 +90,23 @@ app.get(["/", "/index.html"],function(req, res){
           );
           res.write(body);
           res.end();
+      }else{
+        console.log(error);
       }
     }
   )
 })
 
+// github
 app.get(["/:user","/:user/:repo","/:user/:repo/:action"], function(req, res){
-  var indexGitUrl = 'http://github.pingendo.com.s3.amazonaws.com/index.html';
+
+  var env = process.env.NODE_ENV || 'dev';
+
+  console.log(config.routing[env].app);
   request(
     { 
       method: "GET", 
-      uri: indexGitUrl,
+      uri: config.routing[env].app,
       gzip: true
     },
     function (error, response, body){
@@ -103,6 +117,10 @@ app.get(["/:user","/:user/:repo","/:user/:repo/:action"], function(req, res){
           );
           res.write(body);
           res.end();
+      }else{
+        
+        console.log(error);
+
       }
     }
   )
@@ -168,7 +186,7 @@ app.use((req, res) => {
 
 app.use((err, req, res, next) => {
   /* eslint no-unused-vars: 0 */
-  console.error(err.stack);
+  response.error(err.stack);
   res.status(err.status || 500);
   res.sendFile(config.publicDir + '/errors/500.html');
 });

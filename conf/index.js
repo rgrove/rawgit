@@ -194,12 +194,14 @@ module.exports = {
   upstreamRequestLogScrollback: 100000,
   routing: {
     "dev" : {
-      "www" : "http://git.pingendo.com/gseregni/test/test-https/index.html",
+      "www"     : "http://git.pingendo.com/gseregni/test/test-https/index.html",
+      "pricing" : "http://git.pingendo.com/gseregni/test/test-https/pricing.html",
+      "docs"    : "http://git.pingendo.com/gseregni/test/test-https/docs.html",
+      "app"     : "http://localhost:5000/index.html"
     },
     "prod" : {
-      "www" : "http://git.pingendo.com/gseregni/test/test-https/index.html",  
-    }
-    
-  },
-
+      "www" : "http://git.pingendo.com/gseregni/test/test-https/index.html", 
+      "app" : "http://github.pingendo.com.s3.amazonaws.com/index.html" 
+    } 
+  }
 };
