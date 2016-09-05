@@ -46,7 +46,7 @@ app.use(express.static(config.publicDir));
 
 // -- Routes -------------------------------------------------------------------
 app.get('/', (req, res) => {
-  res.render('index', {includeMetaDescription: true});
+  res.render('index', {includeMetaDescription: true, url: req.query.url});
 });
 
 app.get('/faq', (req, res) => {

@@ -20,7 +20,10 @@
     prodCopyButton.style.display = 'inline-block';
   }
 
-  urlEl.addEventListener('input', function () {
+  urlEl.addEventListener('input', formatURL, false);
+  formatURL();
+
+  function formatURL () {
     var url = urlEl.value.trim();
 
     if (REGEX_RAW_URL.test(url)) {
@@ -77,7 +80,7 @@
       devCopyButton.disabled  = true;
       prodCopyButton.disabled = true;
     }
-  }, false);
+  }
 
   devEl.addEventListener('focus', onFocus);
   prodEl.addEventListener('focus', onFocus);
