@@ -6,8 +6,8 @@
 
   var REGEX_GIST_URL     = /^https?:\/\/gist\.github\.com\/.+?\/([0-9a-f]+)(?:\/([0-9a-f]+))?/i;
   var REGEX_RAW_GIST_URL = /^https?:\/\/gist\.githubusercontent\.com\/(.+?\/[0-9a-f]+\/raw\/(?:[0-9a-f]+\/)?.+\..+)$/i;
-  var REGEX_RAW_REPO_URL = /^https?:\/\/raw\.github(?:usercontent)?\.com\/([^\/]+\/[^\/]+\/[^\/]+|[0-9A-Za-z-]+\/[0-9a-f]+\/raw)\/(.+\..+)/i;
-  var REGEX_REPO_URL     = /^https?:\/\/github\.com\/(.[^\/]+?)\/(.[^\/]+?)\/(?!releases\/)(?:(?:blob|raw)\/)?(.+?\/.+)/i;
+  var REGEX_RAW_REPO_URL = /^https?:\/\/raw\.github(?:usercontent)?\.com\/([^/]+\/[^/]+\/[^/]+|[0-9A-Za-z-]+\/[0-9a-f]+\/raw)\/(.+\..+)/i;
+  var REGEX_REPO_URL     = /^https?:\/\/github\.com\/(.[^/]+?)\/(.[^/]+?)\/(?!releases\/)(?:(?:blob|raw)\/)?(.+?\/.+)/i;
 
   var copyButtonDev  = doc.getElementById('url-dev-copy');
   var copyButtonProd = doc.getElementById('url-prod-copy');
