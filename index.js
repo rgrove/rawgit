@@ -46,6 +46,8 @@ app.use(express.static(config.publicDir));
 
 // -- Routes -------------------------------------------------------------------
 app.get('/', (req, res) => {
+  res.set('Cache-Control', 'max-age=60');
+
   res.render('index', {
     includeMetaDescription: true,
     url: req.query.url
