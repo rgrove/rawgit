@@ -2,6 +2,8 @@
 
 This is the source code behind <https://rawgit.com/>.
 
+Have questions about RawGit? See the [FAQ](FAQ.md).
+
 ## Installing
 
 1.  Install Node.js.

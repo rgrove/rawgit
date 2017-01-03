@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/faq', (req, res) => {
-  res.redirect('https://github.com/rgrove/rawgit/wiki/Frequently-Asked-Questions');
+  res.redirect('https://github.com/rgrove/rawgit/blob/master/FAQ.md');
 });
 
 // Don't allow requests for Google Webmaster Central verification files.
