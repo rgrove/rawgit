@@ -149,4 +149,4 @@ Thank you though!
     if you're paranoid. Expect a response within 48 hours.
 
 -   To file a DMCA takedown notification or counter-notification, see
-    [RawGit's DMCA Notice & Takedown Procedure](RawGit-DMCA-Notice-&-Takedown-Procedure)
+    [RawGit's DMCA Notice & Takedown Procedure](DMCA.md)
