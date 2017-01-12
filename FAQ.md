@@ -36,9 +36,9 @@ few minutes. This makes `rawgit.com` useful for testing or sharing demos during
 development, but it also puts more server load on RawGit and GitHub.
 
 Requests to `cdn.rawgit.com` are routed through
-[MaxCDN](http://www.maxcdn.com/)'s super fast content delivery network, and are
-cached **permanently** at the CDN layer based on the URL. This results in the
-best performance and reduces load on RawGit and on GitHub, but it means that
+[StackPath](https://stackpath.com/)'s super fast content delivery network, and
+are cached **permanently** at the CDN layer based on the URL. This results in
+the best performance and reduces load on RawGit and on GitHub, but it means that
 reloading won't fetch new changes from GitHub.
 
 During development, when traffic is low and freshness is more important than
@@ -105,11 +105,11 @@ asleep and I don't know there are problems until I wake up. And sometimes I
 break things by doing something dumb (although I try really hard not to).
 
 Since I run RawGit in my spare time, with my own money and with CDN hosting
-generously donated by [MaxCDN](http://www.maxcdn.com/), it has a budget that's
-probably less than you pay for coffee in a given month. My goal is to help other
-open source developers get their projects up and running, but if you need to
-serve files that are crucial to your business, you should pay for a host with
-well-funded infrastructure and uptime guarantees.
+generously donated by [StackPath](https://stackpath.com/), it has a budget
+that's probably less than you pay for coffee in a given month. My goal is to
+help other open source developers get their projects up and running, but if you
+need to serve files that are crucial to your business, you should pay for a host
+with well-funded infrastructure and uptime guarantees.
 
 ## Why do anonymous gist URLs return 403 errors?
 
@@ -129,7 +129,7 @@ later.
 
 It's super nice of you to offer, but I don't need any donations at this time.
 RawGit's server costs are minimal, and the lovely people at
-[MaxCDN](http://www.maxcdn.com/) provide RawGit's CDN service free of charge.
+[StackPath](https://stackpath.com/) provide RawGit's CDN service free of charge.
 Thank you though!
 
 ## I have feedback or want to report a problem! Who can I contact?
