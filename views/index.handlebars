@@ -7,7 +7,7 @@
     <p id="url-form">
       <label for="url" class="offscreen">GitHub URL:</label>
       <input id="url" class="url" type="url" value="{{url}}"
-             placeholder="Paste a GitHub file or gist URL here." autofocus>
+             placeholder="Paste a GitHub file or gist URL here." autofocus tabindex="1">
     </p>
   </div>
 
@@ -15,7 +15,7 @@
     <h2>Use this URL in <strong>production</strong></h2>
 
     <p class="url-container">
-      <input id="url-prod" class="url" placeholder="https://{{config.cdnDomain}}/user/repo/tag/file" readonly>
+      <input id="url-prod" class="url" placeholder="https://{{config.cdnDomain}}/user/repo/tag/file" readonly tabindex="2">
       <button id="url-prod-copy" class="url-copy-button" data-clipboard-target="#url-prod" title="Copy URL" disabled>
         <img src="{{{assetUrl "/img/clippy.svg"}}}" alt="">
       </button>
@@ -32,7 +32,7 @@
     <h2>Use this URL for <strong>development</strong></h2>
 
     <p class="url-container">
-      <input id="url-dev" class="url" placeholder="https://{{config.devDomain}}/user/repo/branch/file" readonly>
+      <input id="url-dev" class="url" placeholder="https://{{config.devDomain}}/user/repo/branch/file" readonly tabindex="3">
       <button id="url-dev-copy" class="url-copy-button" data-clipboard-target="#url-dev" title="Copy URL" disabled>
         <img src="{{{assetUrl "/img/clippy.svg"}}}" alt="">
       </button>
