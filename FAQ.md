@@ -27,52 +27,33 @@ file hosting right from a GitHub repo. Everyone's happy!
 No, RawGit is not associated with GitHub in any way. Please don't contact GitHub
 asking for help with RawGit.
 
-## What's the difference between rawgit.com and cdn.rawgit.com URLs?
+## What's the difference between development and CDN URLs?
 
-When you make a request to a `rawgit.com` URL, the RawGit server loads the
-requested file from GitHub, serves it to your browser, and caches it for a short
-time. If you push new changes to GitHub, you can reload and see them within a
-few minutes. This makes `rawgit.com` useful for testing or sharing demos during
-development, but it also puts more server load on RawGit and GitHub.
+When you make a request to a `rawgit.com` URL (a development URL), the RawGit server loads the requested file from GitHub, serves it to your browser, and caches it for a short time. If you push new changes to GitHub, you can reload and see them within a few minutes. This makes dev URLs useful for testing or sharing demos during development, but it also puts more server load on RawGit and GitHub.
 
-Requests to `cdn.rawgit.com` are routed through
-[StackPath](https://stackpath.com/)'s super fast content delivery network, and
-are cached **permanently** at the CDN layer based on the URL. This results in
-the best performance and reduces load on RawGit and on GitHub, but it means that
-reloading won't fetch new changes from GitHub.
+Requests to `cdn.rawgit.com` (a CDN URL) are routed through [StackPath](https://stackpath.com/)'s super fast content delivery network and are cached **permanently** at the CDN layer based on the URL. This results in the best performance and reduces load on RawGit and on GitHub, but it means that reloading won't fetch new changes from GitHub.
 
-During development, when traffic is low and freshness is more important than
-performance, use `rawgit.com`. For anything you share with the public or push to
-production, use `cdn.rawgit.com`.
+During development, when traffic is low and freshness is more important than performance, use a development URL. For anything you share with the public or push to production, use a CDN URL.
 
-## Can I use a rawgit.com development URL on a production website or in public example code?
+## Can I use a development URL on a production website or in public example code?
 
-No. Only use `rawgit.com` URLs for low-traffic testing or for sharing temporary
-demos with a few people during development. Please use `cdn.rawgit.com` for
-anything that might result in heavy traffic or that people might copy and paste
-into their own code.
+No. Only use development URLs for personal testing or for sharing temporary demos with a few people during development.
 
-Please don't use `rawgit.com` URLs in example code or in public demos, because
-people often copy and paste that code and use it in production apps without
-realizing that they need to change the RawGit URLs. Then they send too much
-traffic to RawGit, get throttled, and their apps break.
+Don't use development URLs in example code or in public demos, because people often copy and paste that code and use it in production apps without realizing that they need to change the URLs. Then they send too much traffic to RawGit, get throttled, and their apps break.
 
-When people misuse `rawgit.com` development URLs, it costs me money. Please be
-considerate.
+Use CDN URLs for anything you share with the general public.
 
-## What will happen if I send large amounts of traffic to a rawgit.com development URL?
+## What will happen if a development URL gets large amounts of traffic?
 
-First, requests will be throttled and your site will start to load very slowly.
-If the traffic continues even after automatic throttling is triggered, RawGit
-will start serving an error page instead of the requested file. If traffic
-reaches truly excessive levels, then a big ugly error message may be displayed
-directly on your website asking your users to notify you of the problem.
+First, requests will be throttled and the URL will start to load very slowly. If the traffic continues even after automatic throttling is triggered, requests for that URL (or for your entire GitHub account) may be blocked permanently.
 
-This is designed to get your attention as quickly as possible before the
-excessive traffic  becomes a major problem for RawGit and starts costing me
-large amounts of money or impacting other users of this service.
+## What will happen if a CDN URL gets large amounts of traffic?
 
-Remember, only use `cdn.rawgit.com` in production.
+Usually this is fine.
+
+However, some people have begun using RawGit to serve large collections of uniquely named files (often images). These unique URLs defeat the CDN's ability to efficiently cache files, which means requests can end up overloading RawGit's origin server. In cases like this, I may block the excessive traffic to prevent the service from being degraded for other users.
+
+Please don't use RawGit for things like this.
 
 ## How long does the CDN cache files? How can I make it refresh my file?
 
@@ -88,10 +69,6 @@ URL if you push a new version of the file.
 So, instead of a URL like `https://cdn.rawgit.com/user/repo/branch/file`, use a
 URL like `https://cdn.rawgit.com/user/repo/tag/file` or
 `https://cdn.rawgit.com/user/repo/commit/file`.
-
-## How can I get a GitHub URL with a commit hash to use with the CDN?
-
-![](https://camo.githubusercontent.com/046ef00f68f6936ac132a009135faba5236688aa/68747470733a2f2f63646e2e7261776769742e636f6d2f726a73746f6e652f726a73746f6e652e6769746875622e696f2f623633663866653930333231353165326532326235383933636562373137373734346665386531612f696d672f5261774769744c696e6b696e672e676966)
 
 ## I need guaranteed 100% uptime. Should I use cdn.rawgit.com?
 
