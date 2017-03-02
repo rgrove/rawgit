@@ -25,11 +25,27 @@ module.exports = {
   // Domain to use for dev requests to RawGit.
   devDomain: 'rawgit.com',
 
-  // Whitelist of file extensions that will be proxied through RawGit. All
-  // others will be redirected to raw.githubusercontent.com.
+  // Blacklist of file extensions that will always be redirected to GitHub, even
+  // when requested via the CDN. Typically extensions are on this list because
+  // GitHub serves them with the proper Content-Type and there's no reason to
+  // proxy them.
+  extensionBlacklist: new Set([
+    '.exe',
+    '.gif',
+    '.ico',
+    '.jpg',
+    '.jpeg',
+    '.md5',
+    '.png',
+    '.wav',
+    '.zip'
+  ]),
+
+  // Whitelist of file extensions that will be proxied through RawGit for
+  // development requests. All others will be redirected to
+  // raw.githubusercontent.com.
   //
-  // Requests to the cdnDomain will bypass this whitelist and proxy all file
-  // types. Please keep this list alphabetized.
+  // CDN requests use `cdnExtensionBlacklist` instead of this whitelist.
   extensionWhitelist: new Set([
     '.appcache',
     '.coffee',
