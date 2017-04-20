@@ -45,7 +45,7 @@ module.exports = {
   // development requests. All others will be redirected to
   // raw.githubusercontent.com.
   //
-  // CDN requests use `cdnExtensionBlacklist` instead of this whitelist.
+  // CDN requests use `extensionBlacklist` instead of this whitelist.
   extensionWhitelist: new Set([
     '.appcache',
     '.coffee',
