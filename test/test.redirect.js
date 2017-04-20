@@ -25,7 +25,7 @@ describe("Redirects", () => {
       it("should result in a 302 redirect", (done) => {
         agent.get(url)
           .expect(302)
-          .expect('cache-control', 'max-age=300')
+          .expect('cache-control', 'max-age=3600, s-maxage=300')
           .expect('location', 'http://example.com/')
           .end(done);
       });
@@ -39,7 +39,7 @@ describe("Redirects", () => {
       it("should result in a 302 redirect", (done) => {
         agent.get(url)
           .expect(302)
-          .expect('cache-control', 'max-age=300')
+          .expect('cache-control', 'max-age=3600, s-maxage=300')
           .expect('location', 'http://example.com/')
           .end(done);
       });
@@ -53,7 +53,7 @@ describe("Redirects", () => {
       it("should result in a 301 redirect", (done) => {
         agent.get(url)
           .expect(301)
-          .expect('cache-control', 'max-age=300')
+          .expect('cache-control', 'max-age=3600, s-maxage=300')
           .expect('location', 'http://example.com/')
           .end(done);
       });
@@ -68,7 +68,7 @@ describe("Redirects", () => {
     it("should redirect to a relative URL", (done) => {
       agent.get(url)
         .expect(302)
-        .expect('cache-control', 'max-age=300')
+        .expect('cache-control', 'max-age=3600, s-maxage=300')
         .expect('location', '../foo.js')
         .end(done);
     });
@@ -82,7 +82,7 @@ describe("Redirects", () => {
     it("should redirect to a protocol-relative URL", (done) => {
       agent.get(url)
         .expect(302)
-        .expect('cache-control', 'max-age=300')
+        .expect('cache-control', 'max-age=3600, s-maxage=300')
         .expect('location', '//example.com/')
         .end(done);
     });

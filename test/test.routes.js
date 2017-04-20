@@ -104,7 +104,7 @@ describe("Routes", () => {
 
     it("should return a cache-control header with a short max-age", (done) => {
       agent.get(url)
-        .expect('cache-control', 'max-age=300')
+        .expect('cache-control', 'max-age=3600, s-maxage=300')
         .end(done);
     });
 
@@ -154,10 +154,10 @@ describe("Routes", () => {
     describe("200", () => {
       helpers.useNockFixture('gist-200.json');
 
-      it("should return the requested file, cacheable for 5 minutes", (done) => {
+      it("should return the requested file", (done) => {
         agent.get(url)
           .expect(200, 'success!')
-          .expect('cache-control', 'max-age=300')
+          .expect('cache-control', 'max-age=3600, s-maxage=300')
           .end(done);
       });
 
@@ -166,7 +166,7 @@ describe("Routes", () => {
           agent.get(url)
             .set('rawgit-cdn', 'Yup')
             .expect(200, 'success!')
-            .expect('cache-control', 'max-age=315569000')
+            .expect('cache-control', 'max-age=315569000, immutable')
             .end(done);
         });
       });
@@ -202,10 +202,10 @@ describe("Routes", () => {
 
       let url = '/rgrove/rawgit/e8c43410/web.js';
 
-      it("should return the requested file, cacheable for 5 minutes", (done) => {
+      it("should return the requested file", (done) => {
         agent.get(url)
           .expect(200, /^#!\/usr\/bin\/env node/)
-          .expect('cache-control', 'max-age=300')
+          .expect('cache-control', 'max-age=3600, s-maxage=300')
           .end(done);
       });
 
@@ -214,7 +214,7 @@ describe("Routes", () => {
           agent.get(url)
             .set('rawgit-cdn', 'Yup')
             .expect(200, /^#!\/usr\/bin\/env node/)
-            .expect('cache-control', 'max-age=315569000')
+            .expect('cache-control', 'max-age=315569000, immutable')
             .end(done);
         });
       });
@@ -246,11 +246,11 @@ describe("Routes", () => {
     describe("index", () => {
       helpers.useNockFixture('repo-index.json');
 
-      it("should return index.html when path is a directory, cacheable for 5 minutes", (done) => {
+      it("should return index.html when path is a directory", (done) => {
         agent.get('/jekyll/jekyll/gh-pages/')
           .expect(200, 'Hello world!')
           .expect('content-type', 'text/html;charset=utf-8')
-          .expect('cache-control', 'max-age=300')
+          .expect('cache-control', 'max-age=3600, s-maxage=300')
           .end(done);
       });
     });
