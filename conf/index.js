@@ -30,7 +30,9 @@ module.exports = {
   // GitHub serves them with the proper Content-Type and there's no reason to
   // proxy them.
   extensionBlacklist: new Set([
+    '',
     '.bz2',
+    '.dcm',
     '.exe',
     '.gif',
     '.gz',
