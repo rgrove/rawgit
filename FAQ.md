@@ -102,6 +102,10 @@ URLs based on a tag or commit ref rather than a branch, since tags and commits
 always represent a single point in time and won't break if you move a file
 later.
 
+## Does RawGit work for private repositories?
+
+Nope. [We don't want GitHub tokens to fly all around.](https://github.com/rgrove/rawgit/issues/62)
+
 ## Can I donate money/Bitcoin/pie to help you out?
 
 It's super nice of you to offer, but I don't need any donations at this time.
