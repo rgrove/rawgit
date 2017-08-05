@@ -104,7 +104,7 @@ later.
 
 ## Does RawGit work for private repositories?
 
-Nope. [We don't want GitHub tokens to fly all around.](https://github.com/rgrove/rawgit/issues/62)
+Nope. [I don't want your secrets flowing through RawGit](https://github.com/rgrove/rawgit/issues/62).
 
 ## Can I donate money/Bitcoin/pie to help you out?
 
