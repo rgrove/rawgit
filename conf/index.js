@@ -63,6 +63,7 @@ module.exports = {
     '.hbs',
     '.htm',
     '.html',
+    '.ics',
     '.js',
     '.json',
     '.jsonld',
