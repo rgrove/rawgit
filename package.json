@@ -5,17 +5,17 @@
   "dependencies": {
     "express": "4.15.4",
     "express-handlebars": "3.0.0",
-    "mime-db": "1.29.0",
-    "newrelic": "2.1.0",
+    "mime-db": "1.30.0",
+    "newrelic": "2.2.1",
     "on-finished": "2.3.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
     "eslint": "3.19.0",
-    "mocha": "3.5.0",
+    "mocha": "3.5.3",
     "morgan": "1.8.2",
     "nock": "2.18.2",
-    "nodemon": "1.11.0",
+    "nodemon": "1.12.1",
     "supertest": "3.0.0"
   },
   "scripts": {
