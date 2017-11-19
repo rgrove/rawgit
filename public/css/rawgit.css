@@ -251,7 +251,29 @@ pre { overflow-x: auto; }
   }
 }
 
+/* -- News ------------------------------------------------------------------ */
+.news {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.news h1 {
+  margin-bottom: 0;
+}
+
+.news .date {
+  font-style: italic;
+}
+
 /* -- Misc ------------------------------------------------------------------ */
+.announcement {
+  background: #fdf3d1;
+  border: 1px solid #fceec0;
+  border-radius: 5px;
+  padding: 4px;
+  text-align: center;
+}
+
 .invalid {
   background: #FFF7F7;
   border-color: #FFCCCC;

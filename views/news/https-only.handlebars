@@ -1,0 +1,16 @@
+<div class="news">
+  <h1>RawGit will become HTTPS-only on February 17, 2018</h1>
+  <small class="date">Posted November 19, 2017</small>
+
+  <p>On February 17, 2018, rawgit.com and cdn.rawgit.com will begin redirecting all HTTP requests to HTTPS using 301 redirects.
+
+  <p>In most cases this should not affect you or your users. Existing HTTP URLs in the wild will continue to function, but will incur some additional latency due to the redirect. To ensure the best performance, please begin using HTTPS URLs now if possible.
+
+  <p>If you're using RawGit URLs in a scenario where HTTPS support isn't available (such as in an embedded device with limited capabilities), please use the time between now and February 17 to either add HTTPS support or find an alternative to RawGit.
+
+  <p>Over 90% of RawGit's traffic currently uses HTTPS, so I don't expect this transition to be a problem for most users. I'm aware that there are a very small number of RawGit users who rely on HTTP URLs. If you're one of them, I'm sorry about the inconvenience, but I believe this change is necessary (and long overdue) to protect the privacy and security of the majority of RawGit's users.
+
+  <p>In addition to the security and privacy benefits of using HTTPS, there are also performance benefits. Both rawgit.com and cdn.rawgit.com support HTTP/2, which is only available via HTTPS.
+
+  <p>If you have questions or concerns about this transition, please <a href="https://github.com/rgrove/rawgit/issues">open an issue</a> on GitHub.
+</div>

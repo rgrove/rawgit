@@ -58,6 +58,12 @@ app.get('/faq', (req, res) => {
   res.redirect('https://github.com/rgrove/rawgit/blob/master/FAQ.md');
 });
 
+app.get('/news/https-only', (req, res) => {
+  res.render('news/https-only', {
+    title: 'RawGit will become HTTPS-only on February 17, 2018'
+  });
+});
+
 // Don't allow requests for Google Webmaster Central verification files.
 app.get('*/google[0-9a-f]{16}.html', middleware.error403);
 
