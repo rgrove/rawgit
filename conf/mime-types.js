@@ -23,6 +23,12 @@ db['application/rdf+xml'] = {
   extensions  : ['rdf', 'owl']
 };
 
+db['text/shex'] = {
+  charset     : 'utf-8',
+  compressible: true,
+  extensions  : ['shex', 'shexc']
+};
+
 db['application/vnd.geo+json'] = {
   charset     : 'utf-8',
   compressible: true,

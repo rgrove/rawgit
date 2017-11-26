@@ -82,6 +82,7 @@ module.exports = {
     '.ttc',
     '.ttf',
     '.ttl',
+    '.shex',
     '.vtt',
     '.woff',
     '.woff2',
