@@ -23,12 +23,6 @@ db['application/rdf+xml'] = {
   extensions  : ['rdf', 'owl']
 };
 
-db['text/shex'] = {
-  charset     : 'utf-8',
-  compressible: true,
-  extensions  : ['shex', 'shexc']
-};
-
 db['application/vnd.geo+json'] = {
   charset     : 'utf-8',
   compressible: true,
@@ -39,6 +33,12 @@ db['application/x-bat'] = {
   charset     : 'utf-8',
   compressible: true,
   extensions  : ['bat']
+};
+
+db['text/shex'] = {
+  charset     : 'utf-8',
+  compressible: true,
+  extensions  : ['shex', 'shexc']
 };
 
 db['text/x-handlebars-template'] = {
