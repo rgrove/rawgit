@@ -84,6 +84,7 @@ module.exports = {
     '.ttf',
     '.ttl',
     '.vtt',
+    '.wasm',
     '.woff',
     '.woff2',
     '.xht',
