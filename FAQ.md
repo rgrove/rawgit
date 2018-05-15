@@ -82,6 +82,6 @@ It's super nice of you to offer, but I don't need any donations at this time. Ra
 
 -   To report a non-critical issue, please [file an issue](https://github.com/rgrove/rawgit/issues) on RawGit's GitHub project.
 
--   To report a security concern, please email `security@rawgit.com` privately. Feel free to encrypt your email using [my public key](https://rawgit.com/public-key.txt) if you're paranoid. Expect a response within 48 hours.
+-   To report a security concern, please email `security@rawgit.com` privately. Expect a response within 48 hours.
 
 -   To file a DMCA takedown notification or counter-notification, see [RawGit's DMCA Notice & Takedown Procedure](DMCA.md)
