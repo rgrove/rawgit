@@ -16,13 +16,27 @@ RawGit acts as a caching proxy. It forwards requests to GitHub, caches the respo
 
 No, RawGit is not associated with GitHub in any way. Please don't contact GitHub asking for help with RawGit.
 
+## Should I use RawGit instead of GitHub Pages? Should I host my static website on RawGit?
+
+No. [GitHub Pages](https://pages.github.com/) is a much better solution for hosting static files and static websites than RawGit is, so if it fits well in your workflow, you should use it instead of RawGit.
+
+RawGit is not a good solution for hosting a full static website. RawGit is less reliable than GitHub Pages or other static hosts, and RawGit doesn't allow content to be indexed by search bots, so your SEO will suffer.
+
+## What should I use RawGit for?
+
+Use RawGit when you need to quickly and temporarily share some example code or a test page in a GitHub repo or gist, but you don't want to go to thr trouble of setting up a full static site or a GitHub Pages branch.
+
+Some people do rely on the RawGit CDN for serving files in production, but this isn't a great idea. RawGit proxies requests to GitHub on demand, and GitHub occasionally has service issues that cause RawGit requests to fail.
+
+In production you'd be much better off using a dedicated static web host and CDN instead of RawGit. But if you're a cheapskate and want a robust and reliable free CDN, [jsDelivr](https://www.jsdelivr.com/) is a good option.
+
 ## What's the difference between development and CDN URLs?
 
 When you make a request to a `rawgit.com` URL (a development URL), the RawGit server loads the requested file from GitHub, serves it to your browser, and caches it for a short time. If you push new changes to GitHub, you can reload and see them within a few minutes. This makes dev URLs useful for testing or sharing demos during development, but it also puts more server load on RawGit and GitHub.
 
 Requests to `cdn.rawgit.com` (a CDN URL) are routed through [StackPath](https://stackpath.com/)'s super fast content delivery network and are cached **permanently** at the CDN layer based on the URL. This results in the best performance and reduces load on RawGit and on GitHub, but it means that reloading won't fetch new changes from GitHub.
 
-During development, when traffic is low and freshness is more important than performance, use a development URL. For anything you share with the public or push to production, use a CDN URL.
+During development, when traffic is low and freshness is more important than performance, use a development URL. For anything you share with the public, use a CDN URL to avoid putting unnecessary load on RawGit.
 
 ## Can I use a development URL on a production website or in public example code?
 
@@ -59,6 +73,10 @@ No. RawGit is a free, best-effort service and cannot provide any uptime or suppo
 While I do my best to keep things running, things sometimes go wrong. Sometimes there are network or provider issues outside my control. Sometimes abusive traffic temporarily affects response times. Sometimes things break while I'm asleep and I don't know there are problems until I wake up. And sometimes I break things by doing something dumb (although I try really hard not to).
 
 Since I run RawGit in my spare time, with my own money and with CDN hosting generously donated by [StackPath](https://stackpath.com/), it has a budget that's probably less than you pay for coffee in a given month. My goal is to help other open source developers get their projects up and running, but if you need to serve files that are crucial to your business, you should pay for a host with well-funded infrastructure and uptime guarantees.
+
+## Why does RawGit redirect requests for .jpg, .png, and other image files to GitHub?
+
+GitHub already serves certain file types — such as .jpg and .png files — with the correct `Content-Type` headers, so there's no benefit to proxying these files through RawGit. RawGit will redirect requests for these file types to GitHub to avoid wasting bandwidth. You should update your URLs to request these files from GitHub directly.
 
 ## Why do anonymous gist URLs return 403 errors?
 
