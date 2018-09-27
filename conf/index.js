@@ -10,17 +10,17 @@ module.exports = {
   baseRepoUrl: 'https://raw.githubusercontent.com',
 
   // Domain to use for CDN requests to RawGit.
-  cdnDomain: 'cdn.rawgit.com',
+  // cdnDomain: 'cdn.rawgit.com',
 
   // GitHub "username/repo" from which RawGit's own static assets should be
   // loaded via the CDN. Set this to a falsy value to disable loading static
   // assets from the CDN.
-  cdnRepo: 'rgrove/rawgit',
+  // cdnRepo: 'rgrove/rawgit',
 
   // Git tag that points to the GitHub commit from which RawGit's own static
   // assets should be loaded via the CDN. Set this to a falsy value to disable
   // loading static assets from the CDN.
-  cdnTag: 'cdn-20180423',
+  // cdnTag: 'cdn-20180423',
 
   // Domain to use for dev requests to RawGit.
   devDomain: 'rawgit.com',
