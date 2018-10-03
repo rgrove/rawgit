@@ -24,7 +24,7 @@ RawGit is not a good solution for hosting a full static website. RawGit is less 
 
 ## What should I use RawGit for?
 
-Use RawGit when you need to quickly and temporarily share some example code or a test page in a GitHub repo or gist, but you don't want to go to thr trouble of setting up a full static site or a GitHub Pages branch.
+Use RawGit when you need to quickly and temporarily share some example code or a test page in a GitHub repo or gist, but you don't want to go through the trouble of setting up a full static site or a GitHub Pages branch.
 
 Some people do rely on the RawGit CDN for serving files in production, but this isn't a great idea. RawGit proxies requests to GitHub on demand, and GitHub occasionally has service issues that cause RawGit requests to fail.
 
