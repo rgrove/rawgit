@@ -48,9 +48,8 @@ app.use(express.static(config.publicDir));
 app.get('/', (req, res) => {
   res.set('Cache-Control', 'max-age=60');
 
-  res.render('index', {
-    includeMetaDescription: true,
-    url: req.query.url
+  res.render('news/sunset', {
+    includeMetaDescription: true
   });
 });
 
@@ -76,6 +75,7 @@ app.route(/^\/[0-9A-Za-z-]{1,100}\/[0-9a-f]{1,100}\/raw\/?/)
     middleware.accessControl
   )
   .get(
+    middleware.bloomFilter,
     middleware.fileRedirect(config.baseGistUrl),
     middleware.proxyPath(config.baseGistUrl)
   );
@@ -89,6 +89,7 @@ app.route('/:user/:repo/:branch/*')
     middleware.accessControl
   )
   .get(
+    middleware.bloomFilter,
     middleware.fileRedirect(config.baseRepoUrl),
     middleware.proxyPath(config.baseRepoUrl)
   );

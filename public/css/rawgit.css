@@ -253,16 +253,29 @@ pre { overflow-x: auto; }
 
 /* -- News ------------------------------------------------------------------ */
 .news {
-  margin: 0 auto;
-  max-width: 900px;
+  margin: 2em auto;
+  max-width: 720px;
 }
 
-.news h1 {
+.news h2 {
+  font-size: 1.8em;
   margin-bottom: 0;
+  text-align: center;
+}
+
+.news h3 {
+  margin: 1.9em 0 1.3em;
 }
 
 .news .date {
-  font-style: italic;
+  color: #888;
+  display: block;
+  font-size: 12px;
+  text-align: center;
+}
+
+.news-body {
+  margin: 2em 0;
 }
 
 /* -- Misc ------------------------------------------------------------------ */

@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "bloom-filters": "0.5.2",
     "express": "4.16.3",
     "express-handlebars": "3.0.0",
     "mime-db": "1.33.0",
