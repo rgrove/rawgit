@@ -27,6 +27,19 @@ Have questions about RawGit? See the [FAQ](FAQ.md).
 ```
 npm test
 ```
+## Development  
+
+Want to contribute? **:pencil:**  
+  
+To fix a bug or enhance an existing module, follow these steps:  
+  
+1. Fork the repo
+2. Create a new branch (`git checkout -b exciting-stuff`)
+3. Make the appropriate changes in the files
+4. Add changes to reflect the changes made
+5. Commit your changes (`git commit -am 'exciting-stuff!!'`)
+6. Push to the branch (`git push origin exciting-stuff`)
+7. Create a Pull Request
 
 ## Contributing
 
