@@ -1,6 +1,6 @@
 # RawGit
 
-> **Warning**
+> [!WARNING]
 >
 > RawGit is no longer actively developed. You should use [jsDelivr](https://www.jsdelivr.com/rawgit) instead. If you arrived here via any website other than rawgit.com, that website is not associated with this project and is not maintained by this project's maintainers (even if it uses this code).
 
